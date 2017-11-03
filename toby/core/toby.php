@@ -92,16 +92,17 @@ class toby
 		 * 使用twig模板引擎
 		 * @var [type]
 		 */
-		$file=app.'/views/'.$file;
+		$path=$file;
+		$file=app.'/views/'.$file;	
 		if (is_file($file)) {
 			//将数组打散变成一个个变量
 			//extract($this->assign);
 			\Twig_AutoLoader::register();
 			$loader = new \Twig_Loader_Filesystem(app.'/views');
 			$twig = new \Twig_Environment($loader, array(
-    			'cache' => toby.'/log/twig'
+    			//'cache' => toby.'/log/twig'
 			));
-			$template = $twig->load('index.html');
+			$template = $twig->load($path);
 			$template->display($this->assign?$this->assign:array());
 		}
 	}

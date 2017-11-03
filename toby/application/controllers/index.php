@@ -13,8 +13,8 @@ class index extends \core\toby
 
 		//p($info->fetchAll());
 
-		$model = new articleModel();
-		$result = $model->delete1('foo');
+		//$model = new articleModel();
+		//$result = $model->delete1('foo');
 		//dump($result);
 
 		// $model = new model();
@@ -29,11 +29,15 @@ class index extends \core\toby
 		//dump($result);
 
 		//调取视图文件
-		$data='hello world1dfdf111';
-		$this->assign('data',$data);
-		$this->display('layout.html');
+		//$data='hello world1dfdf111';
+		//$this->assign('data',$data);
+		//$this->display('layout.html');
 		
-		$this->uri(3);
+		//$this->uri(3);
+		
+		$this->display('login.html');
+
+
 		/**
 		 * 控制器以及方法路径
 		 * @var [type]
