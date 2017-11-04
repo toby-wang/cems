@@ -14,6 +14,7 @@ class route
 		if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !='/') {
 			$path = $_SERVER['PATH_INFO'];
 			$patharr=explode('/',trim($path,'/'));
+			//print_r(conf::get('ACTION','route'));
 			if (isset($patharr[0])) {
 				$this->ctrl = $patharr[0];
 				unset($patharr[0]);
@@ -24,9 +25,6 @@ class route
 			}else{
 				$this->action = conf::get('ACTION','route');
 			}
-
-			//P($patharr);
-
 		}else{
 			$this->ctrl = conf::get('CTRL','route');
 			$this->action = conf::get('ACTION','route');

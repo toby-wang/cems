@@ -29,14 +29,12 @@ class index extends \core\toby
 		//dump($result);
 
 		//调取视图文件
-		//$data='hello world1dfdf111';
 		//$this->assign('data',$data);
 		//$this->display('layout.html');
 		
 		//$this->uri(3);
+		$this->display('login.php');
 		
-		$this->display('login.html');
-
 
 		/**
 		 * 控制器以及方法路径
@@ -46,11 +44,16 @@ class index extends \core\toby
 		// $temp = \core\lib\conf::get('ACTION','route');
 		// p($temp);
 	}
-	public function test()
+	public function admin_index()
 	{
-		$data='hello world11222211';
-		$this->assign('data',$data);
-		$this->display('test.html');
+		//if ($_POST["radio"]=="admin") {
+		$this->display('admin_index.php');
+		//}else{
+		//	echo 1;
+		//}
+		// $data='hello world11222211';
+		// $this->assign('data',$data);
+		// $this->display('test.html');
 	}
 }
 

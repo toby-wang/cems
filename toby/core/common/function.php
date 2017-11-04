@@ -12,3 +12,9 @@ function p($var)
 	}
 
 }
+
+function site_url()
+{
+	print_r($_SERVER["SERVER_NAME"]."/cems/toby/");
+}
+
