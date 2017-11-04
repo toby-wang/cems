@@ -76,7 +76,7 @@ class toby
 		$this->assign[$name] = $value;
 	}
 
-	public function display($file)
+	public function  display($file)
 	{
 		/**
 		 * 原来的载入视图
@@ -92,6 +92,7 @@ class toby
 		 * @var [type]
 		 */
 		$path=$file;	
+		//dump($path);die;
 		$file=app.'/views/'.$file;	
 		//dump(app.'/views');die;
 		if (is_file($file)) {

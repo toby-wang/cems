@@ -33,7 +33,9 @@ class index extends \core\toby
 		//$this->display('layout.html');
 		
 		//$this->uri(3);
+		//url();die;
 		$this->display('login.php');
+
 		
 
 		/**
@@ -44,16 +46,15 @@ class index extends \core\toby
 		// $temp = \core\lib\conf::get('ACTION','route');
 		// p($temp);
 	}
-	public function admin_index()
+	public function login()
 	{
-		//if ($_POST["radio"]=="admin") {
-		$this->display('admin_index.php');
-		//}else{
-		//	echo 1;
-		//}
-		// $data='hello world11222211';
-		// $this->assign('data',$data);
-		// $this->display('test.html');
+		if ($_POST["radio"]=="admin") {
+			$this->display('admin/admin_index.php');
+		}else if($_POST["radio"]=="teacher"){
+			$this->display('teacher/teacher_index.php');
+		}else{
+			echo 1;
+		}
 	}
 }
 

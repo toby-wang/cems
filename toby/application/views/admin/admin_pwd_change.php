@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>修改密码</title>
-		<link href="style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  
+		<link href="http://localhost/cems/toby/application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  
 	</head>
 	<body style="background:background-color;background-color: transparent;font-size: 18px;">
 		<div align="center" id="add" style="background: transparent;">

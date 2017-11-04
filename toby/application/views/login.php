@@ -7,11 +7,11 @@
 
     <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" />
     <!-- Bootstrap -->
-    <link href="http://localhost/cems/toby/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/cems/toby/application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/cems/toby/style/assets/css/vendor/bootstrap-checkbox.css">
+    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/css/vendor/bootstrap-checkbox.css">
 
-    <link href="http://localhost/cems/toby/style/assets/css/minimal.css" rel="stylesheet">
+    <link href="http://localhost/cems/toby/application/style/assets/css/minimal.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,11 +30,11 @@
 
 
           <div class="inside-block">
-            <img src="http://localhost/cems/toby/style/assets/images/logo-big.png" alt class="logo">
+            <img src="http://localhost/cems/toby/application/style/assets/images/logo-big.png" alt class="logo">
             <h1><strong>Welcome</strong> <span id="">Admin</h1>
             <h5>Examination management system</h5>
 
-            <form id="form-signin" class="form-signin" action="http://localhost/cems/toby/index/admin_index" method="post">
+            <form id="form-signin" class="form-signin" action="http://localhost/cems/toby/index/login" method="post">
               <section class="log-in">
                <input type="radio" name="radio" value="student" checked="true"/>student
                <input type="radio" name="radio" value="teacher" />  teacher
