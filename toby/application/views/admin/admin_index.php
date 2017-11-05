@@ -75,7 +75,7 @@
                 <ul class="menu">
                   
                   <li class="active">
-                    <a href="admin_intro"  target="menuFrame">
+                    <a href="../admin/admin_intro"  target="menuFrame">
                       <i class="fa fa-tachometer"></i> 首页
                       <!--<span class="badge badge-red">1</span>-->
                     </a>

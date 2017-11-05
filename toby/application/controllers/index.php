@@ -1,7 +1,7 @@
 <?php
 namespace application\controllers;
 use core\lib\model;
-use application\models\articleModel;
+use application\models\loginModel;
 class index extends \core\toby
 {
 	public function index()
@@ -35,9 +35,6 @@ class index extends \core\toby
 		//$this->uri(3);
 		//url();die;
 		$this->display('login.php');
-
-		
-
 		/**
 		 * 控制器以及方法路径
 		 * @var [type]
@@ -48,12 +45,29 @@ class index extends \core\toby
 	}
 	public function login()
 	{
+		$username = $_POST['username'];//输入姓名
+		$password = $_POST['password'];
+		$model = new loginModel();
+		$getdata = $model->getUser($username);//获取数据库信息
+
 		if ($_POST["radio"]=="admin") {
-			$this->display('admin/admin_index.php');
+			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="1")
+			{
+				echo "<script>alert(\"登录成功！！！\")</script>";
+				$this->display('admin/admin_index.php');
+			}else{
+				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";
+			}
 		}else if($_POST["radio"]=="teacher"){
-			$this->display('teacher/teacher_index.php');
-		}else{
-			echo 1;
+			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="0")
+			{
+				echo "<script>alert(\"登录成功！！！\")</script>";
+				$this->display('teacher/teacher_index.php');
+			}else{
+				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";
+			}
+		}else if($_POST["radio"]=="student"){
+			$this->display('teacher/student_index.php');
 		}
 	}
 }
