@@ -13,8 +13,8 @@ class index extends \core\toby
 
 		//p($info->fetchAll());
 
-		$model = new articleModel();
-		$result = $model->delete1('foo');
+		//$model = new articleModel();
+		//$result = $model->delete1('foo');
 		//dump($result);
 
 		// $model = new model();
@@ -29,11 +29,15 @@ class index extends \core\toby
 		//dump($result);
 
 		//调取视图文件
-		$data='hello world1dfdf111';
-		$this->assign('data',$data);
-		$this->display('layout.html');
+		//$this->assign('data',$data);
+		//$this->display('layout.html');
 		
-		$this->uri(3);
+		//$this->uri(3);
+		//url();die;
+		$this->display('login.php');
+
+		
+
 		/**
 		 * 控制器以及方法路径
 		 * @var [type]
@@ -42,11 +46,15 @@ class index extends \core\toby
 		// $temp = \core\lib\conf::get('ACTION','route');
 		// p($temp);
 	}
-	public function test()
+	public function login()
 	{
-		$data='hello world11222211';
-		$this->assign('data',$data);
-		$this->display('test.html');
+		if ($_POST["radio"]=="admin") {
+			$this->display('admin/admin_index.php');
+		}else if($_POST["radio"]=="teacher"){
+			$this->display('teacher/teacher_index.php');
+		}else{
+			echo 1;
+		}
 	}
 }
 

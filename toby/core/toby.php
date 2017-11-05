@@ -20,7 +20,6 @@ class toby
 		log::init();
 		//p('ok');
 		$route = new route();
-		//p($route);
 		$ctrlClass = $route->ctrl; //控制器名字
 		$action = $route->action;  //方法名
 		$ctrlfile=app.'/controllers/'.$ctrlClass.'.php';
@@ -77,7 +76,7 @@ class toby
 		$this->assign[$name] = $value;
 	}
 
-	public function display($file)
+	public function  display($file)
 	{
 		/**
 		 * 原来的载入视图
@@ -92,16 +91,19 @@ class toby
 		 * 使用twig模板引擎
 		 * @var [type]
 		 */
-		$file=app.'/views/'.$file;
+		$path=$file;	
+		//dump($path);die;
+		$file=app.'/views/'.$file;	
+		//dump(app.'/views');die;
 		if (is_file($file)) {
 			//将数组打散变成一个个变量
 			//extract($this->assign);
 			\Twig_AutoLoader::register();
-			$loader = new \Twig_Loader_Filesystem(app.'/views');
+			$loader = new \Twig_Loader_Filesystem(app.'/views/');
 			$twig = new \Twig_Environment($loader, array(
-    			'cache' => toby.'/log/twig'
+    			//'cache' => toby.'/log/twig'
 			));
-			$template = $twig->load('index.html');
+			$template = $twig->loadTemplate($path);
 			$template->display($this->assign?$this->assign:array());
 		}
 	}
