@@ -11,7 +11,7 @@
     
 
 <div align="center" id="add" style="background: transparent;">
-    <form class="bs-example bs-example-form" role="form">
+    <form class="bs-example bs-example-form" role="form" action="http://localhost/cems/toby/admin/add_cate" method="post">
     	<table cellpadding="5px">
     		<tr>
     			<td align="right">
@@ -20,7 +20,7 @@
     			
     			<td align="right">
     				
-    				<input type="text" class="input-lg" placeholder="用户名" style="margin:15px;">
+    				<input type="text" name="name" class="input-lg" placeholder="用户名" style="margin:15px;">
     			</td>
     			
     		</tr>
@@ -35,7 +35,7 @@
     			
     			<td align="right">
     				
-    				<input type="text" class="input-lg" placeholder="真实姓名" style="margin:15px;">
+    				<input type="text" name="relname" class="input-lg" placeholder="真实姓名" style="margin:15px;">
     			</td>
     			
     		</tr>
@@ -49,7 +49,7 @@
     			
     			<td align="right">
     				
-    				<input type="text" class="input-lg" placeholder="密码" style="margin:15px;">
+    				<input type="text" name="psw" class="input-lg" placeholder="密码" style="margin:15px;">
     			</td>
     			
     		</tr>
@@ -59,16 +59,16 @@
         	設置為：
         	</td>
         	<td>
-           <select class="form-control" style="height: 45px;width: 200px;" style="margin:15px;">
-                 <option>管理员</option>
-                 <option>普通教师</option>
+           <select class="form-control" name="type" style="height: 45px;width: 200px;" style="margin:15px;">
+                 <option value="1">管理员</option>
+                 <option value="0">普通教师</option>
            </select>
           </td>
         </tr>
  
      		<tr style="margin:15px;">
     			<td align="center">
-    				<button type="button" class="btn btn-success" style="margin:15px;">保存</button>
+    				<input type="submit" class="btn btn-success" style="margin:15px;" value="保存">
     			</td>
     			
     			<td align="right">

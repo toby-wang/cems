@@ -12,15 +12,6 @@ class articleModel extends model
 		$result = $this->select($this->table,'*');
 		return $result;
 	}
-
-	public function getOne($id)
-	{
-		$result = $this->get($this->table,'*',array(
-			'title'=>$id
-		));
-		return $result;
-	}
-
 	public function delete1($id)
 	{
 		$result = $this->delete($this->table,array(

@@ -11,7 +11,7 @@
     
 
 <div align="center" id="add" style="background: transparent;">
-    <form class="bs-example bs-example-form" role="form">
+    <form class="bs-example bs-example-form" role="form" action="http://localhost/cems/toby/admin/teacher_delete" method="post">
     	<table cellpadding="5px">
     		<tr>
     			<td align="right">
@@ -20,7 +20,7 @@
     			
     			<td align="right">
     				
-    				<input type="text" class="input-lg" placeholder="用户名" style="margin:15px;">
+    				<input type="text" name="name" class="input-lg" placeholder="用户名" style="margin:15px;">
     			    <!--<input type="button" class="button bg-blue" value="查询"/>-->
     			</td>
     			
@@ -30,8 +30,7 @@
      		<tr style="margin:15px;">
      			
     			<td align="right">
-    				
-    				<button type="button" class="btn btn-danger" style="margin:15px;">确认删除</button>
+    				<input type="submit" class="btn btn-danger" style="margin:15px;" value="确认删除">
     			</td>
     			
     			<td align="right">
