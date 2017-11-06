@@ -37,6 +37,20 @@ class adminModel extends model
 	}
 	public function pwd_change($data,$user)
 	{
-		$this->update($this->table,$data,$user);
+		$result = $this->update($this->table,$data,$user);
+		return $result;
 	}
+	public function system_list()
+	{
+		$result = $this->get("system_set",'*',array(
+			'id'=> 1
+		));
+		return $result;
+	}
+	public function system_set($data,$id)
+	{
+		$result = $this->update("system_set",$data,$id);
+		return $result;
+	}
+
 }

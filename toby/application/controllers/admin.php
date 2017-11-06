@@ -24,11 +24,8 @@ class admin extends \core\toby
         "password" => $_POST['psw'],
         "type" => $_POST['type']
 		);
-		if ($model->teacher_add($data)) {
-			echo "<script>alert(\"添加成功！！！\");history.go(-1)</script>";
-		}else{
-			echo "<script>alert(\"添加失败,请重新添加！\");history.go(-1)</script>";
-		}
+		$model->teacher_add($data);
+		echo "<script>alert(\"添加成功！！！\");history.go(-1)</script>";
 	}
 	public function admin_pwd_change()
 	{
@@ -70,11 +67,8 @@ class admin extends \core\toby
 		$getdata = $model->get_teacher($username);
 		if (isset($getdata['name']))
 		{
-			if ($model->teacher_delete($username)) {
-				echo "<script>alert(\"删除成功！\");history.go(-1)</script>";
-			}else{
-				echo 1;
-			}
+			$model->teacher_delete($username);
+			echo "<script>alert(\"删除成功！\");history.go(-1)</script>";
 		}else{
 			echo "<script>alert(\"该用户不存在！\");history.go(-1)</script>";
 		}		
@@ -93,7 +87,26 @@ class admin extends \core\toby
 	}
 	public function admin_system_set()
 	{
+		$model = new adminModel();
+		$data = $model->system_list();
+
+		$this->assign('data',$data);
 		$this->display('admin/admin_system_set.php');
+	}
+	public function system_set()
+	{
+		$id=array('id'=>1);
+		$data=array(
+			'time'=> $_POST['time'],
+			'number'=> $_POST['number'],
+			'period'=> $_POST['period'],
+			'min_byte'=> $_POST['min_byte'],
+			'max_byte'=> $_POST['max_byte'],
+			'power'=> $_POST['power']
+		);
+		$model = new adminModel();
+		$model->system_set($data,$id);
+		echo "<script>alert(\"修改成功！！！\");history.go(-1)</script>";
 	}
 }
 
