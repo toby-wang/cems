@@ -50,7 +50,7 @@
 
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a class="navbar-brand" href="teacher-intro.html">
+            <a class="navbar-brand" href="teacher_intro.php">
               <strong>teacher</strong>
             </a>
             
@@ -91,7 +91,7 @@
                 <ul class="menu">
                   
                   <li class="active">
-                    <a href="teacher-intro.html"  target="menuFrame">
+                    <a href="../teacher/teacher_intro"  target="menuFrame">
                       <i class="fa fa-tachometer"></i> 首页
                       <!--<span class="badge badge-red">1</span>-->
                     </a>
@@ -109,7 +109,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/exam-begin.html" target="menuFrame">
+                        <a href="../teacher/exam_begin.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i>開啟考試
                         </a>
                       </li>
@@ -123,7 +123,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="teacher-add.html" target="menuFrame">
+                        <a href="teacher_add.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i>考试状况
                         </a>
                       </li>
@@ -133,12 +133,12 @@
                         </a>
                       </li>
                       <li>
-                        <a href="form-wizard.html" target="menuFrame">
+                        <a href="form_wizard.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 解除锁定
                         </a>
                       </li>
                       <li>
-                        <a href="form-wizard.html" target="menuFrame">
+                        <a href="form_wizard.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 通知管理
                         </a>
                       </li>
@@ -147,7 +147,7 @@
 
 
                   <li>
-                    <a href="buttons.html">
+                    <a href="buttons.php">
                       <i class="fa fa-tint"></i> 考后操作
                     </a>
                   </li>

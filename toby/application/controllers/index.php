@@ -53,7 +53,7 @@ class index extends \core\toby
 		if ($_POST["radio"]=="admin") {
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="1")
 			{
-				echo "<script>alert(\"登录成功！！！\")</script>";
+				//echo "<script>alert(\"登录成功！！！\")</script>";
 				$this->display('admin/admin_index.php');
 			}else{
 				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";
@@ -61,7 +61,7 @@ class index extends \core\toby
 		}else if($_POST["radio"]=="teacher"){
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="0")
 			{
-				echo "<script>alert(\"登录成功！！！\")</script>";
+				//echo "<script>alert(\"登录成功！！！\")</script>";
 				$this->display('teacher/teacher_index.php');
 			}else{
 				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";

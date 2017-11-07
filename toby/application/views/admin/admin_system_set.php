@@ -6,7 +6,7 @@
 	</head>
 	<body style="background:background-color;background-color: transparent;font-size: 14px;color: white;">
         <h3 align="center">修改系统配置</h3>
-        <form method="post" action="http://localhost/cems/toby/admin/system_set">
+        <form method="post" action="../admin/system_set">
         	<table align="center" cellpadding="8px">
         		<tr>
         			<td>后台任务间隔时间</td>

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
 
-    <link href="http://localhost/cems/toby/application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">   
+    <link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">   
     </head>
     <body style="background:background-color;background-color: transparent;color: ghostwhite;font-size: 18px;">
     
 
 <div align="center" id="add" style="background: transparent;">
-    <form class="bs-example bs-example-form" role="form" action="http://localhost/cems/toby/admin/teacher_delete" method="post">
+    <form class="bs-example bs-example-form" role="form" action="../admin/teacher_delete" method="post">
     	<table cellpadding="5px">
     		<tr>
     			<td align="right">
