@@ -49,7 +49,7 @@
     			
     			<td align="right">
     				
-    				<input type="text" name="psw" class="input-lg" placeholder="密码" style="margin:15px;">
+    				<input type="password" name="psw" class="input-lg" placeholder="密码" style="margin:15px;">
     			</td>
     			
     		</tr>
@@ -60,8 +60,8 @@
         	</td>
         	<td>
            <select class="form-control" name="type" style="height: 45px;width: 200px;" style="margin:15px;">
-                 <option value="1">管理员</option>
-                 <option value="0">普通教师</option>
+                <option value="0">普通教师</option>
+                <option value="1">管理员</option>   
            </select>
           </td>
         </tr>
