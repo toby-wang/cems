@@ -50,7 +50,7 @@
 
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a class="navbar-brand" href="teacher_intro.php">
+            <a class="navbar-brand" href="../teacher/teacher_intro" target="menuFrame">
               <strong>teacher</strong>
             </a>
             
@@ -109,7 +109,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/exam_begin.php" target="menuFrame">
+                        <a href="../teacher/teacher_exam_add" target="menuFrame">
                           <i class="fa fa-caret-right"></i>開啟考試
                         </a>
                       </li>
@@ -123,22 +123,22 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="teacher_add.php" target="menuFrame">
+                        <a href="../teacher/teacher_exam_situation" target="menuFrame">
                           <i class="fa fa-caret-right"></i>考试状况
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/teacher_student_add" target="menuFrame">
+                        <a href="../teacher/teacher_student_check" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 学生信息
                         </a>
                       </li>
                       <li>
-                        <a href="form_wizard.php" target="menuFrame">
+                        <a href="../teacher/form_wizard" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 解除锁定
                         </a>
                       </li>
                       <li>
-                        <a href="form_wizard.php" target="menuFrame">
+                        <a href="../teacher/form_wizard.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 通知管理
                         </a>
                       </li>
@@ -147,7 +147,7 @@
 
 
                   <li>
-                    <a href="buttons.php">
+                    <a href="../teacher/teacher_exam_end" target="menuFrame">
                       <i class="fa fa-tint"></i> 考后操作
                     </a>
                   </li>

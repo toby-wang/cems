@@ -27,4 +27,20 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_pwd_change.php');
 	}
+	public function teacher_exam_add()
+	{
+		$this->display('teacher/teacher_exam_add.php');
+	}
+	public function teacher_exam_situation()
+	{
+		$this->display('teacher/teacher_exam_situation.php');
+	}
+	public function teacher_student_check()
+	{
+		$this->display('teacher/teacher_student_check.php');
+	}
+	public function teacher_exam_end()
+	{
+		$this->display('teacher/teacher_exam_end.php');
+	}
 }

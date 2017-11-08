@@ -53,8 +53,8 @@
               </section>
               <section class="controls">
                 <div class="checkbox check-transparent">
-<!--                   <input type="checkbox" value="1" id="remember">
-                  <label for="remember">Remember me</label> -->
+                  <!--<input type="checkbox" value="1" id="remember">
+                  <label for="remember">Remember me</label>-->
                 </div>
                 <a href="#">我Forget password?</a>
               </section>
