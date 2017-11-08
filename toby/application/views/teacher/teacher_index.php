@@ -109,7 +109,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/exam_begin.php" target="menuFrame">
+                        <a href="../teacher/teacher_exam_add.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i>開啟考試
                         </a>
                       </li>
@@ -123,12 +123,12 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="teacher_add.php" target="menuFrame">
+                        <a href="teacher_exam_situation.php" target="menuFrame">
                           <i class="fa fa-caret-right"></i>考试状况
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/teacher_student_add" target="menuFrame">
+                        <a href="../teacher/teacher_student_check" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 学生信息
                         </a>
                       </li>
@@ -147,7 +147,7 @@
 
 
                   <li>
-                    <a href="buttons.php">
+                    <a href="teacher_exam_end.php">
                       <i class="fa fa-tint"></i> 考后操作
                     </a>
                   </li>
