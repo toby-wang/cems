@@ -1002,3 +1002,7 @@
 2017-11-07 21:32:13"controllers:\\application\\controllers\\admin   action:admin_teacher_add"
 2017-11-07 21:32:17"controllers:\\application\\controllers\\admin   action:admin_system_set"
 2017-11-07 21:32:20"controllers:\\application\\controllers\\admin   action:admin_intro"
+2017-11-08 20:27:45"controllers:\\application\\controllers\\index   action:index"
+2017-11-08 20:28:48"controllers:\\application\\controllers\\index   action:index"
+2017-11-08 20:28:52"controllers:\\application\\controllers\\index   action:login"
+2017-11-08 20:28:52"controllers:\\application\\controllers\\admin   action:admin_intro"
