@@ -57,6 +57,8 @@
             <!-- Search -->
             <div class="search" id="main-search">
               <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
+              <span>欢迎您！！！{{ data }}</span>
+              <a href="../index/logout">注销</a>
             </div>
            
 

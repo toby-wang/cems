@@ -34,11 +34,11 @@
             <h1><strong>Welcome</strong> <span id="">Admin</h1>
             <h5>Examination management system</h5>
 
-            <form id="form-signin" class="form-signin" action="http://localhost/cems/toby/index/login" method="post">
+            <form id="form-signin" class="form-signin" action="index/login" method="post">
               <section class="log-in">
-               <input type="radio" name="radio" value="student" checked="true"/>student
+               <input type="radio" name="radio" value="student" />student
                <input type="radio" name="radio" value="teacher" />  teacher
-               <input type="radio" name="radio" value="admin" />  admin
+               <input type="radio" name="radio" value="admin" checked="true"/>  admin
               </section>
               
               <section>

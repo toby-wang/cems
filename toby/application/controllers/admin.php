@@ -9,6 +9,7 @@ class admin extends \core\toby
 	function __construct() 
 	{
 		$this->model = new adminModel();
+		session_start();
 	}
 	public function admin_index()
 	{

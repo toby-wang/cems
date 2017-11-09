@@ -7,7 +7,7 @@
 
     <link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">   
     </head>
-    <body style="background:background-color;background-color: transparent;color: ghostwhite;font-size: 18px;">
+    <body style="background:background-color;background-color: transparent;font-size: 18px;">
     
 
 <div align="center" id="add" style="background: transparent;">
