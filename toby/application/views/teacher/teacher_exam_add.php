@@ -2,63 +2,100 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link href="../application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<title></title>
 	</head>
     <body style="background:background-color;background-color: transparent;">
-	<form >
-		<table align="center">
-			<tr>
-				<h3 align="center">添加考试</h3>
-			</tr>
-			<tr>
-				<td>
-					<input type="text"  placeholder="考试名称*"  />
-				</td>
-				<td>
-					<input type="date"  placeholder="考试时间*" />
-				</td>
-				<td>
-					<input type="checkbox" />自动开始
-				</td>
-				<td>
-					<input type="button" id="teacher_exam_add" value="添加"
-						style="font-size: 16px;background-color:#008000 ;color: white;" />
-				</td>
-			</tr>
-			<tr style="height: 20px;"></tr>
-		</table>
+    	
+    	<form class="form-inline" style="width:80%;margin: 0 auto;">
+
+			<h3 align="left">添加考试</h3>	
+
+			
+		<div class="form-group" style="float:right; ">
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputEmail3">考试名称</label>
+        <input class="form-control" id="exampleInputEmail3" placeholder="考试名称" type="email">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputPassword3">考试时间</label>
+        <input class="form-control" id="exampleInputPassword3" placeholder="考试时间" type="password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> 自动开始
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">添加</button>
+      </div>
+       </div>
+    	</form>
+
+
 		
-		<table align="center" border="1" style="border:double">
-			<thead>
-			<tr>
-				<th width="90px" align="center">考试名称</th>
-				<th width="90px" align="center">考试时间</th>
-				<th width="60px" align="center">创建人</th>
-				<th width="70px" align="center">上传试卷</th>
-				<th width="70px" align="center">自动开始</th>
-				<th width="50px" align="center">进行中</th>
-				<th width="50px" align="center">已结束</th>
-				<th width="50px" align="center">已归档</th>
-				<th width="50px" align="center">已清理</th>
-				<th width="50px" align="center">编辑</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr height="20px">
-				<td></td>
-				<td></td>
-				<td></td>				
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>	
-				<td></td>
-			</tr>
-			</tbody>
-		</table>
-	</form>
+<div style="width:80%;margin: 0 auto;margin-top: 100px;">
+<table class="table table-striped" >
+      <thead>
+        <tr>
+          <th>考试名称</th>
+				<th >考试时间</th>
+				<th >创建人</th>
+				<th >上传试卷</th>
+				<th >自动开始</th>
+				<th >进行中</th>
+				<th >已结束</th>
+				<th >已归档</th>
+				<th >已清理</th>
+				<th >编辑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>		
+			<ul class="pagination" style="float: right;">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+</ul>
+</div>
+			
+			
+
     
     </body>
 </html>
