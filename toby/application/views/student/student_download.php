@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>试卷下载</title>
-		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 
 	<body style="background:background-color;background-color: transparent;">

@@ -54,12 +54,23 @@
             </ul>
             <!-- /Page refresh -->
 
+            <div class="search" id="main-search" style="float: right;margin-right:30px;">
+            
+                  <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <i class="glyphicon glyphicon-user"></i>欢迎你,
+              <span>{{ data }}</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="../index" class="btn btn-danger">退出系统</a>
+             
+            </div>
+
             <!-- Search -->
-            <div class="search" id="main-search">
+           <!--  <div class="search" id="main-search">
               <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
               <span>欢迎您！！！{{ data }}</span>
               <a href="../index/logout">注销</a>
-            </div>
+            </div> -->
            
 
             <!-- Sidebar--> <!-- Collapsed search pasting here at 768px -->

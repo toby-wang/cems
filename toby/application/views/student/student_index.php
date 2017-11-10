@@ -13,24 +13,24 @@
     
      <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" />
+    <link rel="icon" type="image/ico" href="http://tattek.com/minimal/../application/style/assets/images/favicon.ico" />
     <!-- Bootstrap -->
-    <link href="assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
-    <link type="text/css" rel="stylesheet" media="all" href="assets/js/vendor/mmenu/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="assets/js/vendor/videobackground/css/jquery.videobackground.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap-checkbox.css">
+    <link rel="stylesheet" href="../application/style/assets/css/vendor/animate/animate.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="../application/style/assets/js/vendor/mmenu/css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/videobackground/css/jquery.videobackground.css">
+    <link rel="stylesheet" href="../application/style/assets/css/vendor/bootstrap-checkbox.css">
 
-    <link rel="stylesheet" href="assets/js/vendor/rickshaw/css/rickshaw.min.css">
-    <link rel="stylesheet" href="assets/js/vendor/morris/css/morris.css">
-    <link rel="stylesheet" href="assets/js/vendor/tabdrop/css/tabdrop.css">
-    <link rel="stylesheet" href="assets/js/vendor/summernote/css/summernote.css">
-    <link rel="stylesheet" href="assets/js/vendor/summernote/css/summernote-bs3.css">
-    <link rel="stylesheet" href="assets/js/vendor/chosen/css/chosen.min.css">
-    <link rel="stylesheet" href="assets/js/vendor/chosen/css/chosen-bootstrap.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/rickshaw/css/rickshaw.min.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/morris/css/morris.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/tabdrop/css/tabdrop.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/summernote/css/summernote.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/summernote/css/summernote-bs3.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen.min.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
-    <link href="assets/css/minimal.css" rel="stylesheet">
+    <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
   </head>
   <body class="bg-1">
     <!-- Wrap all page content here -->
@@ -42,7 +42,7 @@
  
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a class="navbar-brand" href="teacher-intro.html">
+            <a class="navbar-brand" href="../student/student_intro"  target="menuFrame">
               <strong>student</strong>
             </a>
             
@@ -70,7 +70,7 @@
             			 <i class="glyphicon glyphicon-user"></i>欢迎你,
               <span>ahhaaaaaa</span>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="login.html" class="btn btn-danger">退出系统</a>
+              <a href="../index" class="btn btn-danger">退出系统</a>
              
               </div>
            
@@ -91,20 +91,20 @@
                 <ul class="menu">
                   
                   <li class="active">
-                    <a href="student_index.php"  target="menuFrame">
+                    <a href="../student/student_intro"  target="menuFrame">
                       <i class="fa fa-tachometer"></i> 首页
                       <!--<span class="badge badge-red">1</span>-->
                     </a>
                   </li>
 
                   <li class="dropdown">
-                    <a href="student_download.php" target="menuFrame">
+                    <a href="../student/student_download" target="menuFrame">
                       <i class="fa fa-list"></i> 试卷下载 
                     </a>
                   </li>
 
                   <li class="dropdown">
-                    <a href="student_upload.php" target="menuFrame">
+                    <a href="../student/student_upload" target="menuFrame">
                       <i class="fa fa-pencil"></i> 答案上传
                     </a>
                    
@@ -128,36 +128,36 @@
         </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="assets/js/jquery.js"></script>
+<script src="../application/style/assets/js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/mmenu/js/jquery.mmenu.min.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/animate-numbers/jquery.animateNumbers.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/videobackground/jquery.videobackground.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/blockui/jquery.blockUI.js"></script>
+    <script src="../application/style/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/mmenu/js/jquery.mmenu.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/animate-numbers/jquery.animateNumbers.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/videobackground/jquery.videobackground.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/blockui/jquery.blockUI.js"></script>
 
-    <script src="assets/js/vendor/flot/jquery.flot.min.js"></script>
-    <script src="assets/js/vendor/flot/jquery.flot.time.min.js"></script>
-    <script src="assets/js/vendor/flot/jquery.flot.selection.min.js"></script>
-    <script src="assets/js/vendor/flot/jquery.flot.animator.min.js"></script>
-    <script src="assets/js/vendor/flot/jquery.flot.orderBars.js"></script>
-    <script src="assets/js/vendor/easypiechart/jquery.easypiechart.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.time.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.selection.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.animator.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.orderBars.js"></script>
+    <script src="../application/style/assets/js/vendor/easypiechart/jquery.easypiechart.min.js"></script>
 
-    <script src="assets/js/vendor/rickshaw/raphael-min.js"></script> 
-    <script src="assets/js/vendor/rickshaw/d3.v2.js"></script>
-    <script src="assets/js/vendor/rickshaw/rickshaw.min.js"></script>
+    <script src="../application/style/assets/js/vendor/rickshaw/raphael-min.js"></script> 
+    <script src="../application/style/assets/js/vendor/rickshaw/d3.v2.js"></script>
+    <script src="../application/style/assets/js/vendor/rickshaw/rickshaw.min.js"></script>
 
-    <script src="assets/js/vendor/morris/morris.min.js"></script>
+    <script src="../application/style/assets/js/vendor/morris/morris.min.js"></script>
 
-    <script src="assets/js/vendor/tabdrop/bootstrap-tabdrop.min.js"></script>
+    <script src="../application/style/assets/js/vendor/tabdrop/bootstrap-tabdrop.min.js"></script>
 
-    <script src="assets/js/vendor/summernote/summernote.min.js"></script>
+    <script src="../application/style/assets/js/vendor/summernote/summernote.min.js"></script>
 
-    <script src="assets/js/vendor/chosen/chosen.jquery.min.js"></script>
+    <script src="../application/style/assets/js/vendor/chosen/chosen.jquery.min.js"></script>
 
-    <script src="assets/js/minimal.min.js"></script>
+    <script src="../application/style/assets/js/minimal.min.js"></script>
   </body>
 </html>
       
