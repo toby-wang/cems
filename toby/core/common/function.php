@@ -17,4 +17,17 @@ function url()
 {
 	print_r($_SERVER["SERVER_NAME"]."/cems/toby/application/");
 }
+// function get_ipv4(){
+//     if (isset($_ENV["HOSTNAME"])){
+//         $MachineName = $_ENV["HOSTNAME"];
+//     } else if(isset($_ENV["COMPUTERNAME"])){
+//         $MachineName = $_ENV["COMPUTERNAME"];
+//     }else{
+//         $MachineName = "";
+//     }
+//     echo gethostbyname($MachineName);
+// }
+
+
+
 

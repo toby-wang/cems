@@ -7,22 +7,22 @@
 
     <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" />
     <!-- Bootstrap -->
-    <link href="http://localhost/cems/toby/application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/css/vendor/animate/animate.min.css">
-    <link type="text/css" rel="stylesheet" media="all" href="http://localhost/cems/toby/application/style/assets/js/vendor/mmenu/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/videobackground/css/jquery.videobackground.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/css/vendor/bootstrap-checkbox.css">
+    <link rel="stylesheet" href="../application/style/assets/css/vendor/animate/animate.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="../application/style/assets/js/vendor/mmenu/css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/videobackground/css/jquery.videobackground.css">
+    <link rel="stylesheet" href="../application/style/assets/css/vendor/bootstrap-checkbox.css">
 
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/rickshaw/css/rickshaw.min.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/morris/css/morris.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/tabdrop/css/tabdrop.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/summernote/css/summernote.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/summernote/css/summernote-bs3.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/chosen/css/chosen.min.css">
-    <link rel="stylesheet" href="http://localhost/cems/toby/application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/rickshaw/css/rickshaw.min.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/morris/css/morris.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/tabdrop/css/tabdrop.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/summernote/css/summernote.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/summernote/css/summernote-bs3.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen.min.css">
+    <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
-    <link href="http://localhost/cems/toby/application/style/assets/css/minimal.css" rel="stylesheet">
+    <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
   </head>
   <body class="bg-1">
 
@@ -50,7 +50,7 @@
 
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a class="navbar-brand" href="teacher-intro.html">
+            <a class="navbar-brand" href="../teacher/teacher_intro" target="menuFrame">
               <strong>teacher</strong>
             </a>
             
@@ -73,6 +73,8 @@
             <!-- Search -->
             <div class="search" id="main-search">
               <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
+              <span>欢迎您！！！{{ data }}</span>
+              <a href="../index">注销</a>
             </div>
            
 
@@ -91,7 +93,7 @@
                 <ul class="menu">
                   
                   <li class="active">
-                    <a href="teacher-intro.html"  target="menuFrame">
+                    <a href="../teacher/teacher_intro"  target="menuFrame">
                       <i class="fa fa-tachometer"></i> 首页
                       <!--<span class="badge badge-red">1</span>-->
                     </a>
@@ -109,7 +111,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/exam-begin.html" target="menuFrame">
+                        <a href="../teacher/teacher_exam_add" target="menuFrame">
                           <i class="fa fa-caret-right"></i>開啟考試
                         </a>
                       </li>
@@ -123,22 +125,22 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="teacher-add.html" target="menuFrame">
+                        <a href="../teacher/teacher_exam_situation" target="menuFrame">
                           <i class="fa fa-caret-right"></i>考试状况
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/teacher_student_add" target="menuFrame">
+                        <a href="../teacher/teacher_student_check" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 学生信息
                         </a>
                       </li>
                       <li>
-                        <a href="form-wizard.html" target="menuFrame">
+                        <a href="../teacher/teacher_student_unlock" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 解除锁定
                         </a>
                       </li>
                       <li>
-                        <a href="form-wizard.html" target="menuFrame">
+                        <a href="../teacher/teacher_exam_broadcast" target="menuFrame">
                           <i class="fa fa-caret-right"></i> 通知管理
                         </a>
                       </li>
@@ -147,7 +149,7 @@
 
 
                   <li>
-                    <a href="buttons.html">
+                    <a href="../teacher/teacher_exam_end" target="menuFrame">
                       <i class="fa fa-tint"></i> 考后操作
                     </a>
                   </li>
@@ -191,36 +193,36 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="http://localhost/cems/toby/application/style/assets/js/jquery.js"></script>
+<script src="../application/style/assets/js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/mmenu/js/jquery.mmenu.min.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/animate-numbers/jquery.animateNumbers.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/videobackground/jquery.videobackground.js"></script>
-    <script type="text/javascript" src="http://localhost/cems/toby/application/style/assets/js/vendor/blockui/jquery.blockUI.js"></script>
+    <script src="../application/style/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/mmenu/js/jquery.mmenu.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/animate-numbers/jquery.animateNumbers.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/videobackground/jquery.videobackground.js"></script>
+    <script type="text/javascript" src="../application/style/assets/js/vendor/blockui/jquery.blockUI.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/flot/jquery.flot.min.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/flot/jquery.flot.time.min.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/flot/jquery.flot.selection.min.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/flot/jquery.flot.animator.min.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/flot/jquery.flot.orderBars.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/easypiechart/jquery.easypiechart.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.time.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.selection.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.animator.min.js"></script>
+    <script src="../application/style/assets/js/vendor/flot/jquery.flot.orderBars.js"></script>
+    <script src="../application/style/assets/js/vendor/easypiechart/jquery.easypiechart.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/rickshaw/raphael-min.js"></script> 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/rickshaw/d3.v2.js"></script>
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/rickshaw/rickshaw.min.js"></script>
+    <script src="../application/style/assets/js/vendor/rickshaw/raphael-min.js"></script> 
+    <script src="../application/style/assets/js/vendor/rickshaw/d3.v2.js"></script>
+    <script src="../application/style/assets/js/vendor/rickshaw/rickshaw.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/morris/morris.min.js"></script>
+    <script src="../application/style/assets/js/vendor/morris/morris.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/tabdrop/bootstrap-tabdrop.min.js"></script>
+    <script src="../application/style/assets/js/vendor/tabdrop/bootstrap-tabdrop.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/summernote/summernote.min.js"></script>
+    <script src="../application/style/assets/js/vendor/summernote/summernote.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/vendor/chosen/chosen.jquery.min.js"></script>
+    <script src="../application/style/assets/js/vendor/chosen/chosen.jquery.min.js"></script>
 
-    <script src="http://localhost/cems/toby/application/style/assets/js/minimal.min.js"></script>
+    <script src="../application/style/assets/js/minimal.min.js"></script>
   </body>
 </html>
       

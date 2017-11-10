@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 此电脑
+Source Server         : 王腾飞
 Source Server Version : 50711
 Source Host           : localhost:3306
 Source Database       : exam
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2017-11-03 15:31:22
+Date: 2017-11-06 20:56:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -71,17 +71,39 @@ CREATE TABLE `stuentfile` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for `system_set`
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL COMMENT '自增主键',
-  `name` varchar(255) NOT NULL COMMENT '姓名',
-  `password` varchar(255) NOT NULL COMMENT '密码',
-  `type` varchar(1) NOT NULL COMMENT '类型，0是管理员，1教师',
+DROP TABLE IF EXISTS `system_set`;
+CREATE TABLE `system_set` (
+  `id` int(11) NOT NULL,
+  `time` int(11) DEFAULT NULL,
+  `number` int(11) DEFAULT NULL,
+  `period` int(11) DEFAULT NULL,
+  `min_byte` int(11) DEFAULT NULL,
+  `max_byte` int(11) DEFAULT NULL,
+  `power` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of system_set
+-- ----------------------------
+INSERT INTO system_set VALUES ('1', '2', '1', '1', '1', '1', 'on');
+
+-- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `name` varchar(255) NOT NULL COMMENT '姓名',
+  `password` varchar(255) NOT NULL COMMENT '密码',
+  `type` varchar(1) NOT NULL COMMENT '类型，0是管理员，1教师',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO user VALUES ('12', 'toby', '123', '1');
+INSERT INTO user VALUES ('22', 'toby', '123', '0');

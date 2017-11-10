@@ -6,12 +6,12 @@
 	</head>
 	<body style="background:background-color;background-color: transparent;font-size: 14px;color: white;">
         <h3 align="center">修改系统配置</h3>
-        <form >
+        <form method="post" action="../admin/system_set">
         	<table align="center" cellpadding="8px">
         		<tr>
         			<td>后台任务间隔时间</td>
         			<td>
-        				<input type="text" style="height: auto;width: 200px;" />
+        				<input type="text" name="time" value="{{ data.time }}" style="height: auto;width: 200px;" />
         			</td>
         		</tr>
         		<tr style="margin-bottom:15px;">
@@ -22,7 +22,7 @@
         		<tr>
         			<td>分页查询记录条数</td>
         			<td>
-        				<input type="text" style="height: auto;width: 200px;" />
+        				<input type="text" name="number" value="{{ data.number }}" style="height: auto;width: 200px;" />
         			</td>
         		</tr>
         		<tr style="margin-bottom:15px;">
@@ -33,7 +33,7 @@
         		<tr>
         			<td>手工开启考试时间阈值</td>
         			<td>
-        				<input type="text" style="height: auto;width: 200px;" />
+        				<input type="text" name="period" style="height: auto;width: 200px;" value="{{ data.period }}"/>
         			</td>
         		</tr>
         		<tr style="margin-bottom:15px;margin-top: 15px;">
@@ -44,7 +44,7 @@
         		<tr>
         			<td>上传文件字节数下限</td>
         			<td>
-        				<input type="text" style="height: auto;width: 200px;" />
+        				<input type="text" name="min_byte" value="{{ data.min_byte }}" style="height: auto;width: 200px;" />
         			</td>
         		</tr>
         		<tr style="margin-bottom:15px;margin-top: 15px;">
@@ -55,7 +55,7 @@
         		<tr>
         			<td>上传文件字节数上限</td>
         			<td>
-        				<input type="text" style="height: auto;width: 200px;" />
+        				<input type="text" value="{{ data.max_byte }}" name="max_byte" style="height: auto;width: 200px;" />
         			</td>
         		</tr>
         		<tr style="margin-bottom:15px; padding-bottom: 20px;">
@@ -65,14 +65,15 @@
         		
         		<tr>
         			<td align="right">
-        				<input type="checkbox" />
+                        <input type="hidden" name="power" value="off"/>
+        				<input type="checkbox" name="power"/>
         			</td>
         			<td>教师可以清理和删除考试</td>
         		</tr>
         		
         		<tr>
         			<td align="right">
-    				<button type="button" style="margin:15px;background-color: #22E1BB;">修改</button>
+    				<input type="submit" style="margin:15px;background-color: #22E1BB;" value="修改">
     			</td>   			
     			<td align="center">    				
     				<button type="button" style="margin:15px;background-color: #00BFFF; ">取消</button>
