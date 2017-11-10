@@ -28,9 +28,17 @@
 					
 				
 							文件上传：
-								<input type="text" style="height: 30px;width:300px;margin:10px;">
+								<!-- <input type="text" style="height: 30px;width:300px;margin:10px;"> -->
+
+								<div class="input-group input-group-lg">
+            <span class="input-group-addon glyphicon glyphicon-file"></span>
+            <input type="text" class="form-control" placeholder="请上传答案">
+       </div>
 							
-								<input type="file" align="center" style="display:inline-block;height: 30px;width:55px;margin:10px;"/>
+
+
+								<input type="file" align="center" style="display:inline-block;height: 30px;width:55px;margin:10px;">
+					
 								<br>
 								<br>
 						
