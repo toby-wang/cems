@@ -47,7 +47,9 @@ class index extends \core\toby
 				$ip=$this->mem->get($id);
 				if ($ip) {
 					if ($ip==$_SERVER['REMOTE_ADDR']) {
-						echo '<script>alert("一台电脑只能登录一个用户！");location.href="../"</script>';
+						// echo '<script>alert("一台电脑只能登录一个用户！");location.href="../"</script>';
+						$this->assign('data',$data);
+						$this->display('admin/admin_index.php');
 					}else{
 						echo '<script>alert("这个用户已经在其他电脑上登录了！");location.href="../"</script>';
 					}

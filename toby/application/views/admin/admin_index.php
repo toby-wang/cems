@@ -34,7 +34,7 @@
  
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a class="navbar-brand" href="../admin/admin_intro">
+            <a class="navbar-brand" href="../admin/admin_intro" target="menuFrame">
               <strong>admin</strong>
             </a>
             
@@ -75,7 +75,6 @@
                 <a href="#" class="sidebar-toggle" data-toggle="#navigation">系统管理 <i class="fa fa-angle-up"></i></a>
                 
                 <ul class="menu">
-                  
                   <li class="active">
                     <a href="../admin/admin_intro"  target="menuFrame">
                       <i class="fa fa-tachometer"></i> 首页
@@ -110,25 +109,18 @@
                       </li>
                     </ul>
                   </li>
-
                   <li class="dropdown">
-                    <a href="../admin/admin_exam_deal" target="menuFrame" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="../admin/admin_exam_deal" target="menuFrame" >
                       <i class="fa fa-pencil"></i> 考试清理 
                     </a>
-                   
                   </li>
-
                   <li>
                     <a href="../admin/admin_system_set" target="menuFrame">
                       <i class="fa fa-tint"></i> 系统配置
                     </a>
                   </li>
-                 
-
-
-
-
-          </div>
+				</ul>
+		  </div>
           <!--/.nav-collapse -->
         </div>
         <!-- Fixed navbar end -->

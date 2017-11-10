@@ -35,6 +35,14 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_exam_situation.php');
 	}
+	public function teacher_student_unlock()
+	{
+		$this->display('teacher/teacher_student_unlock.php');
+	}
+	public function teacher_exam_broadcast()
+	{
+		$this->display('teacher/teacher_exam_broadcast.php');
+	}
 	public function teacher_student_check()
 	{
 		$this->display('teacher/teacher_student_check.php');
