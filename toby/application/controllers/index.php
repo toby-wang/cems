@@ -19,6 +19,7 @@ class index extends \core\toby
 		//url();die;
 		//$this->mem->flush(); 
 		$this->display('login.php');
+
 		/**
 		 * 控制器以及方法路径
 		 * @var [type]
@@ -47,9 +48,9 @@ class index extends \core\toby
 				$ip=$this->mem->get($id);
 				if ($ip) {
 					if ($ip==$_SERVER['REMOTE_ADDR']) {
-						// echo '<script>alert("一台电脑只能登录一个用户！");location.href="../"</script>';
-						$this->assign('data',$data);
-						$this->display('admin/admin_index.php');
+						echo '<script>alert("本电脑已经登录此用户了,请勿重复登录！");location.href="../"</script>';
+						// $this->assign('data',$data);
+						// $this->display('admin/admin_index.php');
 					}else{
 						echo '<script>alert("这个用户已经在其他电脑上登录了！");location.href="../"</script>';
 					}
@@ -79,11 +80,10 @@ class index extends \core\toby
 	public function logout()
 	{
 		session_start();
-		$this->mem->flush(); 
+		$this->mem->delete(session_id());
 		session_destroy();	
-		$this->display('login.php');
+		echo '<script>location.href="../";</script>';
 	}
 }
-
 
 
