@@ -6,12 +6,10 @@ use core\lib\model;
 */
 class studentModel extends model
 {
-	public $table = 'user';
-	public function getUser($username)
+	public $table = 'student';
+	public function path_add($data)
 	{
-		$result = $this->get($this->table,'*',array(
-			'name'=>$username
-		));
+		$result = $this->insert($this->table,$data);
 		return $result;
 	}
 }

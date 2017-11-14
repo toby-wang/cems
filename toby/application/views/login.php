@@ -36,9 +36,9 @@
 
             <form id="form-signin" class="form-signin" action="index/login" method="post">
               <section class="log-in">
-               <input type="radio" name="radio" value="student" />student
+               <input type="radio" name="radio" value="student" checked="true" />student
                <input type="radio" name="radio" value="teacher" />  teacher
-               <input type="radio" name="radio" value="admin" checked="true"/>  admin
+               <input type="radio" name="radio" value="admin" />  admin
               </section>
               
               <section>
