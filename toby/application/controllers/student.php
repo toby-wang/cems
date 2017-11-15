@@ -24,20 +24,30 @@ class student extends \core\toby
 	}
 	public function student_upload_act()
 	{
-		p(date('y-m-d h:i:s',time()));die;
 		$filename='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
-		upfile("student");
-		$data=array(
-			"path"=>$filename,
-			"time"=>date('y-m-d h:i:s',time())
-		);
-		$this->model->path_add($data);
-		echo "<script>alert(\"提交成功！！！\");history.go(-1)</script>";
+		if (upfile("student")==1) {
+			$data=array(
+				"path"=>$filename,
+				"time"=>date("y-m-d h:i:s"),
+				"name"=>$_FILES['file']['name']
+			);
+			$this->model->path_add($data);
+			echo "<script>alert(\"提交成功！！！\");history.go(-1)</script>";
+		}
 	}
 	public function student_upload()
 	{
-		//p($_SESSION);die;
-		//$this->assign('data',$data);
+		$data=$this->model->upfile_list();
+		//p($data);die;
+		
+		$this->assign('data',$data);
 		$this->display('student/student_upload.php');
 	}
+	public function student_delete()
+	{
+		$id=$this->uri(3);
+		$this->model->delete_file($id);
+		echo "<script>alert(\"删除成功！！！\");history.go(-1)</script>";
+	}
+		
 }

@@ -31,12 +31,10 @@
             		<span class="input-group-addon glyphicon glyphicon-file"></span>
            			<input type="text" class="form-control" placeholder="请上传答案">
        			</div>
-				<input type="file" name="file" align="center" style="display:inline-block;height: 30px;width:55px;margin:10px;">
+				<input type="file" name="file" align="center" style="display:inline-block;height: 30px;width:155px;margin:10px;" />
 					
 								<br>
 								<br>
-						
-								<!--<i type="submit" class="btn btn-default">提交</i>-->
 				<button class="btn btn-danger" type="submit" style="border-radius: 15px; width: 80px;height: 40px;">提交</button>
 								
 						<br><br>
@@ -46,42 +44,20 @@
 				<br><br>
 				<table class="table table-striped">
 					<tr>
-						<th>答案名称</th>
+						<th>文件名称</th>
 						<th>上传时间</th>
 						<th>说明</th>
 					</tr>
+					{% for v in data %}
 					<tr>
-						<td>我的答案</td>
-						<td>2017.11.10</td>
+						<td>{{ v.name }}</td>
+						<td>{{ v.time }}</td>
 						<td>
-							<a href="#">查看</a>
-							<a href="#">删除</a>
+							<a href="../{{ v.path }}">查看</a>
+							<a href="../student/student_delete/{{ v.id }}">删除</a>
 						</td>
 					</tr>
-					<tr>
-						<td>我的答案</td>
-						<td>2017.11.10</td>
-						<td>
-							<a href="#">查看</a>
-							<a href="#">删除</a>
-						</td>
-					</tr>
-					<tr>
-						<td>我的答案</td>
-						<td>2017.11.10</td>
-						<td>
-							<a href="#">查看</a>
-							<a href="#">删除</a>
-						</td>
-					</tr>
-					<tr>
-						<td>我的答案</td>
-						<td>2017.11.10</td>
-						<td>
-							<a href="#">查看</a>
-							<a href="#">删除</a>
-						</td>
-					</tr>
+					{% endfor %} 
 				</table>
 
 			<!-- </div> -->

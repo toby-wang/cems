@@ -59,7 +59,7 @@ function upfile($category)
                     if (!move_uploaded_file($_FILES['file']['tmp_name'],$path)) {//执行上传操作  
                         echo "<script>alert(\"上传失败！！！\");history.go(-1)</script>";  
                     } else {  
-                          
+                        return "1";  
                     }  
                 } else {  
                     echo "<script>alert(\"上传文件不合法！！！\");history.go(-1)</script>";  
