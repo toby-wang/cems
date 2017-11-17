@@ -7,29 +7,28 @@
 	</head>
     <body style="background:background-color;background-color: transparent;">
     	
-    	<form class="form-inline" style="width:80%;margin: 0 auto;">
+    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="../teacher/exam_add_cate" enctype="multipart/form-data">
+    <h3 align="left">添加考试</h3>	
 
-			<h3 align="left">添加考试</h3>	
-
-			
+		
 		<div class="form-group" style="float:right; ">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail3">考试名称</label>
-        <input class="form-control" id="exampleInputEmail3" placeholder="考试名称" type="email">
+        <input class="form-control" name="exam_name" id="exampleInputEmail3" placeholder="考试名称" >
       </div>
       <div class="form-group">
         <label class="sr-only" for="exampleInputPassword3">考试时间</label>
-        <input class="form-control" id="exampleInputPassword3" placeholder="考试时间" type="password">
+        <input class="form-control" name="begin_time" id="exampleInputPassword3" placeholder="考试时间">
+        <input type="file" name="file" id="">
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox"> 自动开始
+          <input type="checkbox" name="auto_start"> 自动开始
         </label>
       </div>
       <button type="submit" class="btn btn-default">添加</button>
-      </div>
-       </div>
-    	</form>
+    </div> 
+  </form>  
 
 
 		
@@ -37,7 +36,7 @@
 <table class="table table-striped" >
       <thead>
         <tr>
-          <th>考试名称</th>
+        <th>考试名称</th>
 				<th >考试时间</th>
 				<th >创建人</th>
 				<th >上传试卷</th>
@@ -50,30 +49,12 @@
         </tr>
       </thead>
       <tbody>
+        {% for v in data %}
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
+          <th scope="row">{{ v.examnation }}</th>
+          <td>{{ v.BeginTime }}</td>
           <td>Otto</td>
           <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
@@ -81,6 +62,7 @@
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
+        {% endfor %}
       </tbody>
     </table>		
 			<ul class="pagination" style="float: right;">
@@ -94,8 +76,5 @@
 </ul>
 </div>
 			
-			
-
-    
-    </body>
+</body>
 </html>

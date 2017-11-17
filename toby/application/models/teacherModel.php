@@ -19,4 +19,14 @@ class teacherModel extends model
 		$result = $this->insert($this->table,$data);
 		return $result;
 	}
+	public function exam_add($data)
+	{
+		$result = $this->insert("exam",$data);
+		return $result;
+	}
+	public function get_exam()
+	{
+		$result = $this->select("exam",'*');
+		return $result;
+	}
 }

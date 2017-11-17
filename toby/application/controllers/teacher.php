@@ -64,7 +64,22 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_add()
 	{
+		$data=$this->model->get_exam();
+		//p($data);die;
+		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_add.php');
+	}
+	public function exam_add_cate()
+	{
+		//p($_FILES);die;
+		$filename='./upfile/teacher/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		upfile("teacher");
+		$data = array(
+        	"examnation" => $_POST["exam_name"],
+      		"BeginTime" => $_POST["begin_time"]
+		);
+		$this->model->exam_add($data);
+		echo "<script>alert(\"添加成功！！！\");location.replace(document.referrer)</script>";
 	}
 	public function teacher_exam_situation()
 	{
