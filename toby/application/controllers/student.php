@@ -16,6 +16,8 @@ class student extends \core\toby
 	}
 	public function student_download()
 	{
+		$data=$this->model->get_exam();
+		$this->assign('data',$data);
 		$this->display('student/student_download.php');
 	}
 	public function student_intro()
@@ -38,7 +40,6 @@ class student extends \core\toby
 	public function student_upload()
 	{
 		$data=$this->model->upfile_list();
-		//p($data);die;
 		
 		$this->assign('data',$data);
 		$this->display('student/student_upload.php');

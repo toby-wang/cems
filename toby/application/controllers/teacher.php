@@ -64,26 +64,68 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_add()
 	{
-		$data=$this->model->get_exam();
-		//p($data);die;
-		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_add.php');
 	}
 	public function exam_add_cate()
 	{
-		//p($_FILES);die;
-		$filename='./upfile/teacher/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$path='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
 		upfile("teacher");
 		$data = array(
-        	"examnation" => $_POST["exam_name"],
-      		"BeginTime" => $_POST["begin_time"]
+      		"BeginTime" => $_POST["begin_time"],
+      		"EndTime" => $_POST["end_time"],
+      		"class" => $_POST["class"],
+      		"IsAuto" => $_POST["auto"],
+      		"subject" => $_POST["subject"],
+      		"examnation" => $_FILES['file']['name'],
+      		"path" => $path
+      		//"creater" => $_SESSION['user']
 		);
 		$this->model->exam_add($data);
-		echo "<script>alert(\"添加成功！！！\");location.replace(document.referrer)</script>";
+		// echo "<script>alert(\"添加成功！！！\");location.replace(document.referrer)</script>";
+		echo "<script>alert(\"添加成功！！！\");location.href=\"../teacher/teacher_exam_list\";</script>";
+	}
+	public function exam_delete()
+	{
+		$id=$this->uri(3);
+		$this->model->delete_exam($id);
+		echo "<script>alert(\"删除成功！！！\");location.replace(document.referrer)</script>";
+	}
+	public function teacher_exam_list()
+	{
+		$data=$this->model->get_exam();
+		//p($data);die;
+		$this->assign('data',$data);
+		$this->display('teacher/teacher_exam_list.php');
 	}
 	public function teacher_exam_situation()
 	{
 		$this->display('teacher/teacher_exam_situation.php');
+	}
+	public function teacher_exam_edit()
+	{
+		$id=$this->uri(3);
+		$data=$this->model->getOne($id);
+		$this->assign('data',$data);
+		$this->display('teacher/teacher_exam_edit.php');
+	}
+	public function exam_edit_cate()
+	{
+		$path='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		upfile("teacher");
+		$data=array(
+			"BeginTime" => $_POST["begin_time"],
+      		"EndTime" => $_POST["end_time"],
+      		"class" => $_POST["class"],
+      		"IsAuto" => $_POST["auto"],
+      		"subject" => $_POST["subject"],
+      		"examnation" => $_FILES['file']['name'],
+      		"path" => $path
+		);
+		$edit_data=array(
+			"id"=>$this->uri(3)
+		);	
+		$this->model->exam_edit($data,$edit_data);
+		echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
 	}
 	public function teacher_student_unlock()
 	{
