@@ -4,7 +4,7 @@ return array(
     'database_name' => 'exam',
     'server' => 'localhost',
     'username' => 'root',
-    'password' => '123',
+    'password' => 'root',
     'charset' => 'utf8',
 );
 	

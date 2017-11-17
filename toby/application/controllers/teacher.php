@@ -66,9 +66,17 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_exam_add.php');
 	}
+	public function teacher_exam_list()
+	{
+		$this->display('teacher/teacher_exam_list.php');
+	}
 	public function teacher_exam_situation()
 	{
 		$this->display('teacher/teacher_exam_situation.php');
+	}
+	public function teacher_exam_edit()
+	{
+		$this->display('teacher/teacher_exam_edit.php');
 	}
 	public function teacher_student_unlock()
 	{

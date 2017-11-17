@@ -15,7 +15,7 @@
     <body style="background:background-color;background-color: transparent;">
     	
 <div style="width:80%;margin: 0 auto;margin-top: 70px;">
-	<h3 align="center">编辑	考试</h3>	
+	<h3 align="center">添加	考试</h3>	
 <form class="form-horizontal" role="form" style="margin-top:50px;">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">班级名称</label>

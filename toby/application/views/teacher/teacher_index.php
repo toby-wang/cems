@@ -112,12 +112,17 @@
                     <ul class="dropdown-menu">
                       <li>
                         <a href="../teacher/teacher_student_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 導入學生
+                          <i class="fa fa-caret-right"></i> 导入学生
                         </a>
                       </li>
                       <li>
-                        <a href="../teacher/teacher_exam_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i>開啟考試
+                        <a href="../teacher/teacher_exam_edit" target="menuFrame">
+                          <i class="fa fa-caret-right"></i>添加考試
+                        </a>
+                      </li>
+                      <li>
+                        <a href="../teacher/teacher_exam_list" target="menuFrame">
+                          <i class="fa fa-caret-right"></i>开启考试
                         </a>
                       </li>
                     </ul>

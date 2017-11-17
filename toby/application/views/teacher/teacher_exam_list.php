@@ -17,16 +17,7 @@
         <label class="sr-only" for="exampleInputEmail3">考试名称</label>
         <input class="form-control" id="exampleInputEmail3" placeholder="考试名称" type="email">
       </div>
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputPassword3">考试时间</label>
-        <input class="form-control" id="exampleInputPassword3" placeholder="考试时间" type="password">
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> 自动开始
-        </label>
-      </div>
-      <button type="submit" class="btn btn-default">添加</button>
+      <button type="submit" class="btn btn-default">启动</button>
       </div>
        </div>
     	</form>
@@ -37,30 +28,29 @@
 <table class="table table-striped" >
       <thead>
         <tr>
-          <th>考试名称</th>
+        <th>考试名称</th>
 				<th >考试时间</th>
 				<th >创建人</th>
 				<th >上传试卷</th>
 				<th >自动开始</th>
 				<th >进行中</th>
 				<th >已结束</th>
-				<th >已归档</th>
 				<th >已清理</th>
 				<th >编辑</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">Java</th>
+          <td>2017/11/17</td>
+          <td>李老师</td>
+          <td>Java考试</td>
+          <td>true</td>
+          <td>true</td>
+          <td>true</td>
+          <td>true</td>
+          <td><a href="#">编辑</a></td>
+          <td><a href="#">删除</a></td>
           
         </tr>
         <tr>
@@ -68,18 +58,6 @@
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
         </tr>
       </tbody>
     </table>		
