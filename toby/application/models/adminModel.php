@@ -33,7 +33,8 @@ class adminModel extends model
 			'type'=>"0",
 			'name'=>$user
 		));
-		return $result;
+		//return $result;
+		return $result->rowCount();
 	}
 	public function pwd_change($data,$user)
 	{

@@ -7,23 +7,16 @@
 	</head>
     <body style="background:background-color;background-color: transparent;">
     	
-    	<form class="form-inline" style="width:80%;margin: 0 auto;">
-
-			<h3 align="left">添加考试</h3>	
-
-			
+    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="../teacher/exam_open">
+    <h3 align="left">开启考试</h3>	
 		<div class="form-group" style="float:right; ">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail3">考试名称</label>
-        <input class="form-control" id="exampleInputEmail3" placeholder="考试名称" type="email">
+        <input class="form-control" name="exam_name" id="exampleInputEmail3" placeholder="考试名称" >
       </div>
       <button type="submit" class="btn btn-default">启动</button>
       </div>
-       </div>
-    	</form>
-
-
-		
+    	</form>	
 <div style="width:80%;margin: 0 auto;margin-top: 100px;">
 <table class="table table-striped" >
       <thead>
@@ -40,25 +33,32 @@
         </tr>
       </thead>
       <tbody>
+        {% for v in data %}
         <tr>
-          <th scope="row">Java</th>
-          <td>2017/11/17</td>
-          <td>李老师</td>
-          <td>Java考试</td>
+          <th scope="row">{{ v.subject }}</th>
+          <td>{{ v.BeginTime }}</td>
+          <td>{{ v.creater }}</td>
+          <td>{{ v.examnation }}</td>
+          <td>
+          {% if v.IsAuto == '1' %}
+                 是
+          {% elseif v.IsAuto == '0' %}
+                 否
+          {% endif %} 
+          </td>
+          <td>
+          {% if v.IsBegin == '1' %}
+                 是
+          {% elseif v.IsBegin == '0' %}
+                 否
+          {% endif %} 
+          </td>
           <td>true</td>
           <td>true</td>
-          <td>true</td>
-          <td>true</td>
-          <td><a href="#">编辑</a></td>
-          <td><a href="#">删除</a></td>
-          
+          <td><a href="../teacher/teacher_exam_edit/{{ v.id }}">编辑</a></td>
+          <td><a href="../teacher/exam_delete/{{ v.id }}">删除</a></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>		
 			<ul class="pagination" style="float: right;">
@@ -72,8 +72,5 @@
 </ul>
 </div>
 			
-			
-
-    
-    </body>
+</body>
 </html>

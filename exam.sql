@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2017-11-15 20:57:59
+Date: 2017-11-18 16:27:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,17 +23,21 @@ CREATE TABLE `exam` (
   `class` varchar(255) NOT NULL COMMENT '班级名称',
   `tId` int(11) NOT NULL COMMENT '教师id',
   `examnation` varchar(255) NOT NULL COMMENT '考试名称',
-  `BeginTime` datetime DEFAULT NULL COMMENT '开始时间',
-  `EndTime` datetime DEFAULT NULL COMMENT '结束时间',
-  `IsAuto` varchar(1) NOT NULL DEFAULT '0' COMMENT '是否自动开始，0 否，1 是',
-  `IsBegin` varchar(1) NOT NULL DEFAULT '0' COMMENT '是否开始考试，0 否，1 是',
-  `content` varchar(255) NOT NULL DEFAULT 'NULL' COMMENT '考试文件路径',
+  `BeginTime` datetime NOT NULL COMMENT '开始时间',
+  `EndTime` datetime NOT NULL COMMENT '结束时间',
+  `IsAuto` int(1) NOT NULL DEFAULT '0' COMMENT '是否自动开始，0 否，1 是',
+  `IsBegin` int(1) NOT NULL DEFAULT '0' COMMENT '是否开始考试，0 否，1 是',
+  `subject` varchar(255) NOT NULL DEFAULT 'NULL' COMMENT '考试文件路径',
+  `creater` char(255) DEFAULT NULL,
+  `path` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of exam
 -- ----------------------------
+INSERT INTO exam VALUES ('15', '15-6', '0', '15-4demo.xlsx', '2017-11-10 18:00:00', '2017-11-10 18:00:00', '1', '0', '数据结构', null, './upfile/student/1510974353.xlsx');
+INSERT INTO exam VALUES ('16', '15-4', '0', '15-4.xlsx', '2017-11-10 18:00:00', '2017-11-10 18:00:00', '1', '0', '创新项目', null, './upfile/teacher/1510974545.xlsx');
 
 -- ----------------------------
 -- Table structure for `student`
@@ -115,14 +119,13 @@ CREATE TABLE `studentfile` (
   `time` char(255) NOT NULL,
   `name` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of studentfile
 -- ----------------------------
-INSERT INTO studentfile VALUES ('4', '0', '0', './upfile/student/1510742315.xlsx', '17-11-15 06:38:35', '15-4.xlsx');
-INSERT INTO studentfile VALUES ('11', '0', '0', './upfile/student/1510744445.xlsx', '17-11-15 07:14:05', '15-4demo.xlsx');
-INSERT INTO studentfile VALUES ('12', '0', '0', './upfile/student/1510750513.xlsx', '17-11-15 08:55:13', '15-4.xlsx');
+INSERT INTO studentfile VALUES ('13', '0', '0', './upfile/student/1510974227.xlsx', '17-11-18 11:03:47', '15-4.xlsx');
+INSERT INTO studentfile VALUES ('14', '0', '0', './upfile/student/1510974725.txt', '17-11-18 11:12:05', '科三灯光.txt');
 
 -- ----------------------------
 -- Table structure for `system_set`
@@ -162,6 +165,4 @@ CREATE TABLE `user` (
 INSERT INTO user VALUES ('12', 'toby', '123', '1');
 INSERT INTO user VALUES ('24', '的放大', '奋斗奋斗', '1');
 INSERT INTO user VALUES ('25', 'teacher', '123', '0');
-INSERT INTO user VALUES ('26', '111', '111', '0');
 INSERT INTO user VALUES ('27', '222', '2222', '1');
-INSERT INTO user VALUES ('28', '234', '234', '0');

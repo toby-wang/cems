@@ -47,7 +47,8 @@ function upfile($category)
                     echo "没有上传文件";  
                     break;  
             }  
-        } else {  
+        } else {
+            if ($category=="teacher") {
             list($maintype, $subtype) = explode("/", $_FILES['file']['type']);  
             //print_r($maintype);echo "<br>";
             //print_r($subtype);die;
@@ -64,7 +65,19 @@ function upfile($category)
                 } else {  
                     echo "<script>alert(\"上传文件不合法！！！\");history.go(-1)</script>";  
                 }  
-            }  
+            }
+            }elseif ($category=="student") {
+               $path = './upfile/'.$category.'/'. time() . strtolower(strstr($_FILES['file']['name'], "."));//定义上传文件名和存储位置  
+                if (is_uploaded_file($_FILES['file']['tmp_name'])) {//判断文件上传是否为HTTP POST上传  
+                    if (!move_uploaded_file($_FILES['file']['tmp_name'],$path)) {//执行上传操作  
+                        echo "<script>alert(\"上传失败！！！\");history.go(-1)</script>";  
+                    } else {  
+                        return "1";  
+                    }  
+                } else {  
+                    echo "<script>alert(\"上传文件不合法！！！\");history.go(-1)</script>";  
+                }  
+            } 
         }  
     }  
 }

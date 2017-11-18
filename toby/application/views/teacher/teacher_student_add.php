@@ -7,21 +7,9 @@
 
 <link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
-
-
-
 </style>
-    
-    </head>
+</head>
     <body style="background:background-color;background-color: transparent;">
-    
-
-
-<!--<button type="button" class="btn btn-primary btn-lg">
-  <span class="glyphicon glyphicon-user"></span> User
-</button>-->
-
-
 <div align="center" id="add">
     	<table>
             <form class="bs-example bs-example-form" role="form" action="../teacher/student_add_one" method="post">
@@ -86,10 +74,10 @@
         <tr>
           <td></td>
         	<td align="right" colspan="2">
-        		   <input type="text" style="height: 30px;width:300px;margin:10px;"/>
+        		   <input id="showFile" type="text" style="height: 30px;width:300px;margin:10px;"/>
         	</td>
         	<td >
-        		<input type="file" align="center" name="file" style="height: 30px;width:55px;margin:10px;"/>
+        		<input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:55px;margin:10px;"/>
         	</td>
         </tr>
        
@@ -110,5 +98,14 @@
 
 
   </body>
+
+  <script type="text/javascript">
+      function handleFile(){
+        var c = document.getElementById("chooseFile");
+        var s = document.getElementById("showFile");
+        s.value = c.value;
+      }
+
+  </script>
 </html>
       

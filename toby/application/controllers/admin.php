@@ -69,13 +69,12 @@ class admin extends \core\toby
 	public function teacher_delete()
 	{
 		$username=$_POST['name'];
-		$getdata = $this->model->get_teacher($username);
-		if (isset($getdata['name']))
+		$rel=$this->model->teacher_delete($username);
+		if ($rel==0)
 		{
-			$this->model->teacher_delete($username);
-			echo "<script>alert(\"删除成功！\");history.go(-1)</script>";
-		}else{
 			echo "<script>alert(\"该用户不存在！\");history.go(-1)</script>";
+		}else{
+			echo "<script>alert(\"删除成功！\");history.go(-1)</script>";
 		}		
 	}
 	public function admin_teacher_all()

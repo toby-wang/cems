@@ -1,8 +1,3 @@
-<!--//<?php
-//
-//?>-->
-
-
 <!DOCTYPE html>
 <html>
 
@@ -40,22 +35,18 @@
 					</tr>
 				</thead>
 				<tbody align="left">
-					<tr>
-						<td>Java</td>
-						<td>*****</td>
-						<td>ahhhh</td>
-						<td>
-							<a href="#">预览</a>
-							<a href="#">下载</a>
-						</td>
-					</tr>
+					{% for v in data %}
+                        <tr>
+        			    	<td>{{ v.subject }}</td>
+							<td>{{ v.BeginTime }}</td>
+							<td></td>
+							<td>
+								<a href="../{{ v.path }}">下载</a>
+							</td>
+                        </tr>  
+                    {% endfor %}				
 				</tbody>
-			</table>
-
-			
-
-
-				
+			</table>			
 				<P hidden="hidden">当前没有可下载的电子试卷...</P>
 				<!-- <button hidden="hidden" class="btn btn-danger" style="border-radius: 15px;">退出系统</button> -->
 
