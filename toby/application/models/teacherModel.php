@@ -48,4 +48,9 @@ class teacherModel extends model
 		$result = $this->update("exam",$data,$edit_data);
 		return $result;
 	}
+	public function exam_open($data,$edit_data)
+	{
+		$result = $this->update("exam",$data,$edit_data);
+		return $result;
+	}
 }

@@ -7,10 +7,8 @@
 	</head>
     <body style="background:background-color;background-color: transparent;">
     	
-    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="" enctype="multipart/form-data">
+    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="../teacher/exam_open">
     <h3 align="left">开启考试</h3>	
-
-		
 		<div class="form-group" style="float:right; ">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail3">考试名称</label>
@@ -18,9 +16,7 @@
       </div>
       <button type="submit" class="btn btn-default">启动</button>
       </div>
-    	</form>
-
-		
+    	</form>	
 <div style="width:80%;margin: 0 auto;margin-top: 100px;">
 <table class="table table-striped" >
       <thead>

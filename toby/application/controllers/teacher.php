@@ -7,6 +7,7 @@ class teacher extends \core\toby
 	public $model;
 	function __construct() 
 	{
+		session_start();
 		$this->model = new teacherModel();
 	}
 	public function teacher_index()
@@ -68,7 +69,7 @@ class teacher extends \core\toby
 	}
 	public function exam_add_cate()
 	{
-		$path='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$path='./upfile/teacher/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
 		upfile("teacher");
 		$data = array(
       		"BeginTime" => $_POST["begin_time"],
@@ -93,9 +94,22 @@ class teacher extends \core\toby
 	public function teacher_exam_list()
 	{
 		$data=$this->model->get_exam();
-		//p($data);die;
+		//p($_SESSION['user']);die;
 		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_list.php');
+	}
+	public function exam_open()
+	{
+		$name=$_POST['exam_name'];
+		$data=array(
+			"IsAuto" => 1
+		);
+		$edit_data=array(
+			"subject" => $name
+		);
+		$this->model->exam_edit($data,$edit_data);
+		//p($rel);exit;
+		echo "<script>alert(\"启动成功！！！\");location.replace(document.referrer)</script>";
 	}
 	public function teacher_exam_situation()
 	{
