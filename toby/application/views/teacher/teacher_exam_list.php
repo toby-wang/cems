@@ -49,16 +49,24 @@
           <td>true</td>
           <td>true</td>
           <td>true</td>
-          <td><a href="#">编辑</a></td>
-          <td><a href="#">删除</a></td>
-          
+          <td><a href="../teacher/teacher_exam_edit">编辑</a></td>
+          <td><a href="#">删除</a></td>       
         </tr>
+
+
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <th scope="row">Java</th>
+          <td>2017/11/17</td>
+          <td>李老师</td>
+          <td>Java考试</td>
+          <td>true</td>
+          <td>true</td>
+          <td>true</td>
+          <td>true</td>
+          <td><a href="#">编辑</a></td>
+          <td><a href="#">删除</a></td>       
         </tr>
+       
       </tbody>
     </table>		
 			<ul class="pagination" style="float: right;">
