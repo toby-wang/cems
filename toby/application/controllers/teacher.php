@@ -78,12 +78,16 @@ class teacher extends \core\toby
       		"IsAuto" => $_POST["auto"],
       		"subject" => $_POST["subject"],
       		"examnation" => $_FILES['file']['name'],
-      		"path" => $path
-      		//"creater" => $_SESSION['user']
+      		"path" => $path,
+      		"creater" => $_POST["creater"]
 		);
-		$this->model->exam_add($data);
-		// echo "<script>alert(\"添加成功！！！\");location.replace(document.referrer)</script>";
-		echo "<script>alert(\"添加成功！！！\");location.href=\"../teacher/teacher_exam_list\";</script>";
+		//p($data);die;
+		$a=$this->model->exam_add($data);
+		if ($a==0) {
+			echo "<script>alert(\"添加失败！！！\");history.go(-1)</script>";
+		}else{
+			echo "<script>alert(\"添加成功！！！\");location.href=\"../teacher/teacher_exam_list\";</script>";
+		}
 	}
 	public function exam_delete()
 	{
@@ -115,6 +119,7 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_exam_situation.php');
 	}
+
 	public function teacher_exam_edit()
 	{
 		$id=$this->uri(3);
@@ -133,13 +138,18 @@ class teacher extends \core\toby
       		"IsAuto" => $_POST["auto"],
       		"subject" => $_POST["subject"],
       		"examnation" => $_FILES['file']['name'],
-      		"path" => $path
+      		"path" => $path,
+      		"creater" => $_POST["creater"]
 		);
 		$edit_data=array(
 			"id"=>$this->uri(3)
 		);	
-		$this->model->exam_edit($data,$edit_data);
-		echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
+		$a=$this->model->exam_edit($data,$edit_data);
+		if ($a==0) {
+			echo "<script>alert(\"修改失败！！！\");history.go(-1)</script>";
+		}else{
+			echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
+		}	
 	}
 	public function teacher_student_unlock()
 	{

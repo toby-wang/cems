@@ -15,7 +15,7 @@
     <body style="background:background-color;background-color: transparent;">
     	
 <div style="width:80%;margin: 0 auto;margin-top: 70px;">
-	<h3 align="center">添加	考试</h3>	
+	<h3 align="center">添加考试</h3>	
 <form class="form-horizontal" role="form" style="margin-top:50px;" method="post" action="../teacher/exam_add_cate" enctype="multipart/form-data">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">班级名称</label>
@@ -43,6 +43,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="lastname" class="col-sm-2 control-label">创建人</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="creater" placeholder="创建人">
+    </div>
+  </div>
+  <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">自动开启</label>
     <div class="col-sm-10">
       <input type="radio" id="inlineCheckbox2" name="auto" value="1" checked="checked"> 是
@@ -63,16 +69,14 @@
   </div>
 </form>
 	
-</div>         
-     
+</div>            
     <script type="text/javascript">
     	$(".form_datetime").datetimepicker({
     　　		format: "yyyy-mm-dd hh:ii", //选择日期后，文本框显示的日期格式
     　　		language: 'zh-CN', //汉化
     　　		autoclose:true, //选择日期后自动关闭
      		pickerPosition: "bottom-right"
-    	});
-       
+    	});       
     </script>               
     </body>
 </html>

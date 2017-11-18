@@ -8,7 +8,7 @@
     <body style="background:background-color;background-color: transparent;">
     	
     	
-    	<form class="form-horizontal">
+<form class="form-horizontal" method="" action="">
     		
   <div class="form-group" style="width:80%;margin: 0 auto;margin-top: 70px;">
     <label style="margin-left: 0px;" class="col-sm-1 control-label">通知消息</label>
@@ -16,11 +16,10 @@
       <input type="text" class="form-control" id="tongzhi" placeholder="通知消息内容">
     </div>
   </div>
-    <div class="col-sm-offset-2 col-sm-10"  style="width:80%;margin: 0 auto;margin-top: 20px;">
+  <div class="col-sm-offset-2 col-sm-10"  style="width:80%;margin: 0 auto;margin-top: 20px;">
       <button type="submit" style="float: right;" class="btn btn-default">发布</button>
-    </div>
   </div>
-  
+</form>
   <div style="width:80%;margin: 0 auto;margin-top: 100px;">
 <table class="table table-bordered" >
       <thead>
@@ -59,7 +58,7 @@
     <li><a href="#">&raquo;</a></li>
 </ul>
 </div>
-</form>
+
  
 	</body>
 </html>

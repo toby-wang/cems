@@ -22,7 +22,7 @@ class teacherModel extends model
 	public function exam_add($data)
 	{
 		$result = $this->insert("exam",$data);
-		return $result;
+		return $result->rowCount();
 	}
 	public function get_exam()
 	{

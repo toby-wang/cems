@@ -43,6 +43,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="firstname" class="col-sm-2 control-label">创建人</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="creater" id="firstname" placeholder="创建人" value="{{ data.creater }}">
+    </div>
+  </div>
+  <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">自动开启</label>
     <div class="col-sm-10">
       {% if data.IsAuto == '1' %}
@@ -63,8 +69,8 @@
   </div>
 
   <div class="form-group right">
-    <div class="col-sm-offset-11 col-sm-10">
-      <button type="submit" class="btn btn-default">SUBMIT</button>
+    <div style="float:right;">
+      <button type="submit" class="btn btn-default">修改</button>
     </div>
   </div>
 </form>
