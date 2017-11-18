@@ -14,4 +14,11 @@ class loginModel extends model
 		));
 		return $result;
 	}
+	public function getStudent($username)
+	{
+		$result = $this->get("student",'*',array(
+			'sName'=>$username
+		));
+		return $result;
+	}
 }

@@ -68,9 +68,9 @@
             			<i class="fa fa-search"></i> <input type="text" placeholder="Search...">
             		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             			 <i class="glyphicon glyphicon-user"></i>欢迎你,
-              <span>ahhaaaaaa</span>
+              <span>{{ data }}</span>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="../index" class="btn btn-danger">退出系统</a>
+              <a href="../index/logout" class="btn btn-danger">退出系统</a>
              
               </div>
            
@@ -120,7 +120,7 @@
        
 
  <div id="page_content" style="margin-top: 10px; margin-bottom: 10px;">
-          <iframe id="menuFrame" name="menuFrame" src="../student/student_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height:600px;float: left;">
+          <iframe id="menuFrame" name="menuFrame" src="../student/student_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height:600px;float: left; border: none;">
              </iframe>
  </div>
 

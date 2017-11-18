@@ -16,6 +16,7 @@ class toby
 	public $action;
 	static public function run()
 	{
+		include_once toby.'/PHPExcel/PHPExcel/IOFactory.php';
 		//启动日志
 		log::init();
 		//p('ok');
