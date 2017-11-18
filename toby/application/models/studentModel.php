@@ -24,4 +24,9 @@ class studentModel extends model
 		));
 		return $result;
 	}
+	public function get_exam()
+	{
+		$result = $this->select("exam",'*');
+		return $result;
+	}
 }
