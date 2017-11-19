@@ -25,7 +25,7 @@ class adminModel extends model
 	public function teacher_add($data)
 	{
 		$result = $this->insert($this->table,$data);
-		return $result;
+		return $result->rowCount();
 	}
 	public function teacher_delete($user)
 	{
@@ -33,13 +33,12 @@ class adminModel extends model
 			'type'=>"0",
 			'name'=>$user
 		));
-		//return $result;
 		return $result->rowCount();
 	}
 	public function pwd_change($data,$user)
 	{
 		$result = $this->update($this->table,$data,$user);
-		return $result;
+		return $result->rowCount();
 	}
 	public function system_list()
 	{
@@ -51,7 +50,7 @@ class adminModel extends model
 	public function system_set($data,$id)
 	{
 		$result = $this->update("system_set",$data,$id);
-		return $result;
+		return $result->rowCount();
 	}
 
 }

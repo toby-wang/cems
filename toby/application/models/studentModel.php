@@ -10,7 +10,7 @@ class studentModel extends model
 	public function path_add($data)
 	{
 		$result = $this->insert($this->table,$data);
-		return $result;
+		return $result->rowCount();
 	}
 	public function upfile_list()
 	{
@@ -22,7 +22,7 @@ class studentModel extends model
 		$result = $this->delete($this->table,array(
 			'id'=>$id
 		));
-		return $result;
+		return $result->rowCount();
 	}
 	public function get_exam()
 	{

@@ -17,7 +17,7 @@ class teacherModel extends model
 	public function student_add($data)
 	{
 		$result = $this->insert($this->table,$data);
-		return $result;
+		return $result->rowCount();
 	}
 	public function exam_add($data)
 	{
@@ -34,7 +34,7 @@ class teacherModel extends model
 		$result = $this->delete("exam",array(
 			'id'=>$id
 		));
-		return $result;
+		return $result->rowCount();
 	}
 	public function getOne($id)
 	{
@@ -46,11 +46,11 @@ class teacherModel extends model
 	public function exam_edit($data,$edit_data)
 	{
 		$result = $this->update("exam",$data,$edit_data);
-		return $result;
+		return $result->rowCount();
 	}
 	public function exam_open($data,$edit_data)
 	{
 		$result = $this->update("exam",$data,$edit_data);
-		return $result;
+		return $result->rowCount();
 	}
 }

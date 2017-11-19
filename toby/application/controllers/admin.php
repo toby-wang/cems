@@ -27,12 +27,13 @@ class admin extends \core\toby
 	public function add_cate()
 	{
 		$data = array(
-        "name" => $_POST['name'],
-        "password" => $_POST['psw'],
-        "type" => $_POST['type']
+        	"name" => $_POST['name'],
+        	"password" => $_POST['psw'],
+        	"type" => $_POST['type']
 		);
-		$this->model->teacher_add($data);
-		echo "<script>alert(\"添加成功！！！\");history.go(-1)</script>";
+		if ($this->model->teacher_add($data)) {
+			echo "<script>alert(\"添加成功！！！\");history.go(-1)</script>";
+		}
 	}
 	public function admin_pwd_change()
 	{
@@ -106,8 +107,11 @@ class admin extends \core\toby
 			'max_byte'=> $_POST['max_byte'],
 			'power'=> $_POST['power']
 		);
-		$this->model->system_set($data,$id);
-		echo "<script>alert(\"修改成功！！！\");history.go(-1)</script>";
+		if ($this->model->system_set($data,$id)) {
+			echo "<script>alert(\"修改成功！！！\");location.replace(document.referrer)</script>";
+		}else{
+			echo "<script>alert(\"修改失败！！！\");location.replace(document.referrer)</script>";
+		}
 	}
 }
 
