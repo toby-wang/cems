@@ -34,15 +34,12 @@
             <h1><strong>Welcome</strong> <span id="">Admin</h1>
             <h5>Examination management system</h5>
 
-            <form id="form-signin" class="form-signin" action="index/login" method="post">
-              <section class="log-in">
-               <input type="radio" name="radio" value="student" checked="true" />student
-               <input type="radio" name="radio" value="teacher" />  teacher
-               <input type="radio" name="radio" value="admin" />  admin
-              </section>
+
+            <form id="form-signin" class="form-signin" action="http://localhost/cems/toby/index/login" method="post">
+
               
-              <section>
-                <div class="input-group">
+              <section  class="log-in" >
+                <div class="input-group" style="margin-top: 20px;">
                   <input type="text" class="form-control" name="username" placeholder="Username">
                   <div class="input-group-addon"><i class="fa fa-user"></i></div>
                 </div>
@@ -51,10 +48,18 @@
                   <div class="input-group-addon"><i class="fa fa-key"></i></div>
                 </div>
               </section>
+
+
+              <section>
+                    <input type="radio" name="radio" value="student" checked="true"/>student
+                    <input type="radio" name="radio" value="teacher" />  teacher
+                    <input type="radio" name="radio" value="admin" />  admin
+              </section>
+
               <section class="controls">
                 <div class="checkbox check-transparent">
-                  <!--<input type="checkbox" value="1" id="remember">
-                  <label for="remember">Remember me</label>-->
+                  <input type="checkbox" value="1" id="remember">
+                  <label for="remember">Remember me</label>
                 </div>
                 <a href="#">我Forget password?</a>
               </section>

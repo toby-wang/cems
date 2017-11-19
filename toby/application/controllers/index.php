@@ -2,6 +2,7 @@
 namespace application\controllers;
 use core\lib\model;
 use application\models\loginModel;
+use core\lib\Pagination;
 class index extends \core\toby
 {
 	public $mem;
@@ -80,9 +81,25 @@ class index extends \core\toby
 	{
 		session_start();
 		$this->mem->delete(session_id());
-		session_destroy();	
+		session_destroy();
 		echo '<script>location.href="../";</script>';
 	}
+
+	//分页类测试
+	public function test(){
+
+        /**
+         * 参数
+         * total 总条数
+         * pageSize 每页条数
+         * base_uri 基础路由
+         */
+        $page = new Pagination();
+        $page->init(100,5,'/cems/toby/index/test');
+        $index = $page->show();
+        echo $index;
+    }
+
 }
 
 
