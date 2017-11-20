@@ -13,13 +13,16 @@
     			<input type="text" placeholder="学号"/>
     			<input type="text" placeholder="姓名" />
     			<input type="text" placeholder="班级" />
-    			<input type="button" class="glyphicon glyphicon-search" value="查找" />
+    			<input type="submit" class="glyphicon glyphicon-search" value="查找" />
     		</div>
+        </form>
+        <form method="post" action="../teacher/unlock_ip">
     		<div align="center" style="width:600px;height: 100px;">
     			<h3 align="center">按IP查找已登录信息 </h3>
-    			<input type="text" placeholder="IP" />
-    			<input type="button" class="glyphicon glyphicon-search" value="查找" />
+    			<input type="text" placeholder="IP" name="ip" />
+    			<input type="submit" class="glyphicon glyphicon-search" value="查找" />
     		</div>
+        </form>
     		<div align="center" style="width: 600px;height: 100px;">
     			<h3 align="center">查找结果</h3>
     		<table border="2"  style="width: 500px;">
@@ -41,6 +44,5 @@
     			</tbody>
     		</table>
     		</div>
-    	</form>
 	</body>
 </html>

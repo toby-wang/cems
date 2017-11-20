@@ -2,7 +2,6 @@
 namespace application\controllers;
 use core\lib\model;
 use application\models\loginModel;
-use core\lib\Pagination;
 class index extends \core\toby
 {
 	public $mem;
@@ -27,7 +26,6 @@ class index extends \core\toby
 		$model = new loginModel();
 		$getstu=$model->getStudent($username);
 		$getdata = $model->getUser($username);//获取数据库信息
-
 		if ($_POST["radio"]=="admin") {
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="1")
 			{
@@ -52,6 +50,10 @@ class index extends \core\toby
 		}else if($_POST["radio"]=="student"){
 			if ($getstu['sName']==$username&&$getstu['sPassword']==$password)
 			{
+				$data=array("ip"=>$_SERVER['REMOTE_ADDR']);
+				$edit_data=array("sName"=>$username);
+				$model->bind_ip($data,$edit_data);
+
 				$_SESSION['user']=$getstu['sName'];
 				$_SESSION['sId']=$getstu['sId'];
 				$data=$_SESSION['user'];
@@ -81,25 +83,9 @@ class index extends \core\toby
 	{
 		session_start();
 		$this->mem->delete(session_id());
-		session_destroy();
+		session_destroy();	
 		echo '<script>location.href="../";</script>';
 	}
-
-	//分页类测试
-	public function test(){
-
-        /**
-         * 参数
-         * total 总条数
-         * pageSize 每页条数
-         * base_uri 基础路由
-         */
-        $page = new Pagination();
-        $page->init(100,5,'/cems/toby/index/test');
-        $index = $page->show();
-        echo $index;
-    }
-
 }
 
 

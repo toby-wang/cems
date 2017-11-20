@@ -12,7 +12,6 @@ function p($var)
 	}
 
 }
-
 function url()
 {
 	print_r($_SERVER["SERVER_NAME"]."/cems/toby/application/");

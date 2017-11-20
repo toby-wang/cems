@@ -2,13 +2,20 @@
 namespace application\controllers;
 use core\lib\model;
 use application\models\teacherModel;
+use core\lib\Pagination;
 class teacher extends \core\toby
 {
 	public $model;
+	public $mem;
 	function __construct() 
 	{
 		session_start();
 		$this->model = new teacherModel();
+
+		//初始化对象
+		$this->mem = new \Memcache;
+		//连接服务器
+		$this->mem->connect("127.0.0.1", 11211);
 	}
 	public function teacher_index()
 	{
@@ -97,8 +104,12 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_list()
 	{
+		$page = new Pagination();
+        $page->init(2,1,'/cems/toby/teacher/teacher_exam_list');
+        $index = $page->show();
+        //echo $index;
+
 		$data=$this->model->get_exam();
-		//p($_SESSION['user']);die;
 		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_list.php');
 	}
@@ -155,9 +166,37 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_student_unlock.php');
 	}
+	public function unlock_ip()
+	{
+		$ip=$_POST['ip'];
+		$info=$this->model->getinfo($ip);
+		echo "<script>location.replace(document.referrer)</script>";
+	}
 	public function teacher_exam_broadcast()
 	{
+		$data=$this->model->get_message();
+		//p($data);die;
+		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_broadcast.php');
+	}
+	public function broadcast_add()
+	{
+		$data=array(
+			"content"=>$_POST['content'],
+			"time"=>date("y-m-d h:i:s")
+		);
+		$b=$this->model->message_add($data);
+		if ($b==0) {
+			echo "<script>alert(\"添加失败！！！\");history.go(-1)</script>";
+		}else{
+			echo "<script>alert(\"添加成功！！！\");location.href=\"../teacher/teacher_exam_broadcast\";</script>";
+		}
+	}
+	public function broadcast_delete()
+	{
+		$id=$this->uri(3);
+		$this->model->message_delete($id);
+		echo "<script>location.replace(document.referrer)</script>";
 	}
 	public function teacher_student_check()
 	{

@@ -8,12 +8,12 @@
     <body style="background:background-color;background-color: transparent;">
     	
     	
-<form class="form-horizontal" method="" action="">
+<form class="form-horizontal" method="post" action="../teacher/broadcast_add">
     		
   <div class="form-group" style="width:80%;margin: 0 auto;margin-top: 70px;">
     <label style="margin-left: 0px;" class="col-sm-1 control-label">通知消息</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="tongzhi" placeholder="通知消息内容">
+      <input type="text" class="form-control" name="content" id="tongzhi" placeholder="通知消息内容">
     </div>
   </div>
   <div class="col-sm-offset-2 col-sm-10"  style="width:80%;margin: 0 auto;margin-top: 20px;">
@@ -24,28 +24,21 @@
 <table class="table table-bordered" >
       <thead>
         <tr>
-          <th width="20px" scope="row">#</th>
+          <th width="45px" scope="row">序号</th>
           <th>通知消息内容</th>
-		  <th width="100px">发布时间</th>
+		      <th width="150px">发布时间</th>
+          <th width="50px">操作</th>
         </tr>
       </thead>
       <tbody>
+        {% for v in data %}
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          
+          <th scope="row">{{ v.id }}</th>
+          <td>{{ v.content }}</td>
+          <td>{{ v.time }}</td>
+          <td><a href="../teacher/broadcast_delete/{{ v.id }}">删除</a></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>		
 			<ul class="pagination" style="float: right;">

@@ -21,4 +21,9 @@ class loginModel extends model
 		));
 		return $result;
 	}
+	public function bind_ip($data,$edit_data)
+	{
+		$result = $this->update("student",$data,$edit_data);
+		return $result->rowCount();
+	}
 }

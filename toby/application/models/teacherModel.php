@@ -6,17 +6,23 @@ use core\lib\model;
 */
 class teacherModel extends model
 {
-	public $table = 'student';
 	public function getUser($username)
 	{
-		$result = $this->get($this->table,'*',array(
+		$result = $this->get("student",'*',array(
 			'name'=>$username
+		));
+		return $result;
+	}
+	public function getinfo($ip)
+	{
+		$result = $this->get("student",'*',array(
+			'ip'=>$ip
 		));
 		return $result;
 	}
 	public function student_add($data)
 	{
-		$result = $this->insert($this->table,$data);
+		$result = $this->insert("student",$data);
 		return $result->rowCount();
 	}
 	public function exam_add($data)
@@ -52,5 +58,22 @@ class teacherModel extends model
 	{
 		$result = $this->update("exam",$data,$edit_data);
 		return $result->rowCount();
+	}
+	public function message_add($data)
+	{
+		$result = $this->insert("message",$data);
+		return $result->rowCount();
+	}
+	public function message_delete($id)
+	{
+		$result = $this->delete("message",array(
+			'id'=>$id
+		));
+		return $result->rowCount();
+	}
+	public function get_message()
+	{
+		$result = $this->select("message",'*');
+		return $result;
 	}
 }
