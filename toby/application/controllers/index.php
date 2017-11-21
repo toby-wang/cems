@@ -70,9 +70,13 @@ class index extends \core\toby
 						echo '<script>alert("这个用户已经在其他电脑上登录了！");location.href="../"</script>';
 					}
 				}else{
-					$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
-					$this->assign('data',$data);
-					$this->display('student/student_index.php');
+					if ($_SERVER['REMOTE_ADDR'] !=$getstu['ip']) {
+						echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';
+					}else{
+						$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
+						$this->assign('data',$data);
+						$this->display('student/student_index.php');
+					}
 				}
 			}else{
 				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";

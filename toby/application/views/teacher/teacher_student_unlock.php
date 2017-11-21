@@ -7,22 +7,22 @@
 
 	</head>
     <body style="background:background-color;background-color: transparent;">
-    	<form method="post" action="">
-    		<div align="center" style="width: 600px;height: 100px;">
+<!--     	<form method="post" action="">
+ -->    	<div align="center" style="width: 600px;height: 100px;">
     			<h3 align="center">按学生查找已登录信息 </h3>
     			<input type="text" placeholder="学号"/>
-    			<input type="text" placeholder="姓名" />
+    			<input type="text" id="student_name" placeholder="姓名" />
     			<input type="text" placeholder="班级" />
-    			<input type="submit" class="glyphicon glyphicon-search" value="查找" />
+    			<input type="submit" id="search0" class="glyphicon glyphicon-search" value="查找" />
     		</div>
-        </form>
-        <form method="post" action="../teacher/unlock_ip">
-    		<div align="center" style="width:600px;height: 100px;">
+<!--         </form> -->
+<!--         <form method="post" action="">
+ -->    		<div align="center" style="width:600px;height: 100px;">
     			<h3 align="center">按IP查找已登录信息 </h3>
-    			<input type="text" placeholder="IP" name="ip" />
-    			<input type="submit" class="glyphicon glyphicon-search" value="查找" />
+    			<input type="text" placeholder="IP" id="ip" />
+    			<input type="submit" id="search" class="glyphicon glyphicon-search" value="查找" />
     		</div>
-        </form>
+       <!--  </form> -->
     		<div align="center" style="width: 600px;height: 100px;">
     			<h3 align="center">查找结果</h3>
     		<table border="2"  style="width: 500px;">
@@ -36,13 +36,71 @@
     			</thead>
     			<tbody>
     				<tr>
-    					<td></td>
-    					<td></td>
-    					<td></td>
-    					<td></td>
+    					<td id="number"></td>
+    					<td id="name"></td>
+    					<td id="class"></td>
+    					<td id="ipdress"></td>
     				</tr>
     			</tbody>
     		</table>
     		</div>
 	</body>
+    <script>
+        function IsJsonString(str) {
+            try {
+               JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
+        }
+    document.getElementById("search").onclick = function() { 
+    var request = new XMLHttpRequest();
+    request.open("POST", "search_ip");
+    var data = "ip=" + document.getElementById("ip").value;
+    request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    request.send(data);
+    request.onreadystatechange = function() {
+        if (request.readyState===4) {
+            if (request.status===200) { 
+                var isjson=IsJsonString(request.responseText);
+                if (isjson==true) {
+                    var info=JSON.parse(request.responseText);
+                    document.getElementById("number").innerHTML = info.sId;
+                    document.getElementById("name").innerHTML = info.sName;
+                    document.getElementById("ipdress").innerHTML = info.ip;
+                }else{
+                    alert(request.responseText);
+                }
+            } else {
+                alert("发生错误：" + request.status);
+            }
+        } 
+    }
+} 
+ document.getElementById("search0").onclick = function() { 
+    var request = new XMLHttpRequest();
+    request.open("POST", "search_name");
+    var data = "name=" + document.getElementById("student_name").value;
+    request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    request.send(data);
+    request.onreadystatechange = function() {
+        if (request.readyState===4) {
+            if (request.status===200) { 
+                var isjson=IsJsonString(request.responseText);
+                if (isjson==true) {
+                    var info=JSON.parse(request.responseText);
+                    document.getElementById("number").innerHTML = info.sId;
+                    document.getElementById("name").innerHTML = info.sName;
+                    document.getElementById("ipdress").innerHTML = info.ip;
+                }else{
+                    alert(request.responseText);
+                }
+            } else {
+                alert("发生错误：" + request.status);
+            }
+        } 
+    }
+} 
+    </script>
 </html>

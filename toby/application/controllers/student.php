@@ -34,7 +34,7 @@ class student extends \core\toby
 				"name"=>$_FILES['file']['name']
 			);
 			$this->model->path_add($data);
-			echo "<script>alert(\"提交成功！！！\");history.go(-1)</script>";
+			echo "<script>alert(\"上传成功！！！\");location.replace(document.referrer)</script>";
 		}
 	}
 	public function student_upload()
@@ -47,8 +47,11 @@ class student extends \core\toby
 	public function student_delete()
 	{
 		$id=$this->uri(3);
-		$this->model->delete_file($id);
-		echo "<script>alert(\"删除成功！！！\");history.go(-1)</script>";
+		$data=$this->model->get_path($id);
+		unlink($data["path"]);
+		if($this->model->delete_file($id)==1){
+			echo "<script>alert(\"删除成功！！！\");location.replace(document.referrer)</script>";
+		}
 	}
 		
 }

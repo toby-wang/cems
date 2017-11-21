@@ -13,10 +13,17 @@ class teacherModel extends model
 		));
 		return $result;
 	}
-	public function getinfo($ip)
+	public function getip($ip)
 	{
 		$result = $this->get("student",'*',array(
 			'ip'=>$ip
+		));
+		return $result;
+	}
+	public function getname($name)
+	{
+		$result = $this->get("student",'*',array(
+			'sName'=>$name
 		));
 		return $result;
 	}

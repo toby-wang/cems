@@ -99,17 +99,36 @@ class teacher extends \core\toby
 	public function exam_delete()
 	{
 		$id=$this->uri(3);
-		$this->model->delete_exam($id);
-		echo "<script>alert(\"删除成功！！！\");location.replace(document.referrer)</script>";
+		$data=$this->model->getOne($id);
+		unlink($data["path"]);
+		if($this->model->delete_exam($id)==1){
+			echo "<script>alert(\"删除成功！！！\");location.replace(document.referrer)</script>";
+		}
 	}
 	public function teacher_exam_list()
 	{
-		$page = new Pagination();
-        $page->init(2,1,'/cems/toby/teacher/teacher_exam_list');
-        $index = $page->show();
+		// $page = new Pagination();
+  //       $page->init(2,1,'/cems/toby/teacher/teacher_exam_list');
+  //       $index = $page->show();
         //echo $index;
-
 		$data=$this->model->get_exam();
+		foreach ($data as $k => $v) {
+			if ($v["IsAuto"]==1) {
+				// p($v["BeginTime"]);
+				// echo "br";
+				// p(date("Y-m-d H:i:s"));die;
+				if ($v["BeginTime"]==date("Y-m-d H:i:s")) {
+					$data=array(
+						"IsBegin" => 1
+					);
+					$edit_data=array(
+						"BeginTime" => date("Y-m-d H:i:s")
+					);
+					$result=$this->model->exam_edit($data,$edit_data);
+					echo "<script>alert(\"考试开始！！！\");location.replace(location)</script>";
+				}
+			}
+		}
 		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_list.php');
 	}
@@ -117,14 +136,17 @@ class teacher extends \core\toby
 	{
 		$name=$_POST['exam_name'];
 		$data=array(
-			"IsAuto" => 1
+			"IsBegin" => 1
 		);
 		$edit_data=array(
 			"subject" => $name
 		);
-		$this->model->exam_edit($data,$edit_data);
-		//p($rel);exit;
-		echo "<script>alert(\"启动成功！！！\");location.replace(document.referrer)</script>";
+		$result=$this->model->exam_edit($data,$edit_data);
+		if ($result==1) {
+			echo "<script>alert(\"启动成功！！！\");location.replace(document.referrer)</script>";
+		}else{
+			echo "<script>alert(\"该项目已启动或输入名称错误！！！\");location.replace(document.referrer)</script>";
+		}
 	}
 	public function teacher_exam_situation()
 	{
@@ -158,7 +180,7 @@ class teacher extends \core\toby
 		$a=$this->model->exam_edit($data,$edit_data);
 		if ($a==0) {
 			echo "<script>alert(\"修改失败！！！\");history.go(-1)</script>";
-		}else{
+		}else{  
 			echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
 		}	
 	}
@@ -166,11 +188,29 @@ class teacher extends \core\toby
 	{
 		$this->display('teacher/teacher_student_unlock.php');
 	}
-	public function unlock_ip()
+	public function search_ip()
 	{
 		$ip=$_POST['ip'];
-		$info=$this->model->getinfo($ip);
-		echo "<script>location.replace(document.referrer)</script>";
+		$info=$this->model->getip($ip);
+		if ($info) {
+			echo json_encode($info);	
+		}else{
+			echo "该IP不存在！！！";
+		}
+	}
+	public function search_name()
+	{
+		$name=$_POST['name'];
+		$info=$this->model->getname($name);
+		if ($info) {
+			if (is_null($info["ip"])) {
+				echo "该用户未登录！！!";
+			}else{
+				echo json_encode($info);
+			}
+		}else{
+			echo "该学生不存在！！！";
+		}
 	}
 	public function teacher_exam_broadcast()
 	{

@@ -17,6 +17,13 @@ class studentModel extends model
 		$result = $this->select($this->table, "*");
 		return $result;
 	}
+	public function get_path($id)
+	{
+		$result = $this->get($this->table, '*' ,array(
+			'id'=>$id
+		));
+		return $result;
+	}
 	public function delete_file($id)
 	{
 		$result = $this->delete($this->table,array(
