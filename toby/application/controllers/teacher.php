@@ -51,7 +51,7 @@ class teacher extends \core\toby
 			$data = array(
         		"sId" => $info[$j][0],
       			"sName" => $info[$j][1],
-       	 		"examId" => $info[$j][2]
+       	 		"exam" => $info[$j][2]
 			);
 			$this->model->student_add($data);
 		}
@@ -61,7 +61,8 @@ class teacher extends \core\toby
 	{
 		$data = array(
         	"sId" => $_POST["sid"],
-      		"sName" => $_POST["sname"]
+      		"sName" => $_POST["sname"],
+      		"exam"=>$_POST['subject']
 		);
 		$this->model->student_add($data);
 		echo "<script>alert(\"添加成功！！！\");history.go(-1)</script>";
@@ -187,6 +188,34 @@ class teacher extends \core\toby
 	public function teacher_student_unlock()
 	{
 		$this->display('teacher/teacher_student_unlock.php');
+	}
+	public function unlock_class()
+	{
+		$exam=$_POST['exam'];
+		$edit_data=array(
+			"exam"=>$exam
+		);
+		$data=array(
+			"ip"=>null
+		);		
+		if ($this->model->unlock($data,$edit_data)!=0) {
+			echo "<script>alert(\"全部解除成功！\");location.replace(document.referrer)</script>";
+		}else{
+			echo "<script>alert(\"目前没有学生登录！\");location.replace(document.referrer)</script>";
+		}
+	}
+	public function unlock()
+	{
+		$id=$this->uri(3);
+		$edit_data=array(
+			"sId"=>$id
+		);
+		$data=array(
+			"ip"=>null
+		);
+		if ($this->model->unlock($data,$edit_data)==1) {
+			echo "<script>alert(\"解除成功！！！\");location.replace(document.referrer)</script>";
+		}
 	}
 	public function search_ip()
 	{

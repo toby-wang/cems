@@ -16,7 +16,7 @@ class index extends \core\toby
 	{
 		//$this->uri(3);
 		//url();die;
-		$this->mem->flush(); 
+		//$this->mem->flush(); 
 		$this->display('login.php');
 	}
 	public function login()
@@ -50,10 +50,6 @@ class index extends \core\toby
 		}else if($_POST["radio"]=="student"){
 			if ($getstu['sName']==$username&&$getstu['sPassword']==$password)
 			{
-				$data=array("ip"=>$_SERVER['REMOTE_ADDR']);
-				$edit_data=array("sName"=>$username);
-				$model->bind_ip($data,$edit_data);
-
 				$_SESSION['user']=$getstu['sName'];
 				$_SESSION['sId']=$getstu['sId'];
 				$data=$_SESSION['user'];
@@ -70,12 +66,21 @@ class index extends \core\toby
 						echo '<script>alert("这个用户已经在其他电脑上登录了！");location.href="../"</script>';
 					}
 				}else{
-					if ($_SERVER['REMOTE_ADDR'] !=$getstu['ip']) {
-						echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';
-					}else{
-						$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
-						$this->assign('data',$data);
-						$this->display('student/student_index.php');
+					if (is_null($getstu['ip'])) {
+							$data1=array("ip"=>$_SERVER['REMOTE_ADDR']);
+							$edit_data=array("sName"=>$username);
+							$model->bind_ip($data1,$edit_data);
+							$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
+							$this->assign('data',$data);
+							$this->display('student/student_index.php');
+						}else{
+							if ($_SERVER['REMOTE_ADDR'] !=$getstu['ip']) {
+								echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';
+							}else{
+								$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
+								$this->assign('data',$data);
+								$this->display('student/student_index.php');
+						}
 					}
 				}
 			}else{

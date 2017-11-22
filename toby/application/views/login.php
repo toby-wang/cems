@@ -56,13 +56,13 @@
                     <input type="radio" name="radio" value="admin" />  admin
               </section>
 
-              <section class="controls">
+              <!-- <section class="controls">
                 <div class="checkbox check-transparent">
                   <input type="checkbox" value="1" id="remember">
                   <label for="remember">Remember me</label>
                 </div>
                 <a href="#">我Forget password?</a>
-              </section>
+              </section> -->
               <section class="log-in">
                 <button class="btn btn-greensea">Log In</button>
               </section>

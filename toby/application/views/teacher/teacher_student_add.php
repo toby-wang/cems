@@ -20,48 +20,39 @@
     			
     			<td colspan="2">
     				
-    				<input type="text" class="input-lg" placeholder="学号" name="sid"style="margin:10px;">
+    				<input type="text" class="input-lg" id="sid" placeholder="学号" name="sid"style="margin:10px;">
     			</td>
-    			
     		</tr>
     		<tr>
     			<td align="right" colspan="2">
     				 <span class="glyphicon glyphicon-user" class="label"></span> Name
     			</td>
-    			
     			<td colspan="2">
-    				
-    				<input type="text" class="input-lg" placeholder="姓名" name="sname" style="margin:10px;">
+    				<input type="text" class="input-lg" placeholder="姓名" id="sname" name="sname" style="margin:10px;">
     			</td>
-    			
     		</tr>
-    		
-    		
-    		
-    		    		<tr>
+            <tr>
     			<td align="right" colspan="2">
     				<span class="glyphicon glyphicon-home" class="label"></span> Class
     			</td>
     			<td colspan="2">
-    				<input type="text" class="input-lg" placeholder="班级" style="margin:10px;">
+    				<input type="text" class="input-lg" placeholder="班级" id="class" style="margin:10px;">
     			</td>
-    			<tr>
+            </tr>
+    		<tr>
     			<td align="right" colspan="2">
-    				<span class="glyphicon glyphicon-lock" class="label"></span> Major
+    				<span class="glyphicon glyphicon-lock" class="label"></span> subject
     			</td>
     			<td colspan="2">
-    				
-    				<input type="text" class="input-lg" placeholder="专业" style="margin:10px;">
+    				<input type="text" class="input-lg" id="subject" name="subject" placeholder="科目" style="margin:10px;">
     			</td>
     		</tr>
      		<tr>
     			<td align="right" colspan="2">
-    				<button type="submit" class="btn btn-success" style="margin:10px;">保存</button>
+    				<button type="submit" class="btn btn-success" style="margin:10px;">添加</button>
     			</td>
-    			
     			<td align="center" colspan="2">
-    				
-    				<button type="button" class="btn btn-danger" style="margin:10px;">重置</button>
+    				<button type="button" class="btn btn-danger" id="reset" style="margin:10px;">重置</button>
     			</td>
     			
     		</tr>
@@ -77,13 +68,12 @@
         		   <input id="showFile" type="text" style="height: 30px;width:300px;margin:10px;"/>
         	</td>
         	<td >
-        		<input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:55px;margin:10px;"/>
+        		<input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:75px;margin:10px;"/>
         	</td>
         </tr>
-       
        <tr>
     			<td align="right" colspan="2">
-    				<button type="submit" class="btn btn-success" style="margin:10px;">保存</button>
+    				<button type="submit" class="btn btn-success" style="margin:10px;">导入</button>
     			</td>
     			
     			<td align="center" colspan="2">
@@ -100,6 +90,11 @@
   </body>
 
   <script type="text/javascript">
+    document.getElementById("reset").onclick = function() {
+        document.getElementById("sid").value = "";
+        document.getElementById("sname").value = "";
+        document.getElementById("subject").value = "";
+    }
       function handleFile(){
         var c = document.getElementById("chooseFile");
         var s = document.getElementById("showFile");

@@ -32,6 +32,11 @@ class teacherModel extends model
 		$result = $this->insert("student",$data);
 		return $result->rowCount();
 	}
+	public function unlock($data,$edit_data)
+	{
+		$result = $this->update("student",$data,$edit_data);
+		return $result->rowCount();
+	}
 	public function exam_add($data)
 	{
 		$result = $this->insert("exam",$data);
