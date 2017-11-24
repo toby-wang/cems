@@ -91,11 +91,7 @@
                           <i class="fa fa-caret-right"></i><font color="#000" size="4px">考试状况</font>
                         </a>
                       </li>
-                      <li>
-                        <a href="../teacher/teacher_student_check" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">学生信息</font>
-                        </a>
-                      </li>
+                     
                       <li>
                         <a href="../teacher/teacher_student_unlock" target="menuFrame">
                           <i class="fa fa-caret-right"></i> <font color="#000" size="4px">解除锁定</font>
