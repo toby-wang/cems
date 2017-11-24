@@ -50,31 +50,31 @@
             </div>
             <ul class="nav navbar-nav side-nav" id="sidebar">
               <li class="navigation" id="navigation">
-                <a href="#" class="sidebar-toggle" data-toggle="#navigation">系统管理 <i class="fa fa-angle-up"></i></a>
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation"><font color="#000" size="6px">系统管理</font> <i class="fa fa-angle-up"></i></a>
                 <ul class="menu">
                   <li class="active">
                     <a href="../teacher/teacher_intro"  target="menuFrame">
-                      <i class="fa fa-tachometer"></i> 首页
+                      <i class="fa fa-tachometer"></i> <font color="#000" size="4px">首页</font>
                     </a>
                   </li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-pencil"></i> 考前操作<b class="fa fa-plus dropdown-plus"></b>
+                      <i class="fa fa-pencil"></i> <font color="#000" size="4px">考前操作</font><b class="fa fa-plus dropdown-plus"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li>
                         <a href="../teacher/teacher_student_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 导入学生
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">导入学生</font>
                         </a>
                       </li>
                       <li>
                         <a href="../teacher/teacher_exam_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i>添加考試
+                          <i class="fa fa-caret-right"></i><font color="#000" size="4px">添加考試</font>
                         </a>
                       </li>
                       <li>
                         <a href="../teacher/teacher_exam_list" target="menuFrame">
-                          <i class="fa fa-caret-right"></i>开启考试
+                          <i class="fa fa-caret-right"></i><font color="#000" size="4px">开启考试</font>
                         </a>
                       </li>
                     </ul>
@@ -83,27 +83,23 @@
 
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-list"></i> 考中管理 <b class="fa fa-plus dropdown-plus"></b>
+                      <i class="fa fa-list"></i> <font color="#000" size="4px">考中管理</font> <b class="fa fa-plus dropdown-plus"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li>
                         <a href="../teacher/teacher_exam_situation" target="menuFrame">
-                          <i class="fa fa-caret-right"></i>考试状况
+                          <i class="fa fa-caret-right"></i><font color="#000" size="4px">考试状况</font>
                         </a>
                       </li>
-                      <li>
-                        <a href="../teacher/teacher_student_check" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 学生信息
-                        </a>
-                      </li>
+                     
                       <li>
                         <a href="../teacher/teacher_student_unlock" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 解除锁定
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">解除锁定</font>
                         </a>
                       </li>
                       <li>
                         <a href="../teacher/teacher_exam_broadcast" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 通知管理
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">通知管理</font>
                         </a>
                       </li>
                 </ul>
@@ -111,7 +107,7 @@
                   </li>
                   <li>
                     <a href="../teacher/teacher_exam_end" target="menuFrame">
-                      <i class="fa fa-tint"></i> 考后操作
+                      <i class="fa fa-tint"></i> <font color="#000" size="4px">考后操作</font>
                     </a>
                   </li>
                 </ul>

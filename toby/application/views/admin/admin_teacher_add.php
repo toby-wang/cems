@@ -23,21 +23,7 @@
     				<input type="text" class="input-lg" placeholder="用户名" name="name" style="margin:15px;">
     			</td>
     			
-    		</tr>	
-    		<tr>
-    			<td align="right">
-    				 <span class="glyphicon glyphicon-user" class="label"></span> Name
-    			</td>
-    			
-    			<td align="right">
-    				
-    				<input type="text" name="relname" class="input-lg" placeholder="真实姓名" style="margin:15px;">
-    			</td>
-    			
-    		</tr>
-    		
-    		
-    		
+    		</tr>    		
     		<tr>
     			<td align="right">
     				<span class="glyphicon glyphicon-lock" class="label"></span> Psw

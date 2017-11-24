@@ -3,25 +3,39 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+                <link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body style="background:background-color;background-color: transparent;font-size: 18px;">
-        <form method="" action="">
-        	<table border="2" align="center" style="margin-top: 100px;">
-        		<thead>
-        			<tr>
-        			     <th width="100px">姓名</th>
-        			     <th width="100px">密码</th>
-        			</tr>
-        		</thead>
-        		<tbody>
+<br>
+        <div class="panel panel-danger">
+           <div class="panel-heading">
+              <h2 class="panel-title text-center">所有教师列表</h2>
+           </div>
+           <div class="panel-body">
+                <form method="" action="">
+                <table class="table table-striped">
+                        <thead>
+                                <tr>
+                                     <th>姓名</th>
+                                     <th>密码</th>
+                                     <th>是否为管理员</th>
+                                </tr>
+                        </thead>
+                        <tbody>
                                 {% for v in data %}
                                 <tr>
-        			     <th>{{ v.name }}</th>
-        			     <th>{{ v.password }}</th>
+                                     <th>{{ v.name }}</th>
+                                     <th>{{ v.password }}</th>
+                                     <th>是</th>
                                 </tr>  
                                 {% endfor %} 
-        		</tbody>
-        	</table>
+                        </tbody>
+                </table>
         </form>
+
+           </div>
+        </div>
+
+       
 	</body>
 </html>

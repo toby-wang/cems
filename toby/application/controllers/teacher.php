@@ -267,12 +267,9 @@ class teacher extends \core\toby
 		$this->model->message_delete($id);
 		echo "<script>location.replace(document.referrer)</script>";
 	}
-	public function teacher_student_check()
-	{
-		$this->display('teacher/teacher_student_check.php');
-	}
+	
 	public function teacher_exam_end()
 	{
-		$this->display('teacher/teacher_exam_end.php');
+		$this->display('teacher/teacher_exam_clear.php');
 	}
 }

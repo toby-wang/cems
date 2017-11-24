@@ -68,7 +68,7 @@
         		   <input id="showFile" type="text" style="height: 30px;width:300px;margin:10px;"/>
         	</td>
         	<td >
-        		<input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:75px;margin:10px;"/>
+        		<input onchange="handleFile()" id="chooseFile" type="file" name="file" value="选择文件" style="color: transparent;" />
         	</td>
         </tr>
        <tr>
@@ -99,6 +99,7 @@
         var c = document.getElementById("chooseFile");
         var s = document.getElementById("showFile");
         s.value = c.value;
+        c.value("");
       }
 
   </script>
