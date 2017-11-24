@@ -273,6 +273,6 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_end()
 	{
-		$this->display('teacher/teacher_exam_end.php');
+		$this->display('teacher/teacher_exam_clear.php');
 	}
 }
