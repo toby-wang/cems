@@ -35,7 +35,7 @@
             <h5>Examination management system</h5>
 
 
-            <form id="form-signin" class="form-signin" action="http://localhost/cems/toby/index/login" method="post">
+            <form id="form-signin" class="form-signin" action="index/login" method="post">
 
               
               <section  class="log-in" >

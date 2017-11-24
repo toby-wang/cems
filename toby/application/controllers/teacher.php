@@ -9,7 +9,7 @@ class teacher extends \core\toby
 	public $mem;
 	function __construct() 
 	{
-		session_start();
+		
 		$this->model = new teacherModel();
 
 		//初始化对象

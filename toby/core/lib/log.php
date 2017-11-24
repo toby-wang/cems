@@ -7,7 +7,7 @@ class log
 	static public function init(){
 		//确定存储方式
 		$drive = conf::get('DRIVE','log');
-		$class = '\core\lib\drive\log\\'.$drive;
+		$class = '/core/lib/drive/log/'.$drive;
 		self::$class = new $class;
 	}
 

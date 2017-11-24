@@ -69,10 +69,14 @@ class index extends \core\toby
 					if (is_null($getstu['ip'])) {
 							$data1=array("ip"=>$_SERVER['REMOTE_ADDR']);
 							$edit_data=array("sName"=>$username);
-							$model->bind_ip($data1,$edit_data);
-							$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
-							$this->assign('data',$data);
-							$this->display('student/student_index.php');
+							$rel=$model->bind_ip($data1,$edit_data);
+							if ($rel==0) {
+								echo '<script>alert("一个电脑只能登录一个学生用户！！!");location.href="../"</script>';
+							}else{
+								$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
+								$this->assign('data',$data);
+								$this->display('student/student_index.php');
+							}
 						}else{
 							if ($_SERVER['REMOTE_ADDR'] !=$getstu['ip']) {
 								echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';

@@ -47,7 +47,6 @@ class toby
 		}else{
 			//$class=str_replace('\\','/', $class);
 			$file=toby.'/'.$class.'.php';
-			//p($class);
 			if (is_file($file)) {
 				include_once $file;
 				self::$classMap[$class]=$class;
