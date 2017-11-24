@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
     <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
+
   </head>
   <body class="bg-1">
     <!-- Wrap all page content here -->
@@ -83,51 +84,51 @@
               </li>-->
 
               <li class="navigation" id="navigation">
-                <a href="#" class="sidebar-toggle" data-toggle="#navigation">系统管理 <i class="fa fa-angle-up"></i></a>
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation"><font color="#000" size="6px">系统管理</font> <i class="fa fa-angle-up"></i></a>
                 
                 <ul class="menu">
                   <li class="active">
                     <a href="../admin/admin_intro"  target="menuFrame">
-                      <i class="fa fa-tachometer"></i> 首页
+                      <i class="fa fa-tachometer"></i> <font color="#000" size="4px">首页</font>
                       <!--<span class="badge badge-red">1</span>-->
                     </a>
                   </li>
 
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-list"></i> 教师管理 <b class="fa fa-plus dropdown-plus"></b>
+                      <i class="fa fa-list"></i> <font color="#000" size="4px">教师管理</font> <b class="fa fa-plus dropdown-plus"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li>
                         <a href="../admin/admin_teacher_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 添加教师
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">添加教师</font>
                         </a>
                       </li>
                       <li>
                         <a href="../admin/admin_pwd_change" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 修改密码
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">修改密码</font>
                         </a>
                       </li>
                       <li>
                         <a href="../admin/admin_teacher_delete" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 删除教师
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">删除教师</font>
                         </a>
                       </li>
                       <li>
                         <a href="../admin/admin_teacher_all" target="menuFrame">
-                          <i class="fa fa-caret-right"></i> 查看所有教师
+                          <i class="fa fa-caret-right"></i> <font color="#000" size="4px">查看所有教师</font>
                         </a>
                       </li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="../admin/admin_exam_deal" target="menuFrame" >
-                      <i class="fa fa-pencil"></i> 考试清理 
+                      <i class="fa fa-pencil"></i> <font color="#000" size="4px">考试清理 </font>
                     </a>
                   </li>
                   <li>
                     <a href="../admin/admin_system_set" target="menuFrame">
-                      <i class="fa fa-tint"></i> 系统配置
+                      <i class="fa fa-tint"></i> <font color="#000" size="4px">系统配置</font>
                     </a>
                   </li>
 				</ul>
@@ -140,7 +141,7 @@
 
         <div id="content" class="col-md-12">
  <div id="page_content" style="margin-top: 10px; margin-bottom: 10px;">
-          <iframe id="menuFrame" name="menuFrame" src="../admin/admin_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height:600px;float: left;">
+          <iframe id="menuFrame" name="menuFrame" src="../admin/admin_intro" scrolling="auto" allowtransparency="yes" style="border:none;width:100%;height:600px;float: left;">
              </iframe>
  </div>
         </div>
