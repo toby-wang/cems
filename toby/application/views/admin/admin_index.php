@@ -121,11 +121,6 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a href="../admin/admin_exam_deal" target="menuFrame" >
-                      <i class="fa fa-pencil"></i> <font color="#000" size="4px">考试清理 </font>
-                    </a>
-                  </li>
                   <li>
                     <a href="../admin/admin_system_set" target="menuFrame">
                       <i class="fa fa-tint"></i> <font color="#000" size="4px">系统配置</font>
