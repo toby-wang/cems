@@ -30,9 +30,6 @@
     				<input type="text" class="input-lg" placeholder="用户名" name="name" style="margin:15px;">
     			</td>    			
     		</tr>
-    		
-    	    		
-    		
     		<tr>
     			<td align="right">
     				<span style="color: white;"><font color="black" size="4px"> 输入原密码</font></span>
@@ -40,11 +37,7 @@
     			<td align="right">    				
     				<input type="password" class="input-lg" placeholder="密码" name="old_psw" style="margin:15px;">
     			</td>
-    			
     		</tr>
-    		
-    		
-    		
     		<tr>
     			<td align="right">
     				<span style="color: white;"><font color="black" size="4px">输入新密码</font></span>
@@ -53,9 +46,7 @@
     				
     				<input type="password" class="input-lg" name="new_psw" placeholder="新密码" style="margin:15px;">
     			</td>    			
-    		</tr>
-    		
-    		
+    		</tr>   		
     		<tr>
     			<td align="right">
     				<span style="color: white;"><font color="black" size="4px">再次输入新密码</font></span> 
@@ -65,15 +56,11 @@
     				<input type="password" class="input-lg" name="new_psw1" placeholder="重输新密码" style="margin:15px;">
     			</td>   			
     		</tr>
-    		
-    		
-    		
         	<tr style="margin:15px;">
     			<td align="center">
     				<button type="submit" class="btn btn-danger" style="margin:15px;">保存</button>
     			</td>   			
     			<td align="right">
-    				
     				<button type="button" class="btn btn-danger" style="margin:15px;">重置</button>
     			</td>    			
     		</tr>       
