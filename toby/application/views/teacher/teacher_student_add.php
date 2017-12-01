@@ -16,7 +16,7 @@
         <div class="panel-heading">
            <h3 class="panel-title text-center">导入学生</h3>
         </div>
-        <div class="panel-body" style="line-height: 100px;">
+        <div class="panel-body" style="line-height: 80px;">
 
     	
             <form class="bs-example bs-example-form" role="form" action="../teacher/student_add_one" method="post">
@@ -65,16 +65,13 @@
     			
     		</tr>
             </table>
-        </form>
-    	<br />
-    	<br />
-    	
+        </form>    	
         <form action="../teacher/student_add" method="post" enctype="multipart/form-data">
         <table>
         <tr>
           <td></td>
         	<td align="right" colspan="2">
-        		   <input id="showFile" type="text" style="height: 30px;width:300px;margin:10px;"/>
+        		  批量导入： <input id="showFile" type="text" style="height: 30px;width:300px;margin:10px;"/>
         	</td>
         	<td >
         		<input onchange="handleFile()" id="chooseFile" type="file" name="file" value="选择文件" style="color: transparent;" />
@@ -82,14 +79,8 @@
         </tr>
        <tr>
     			<td align="right" colspan="2">
-    				<button type="submit" class="btn btn-success" style="margin:10px;">导入</button>
-    			</td>
-    			
-    			<td align="center" colspan="2">
-    				
-    				<button type="button" class="btn btn-danger" style="margin:10px;">重置</button>
-    			</td>
-    			
+    				<button type="submit" class="btn btn-danger" style="margin:10px;">导入</button>
+    			</td>    			
     		</tr>
             </table>
         </form>

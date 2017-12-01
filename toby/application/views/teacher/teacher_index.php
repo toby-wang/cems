@@ -69,7 +69,7 @@
                       </li>
                       <li>
                         <a href="../teacher/teacher_exam_add" target="menuFrame">
-                          <i class="fa fa-caret-right"></i><font color="#000" size="4px">添加考試</font>
+                          <i class="fa fa-caret-right"></i><font color="#000" size="4px">添加考试</font>
                         </a>
                       </li>
                       <li>
@@ -118,8 +118,11 @@
      
         <div id="content" class="col-md-12">
          <div id="page_content">
-          <iframe id="menuFrame" name="menuFrame" src="../teacher/teacher_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height: 610px;float: left;margin-bottom: 10px;border:none;">
+          <iframe id="menuFrame" name="menuFrame" src="../teacher/teacher_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height: 660px;float: left;border:none;">
           </iframe>
+
+          <!-- <iframe id="menuFrame" name="menuFrame" src="../admin/admin_intro" scrolling="auto" allowtransparency="yes" style="border:none;width:100%;height:600px;float: left;">
+          </iframe> -->
          </div>
         </div>
 
