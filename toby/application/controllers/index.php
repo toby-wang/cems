@@ -57,27 +57,31 @@ class index extends \core\toby
 				session_start();
 				$id=md5($getstu['sName']);
 				$ip=$this->mem->get($id);
+				//p($ip);die;
+				$ipv4=get_ipv4();
 				if ($ip) {
-					if ($ip==$_SERVER['REMOTE_ADDR']) {
+					if ($ip==$ipv4) {
 						echo '<script>alert("本电脑已经登录此用户了,请勿重复登录！");location.href="../"</script>';
-						// $this->assign('data',$data);
-						// $this->display('admin/admin_index.php');
 					}else{
 						echo '<script>alert("这个用户已经在其他电脑上登录了！");location.href="../"</script>';
 					}
 				}else{
 					if (is_null($getstu['ip'])) {
-							$data1=array("ip"=>$_SERVER['REMOTE_ADDR']);
+							$data1=array("ip"=>$ipv4);
 							$edit_data=array("sName"=>$username);
-							$model->bind_ip($data1,$edit_data);
-							$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
-							$this->assign('data',$data);
-							$this->display('student/student_index.php');
+							$rel=$model->bind_ip($data1,$edit_data);
+							if ($rel==0) {
+								echo '<script>alert("一个电脑只能登录一个学生用户！！!");location.href="../"</script>';
+							}else{
+								$this->mem->set($id,$ipv4, 0, 0);
+								$this->assign('data',$data);
+								$this->display('student/student_index.php');
+							}
 						}else{
-							if ($_SERVER['REMOTE_ADDR'] !=$getstu['ip']) {
+							if ($ipv4 !=$getstu['ip']) {
 								echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';
 							}else{
-								$this->mem->set($id,$_SERVER['REMOTE_ADDR'], 0, 0);
+								$this->mem->set($id,$ipv4, 0, 0);
 								$this->assign('data',$data);
 								$this->display('student/student_index.php');
 						}
