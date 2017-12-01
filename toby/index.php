@@ -13,6 +13,7 @@ define('application','\application');
 
 
 include_once "vendor/autoload.php";
+
 /**
  * 是否开启调试模式
  */
@@ -45,4 +46,5 @@ include_once core.'/toby.php';
 spl_autoload_register('\core\toby::load');
 
 \core\toby::run();
+
 
