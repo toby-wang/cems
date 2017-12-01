@@ -1,3 +1,6 @@
+<!--//<?php
+//
+//?>-->
 
 
 <!DOCTYPE html>
@@ -25,8 +28,11 @@
             			<span class="input-group-addon glyphicon glyphicon-file"></span>
            				<input style="width:450px;" type="text" id="showFile" class="form-control" placeholder="请上传答案">
        				</div>
-					
-					<input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:75px;margin:10px;display: inline-block;"/><br><br>
+		<!-- 			       <span class="btn btn-success fileinput-button">
+            <span>上传答案</span>
+            <input type="file" onchange="handleFile()" id="chooseFile" style="color: transparent;display: inline-block;" />
+        </span> -->
+					<input onchange="handleFile()" id="chooseFile" type="file" style="color: transparent;display: inline-block;"/><br><br>
 					<button class="btn btn-danger" type="submit" style="border-radius: 15px; width: 80px;height: 40px;">提交</button><br><br>
 				</form><br><br>
 				<table class="table table-striped">
@@ -58,6 +64,7 @@
 		var s = document.getElementById("showFile");
 		s.value = c.value;
 	}
+
 	</script>
 
 </html>
