@@ -10,7 +10,7 @@
     <body style="background:background-color;background-color: transparent;font-size: 18px;">
     
 
-<div align="center" id="add" style="background: transparent;margin-top: 10px;">
+<div align="center" id="add" style="background: transparent;">
 
 <div class="panel panel-danger">
             <div class="panel-heading">
