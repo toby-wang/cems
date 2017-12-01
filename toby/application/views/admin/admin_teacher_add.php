@@ -10,7 +10,7 @@
     <body style="background:background-color;background-color: transparent;font-size: 18px;">
     
 
-<div align="center" id="add" style="background: transparent;margin-top: 20px;">
+<div align="center" id="add" style="background: transparent;margin-top: 10px;">
 
 <div class="panel panel-danger">
             <div class="panel-heading">
@@ -59,7 +59,7 @@
                 </td>
                 
                 <td align="left">
-                   <select class="form-control" name="type" style="height: 45px;width: 200px;">
+                   <select class="form-control" name="type">
                     <option value="0">普通教师</option>
                     <option value="1">管理员</option>   
                    </select>
