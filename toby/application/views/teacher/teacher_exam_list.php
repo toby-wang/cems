@@ -6,9 +6,12 @@
 		<title></title>
 	</head>
     <body style="background:background-color;background-color: transparent;">
-    	
-    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="../teacher/exam_open">
-    <h3 align="left">开启考试</h3>	
+    	<div class="panel panel-danger">
+        <div class="panel-heading">
+           <h3 class="panel-title text-center">开启考试</h3>
+        </div>
+        <div class="panel-body" style="line-height: 80px;">
+    	<form class="form-inline" style="width:80%;margin: 0 auto;" method="post" action="../teacher/exam_open">	
 		<div class="form-group" style="float:right; ">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail3">考试名称</label>
@@ -70,6 +73,8 @@
       <li><a href="#">5</a></li>
       <li><a href="#">&raquo;</a></li>
     </ul>
+</div>
+</div>
 </div>
 			
 </body>

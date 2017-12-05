@@ -14,8 +14,11 @@
 	</head>
     <body style="background:background-color;background-color: transparent;">
     	
-<div style="width:80%;margin: 0 auto;margin-top: 70px;">
-	<h3 align="center">添加考试</h3>	
+<div class="panel panel-danger">
+        <div class="panel-heading">
+           <h3 class="panel-title text-center">添加考试</h3>
+        </div>
+        <div class="panel-body" style="line-height: 35px;">	
 <form class="form-horizontal" role="form" style="margin-top:50px;" method="post" action="../teacher/exam_add_cate" enctype="multipart/form-data">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">班级名称</label>
@@ -68,6 +71,9 @@
     </div>
   </div>
 </form>
+</div>
+  </div>
+</div>  
 	
 </div>            
     <script type="text/javascript">

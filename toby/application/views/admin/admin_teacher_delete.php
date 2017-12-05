@@ -10,7 +10,14 @@
     <body style="background:background-color;background-color: transparent;font-size: 18px;">
     
 
-<div align="center" id="add" style="background: transparent;">
+<div align="center" id="add" style="background: transparent;margin-top: 20px;">
+
+<div class="panel panel-danger">
+            <div class="panel-heading">
+                 <h3 class="panel-title text-center">修改密码</h3>
+            </div>
+            <div class="panel-body" style="line-height: 100px;">
+
     <form class="bs-example bs-example-form" role="form" action="../admin/teacher_delete" method="post">
     	<table cellpadding="5px">
     		<tr>
@@ -43,6 +50,9 @@
        
        </table>
     </form>
+    </div>
+  </div>
+</div>  
 </div>	
 
   </body>

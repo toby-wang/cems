@@ -45,7 +45,7 @@ class toby
 		if (isset($classMap[$class])) {
 			return true;
 		}else{
-			//$class=str_replace('\\','/', $class);
+			$class=str_replace('\\','/', $class);
 			$file=toby.'/'.$class.'.php';
 			if (is_file($file)) {
 				include_once $file;
@@ -98,6 +98,7 @@ class toby
 		if (is_file($file)) {
 			//将数组打散变成一个个变量
 			//extract($this->assign);
+                        include_once toby.'/vendor/twig/twig/lib/Twig/Autoloader.php';
 			\Twig_AutoLoader::register();
 			$loader = new \Twig_Loader_Filesystem(app.'/views/');
 			$twig = new \Twig_Environment($loader, array(

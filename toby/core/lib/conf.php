@@ -12,6 +12,7 @@ class conf
 		}else{
 			//判断配置文件是否存在
 			$path = toby.'\core\config\\'.$file.'.php';
+			$path=str_replace('\\','/', $path);
 			if (is_file($path)) {
 				$conf=include $path;
 				if (isset($conf[$name])) {
@@ -33,6 +34,7 @@ class conf
 		}else{
 			//判断配置文件是否存在
 			$path = toby.'\core\config\\'.$file.'.php';
+			$path=str_replace('\\','/', $path);
 			if (is_file($path)) {
 				$conf=include $path;
 				self::$conf[$file]=$conf;
