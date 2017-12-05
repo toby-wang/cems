@@ -80,26 +80,26 @@
               
               
               <li class="navigation" id="navigation">
-                <a href="#" class="sidebar-toggle" data-toggle="#navigation">系统管理 <i class="fa fa-angle-up"></i></a>
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation"><font color="#000" size="6px">系统管理</font><i class="fa fa-angle-up"></i></a>
                 
                 <ul class="menu">
                   
                   <li class="active">
                     <a href="../student/student_intro"  target="menuFrame">
-                      <i class="fa fa-tachometer"></i> 首页
+                      <i class="fa fa-tachometer"></i><font color="#000" size="4px">首页</font>
                       <!--<span class="badge badge-red">1</span>-->
                     </a>
                   </li>
 
                   <li class="dropdown">
                     <a href="../student/student_download" target="menuFrame">
-                      <i class="fa fa-list"></i> 试卷下载 
+                      <i class="fa fa-list"></i> <font color="#000" size="4px">试卷下载</font>
                     </a>
                   </li>
 
                   <li class="dropdown">
                     <a href="../student/student_upload" target="menuFrame">
-                      <i class="fa fa-pencil"></i> 答案上传
+                      <i class="fa fa-pencil"></i> <font color="#000" size="4px">答案上传</font>
                     </a>
                    
                   </li>
