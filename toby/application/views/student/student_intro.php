@@ -10,8 +10,8 @@
         <link href="../application/style/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
             ul li{
-             line-height: 35px;
-             font-size: 20px;
+             line-height: 30px;
+             font-size: 17px;
                 color: #000;
                 list-style-type: square;
              margin-left: 400px;
