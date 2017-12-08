@@ -15,7 +15,7 @@
     <body style="background:background-color;background-color: transparent;">
     	
 <div class="panel panel-danger">
-        <div class="panel-heading">
+        <div class="panel-heading" style="margin-top:40px">
            <h3 class="panel-title text-center">添加考试</h3>
         </div>
         <div class="panel-body" style="line-height: 35px;">	
@@ -66,7 +66,7 @@
   </div>
 
   <div class="form-group right">
-    <div class="col-sm-offset-11 col-sm-10">
+    <div class="col-sm-offset-11">
       <button type="submit" class="btn btn-default">SUBMIT</button>
     </div>
   </div>
