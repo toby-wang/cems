@@ -7,7 +7,7 @@
 	</head>
     <body style="background:background-color;background-color: transparent;">
     	
-    	
+ <div class="panel panel-danger" style="margin-top:20px">   	
 <form class="form-horizontal" method="post" action="../teacher/broadcast_add">
     		
   <div class="form-group" style="width:80%;margin: 0 auto;margin-top: 70px;">
@@ -26,7 +26,7 @@
         <tr>
           <th width="45px" scope="row">序号</th>
           <th>通知消息内容</th>
-		      <th width="150px">发布时间</th>
+		  <th width="150px">发布时间</th>
           <th width="50px">操作</th>
         </tr>
       </thead>
@@ -51,7 +51,7 @@
     <li><a href="#">&raquo;</a></li>
 </ul>
 </div>
-
+</div>
  
 	</body>
 </html>
