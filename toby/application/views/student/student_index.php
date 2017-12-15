@@ -114,7 +114,7 @@
        
 
  <div id="page_content" style="margin-top: 10px; margin-bottom: 10px;">
-          <iframe id="menuFrame" name="menuFrame" src="../student/student_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height:600px;float: left; border: none;">
+         <iframe id="menuFrame" name="menuFrame" src="../student/student_intro" scrolling="auto" allowtransparency="yes" style="width:100%;height:670px;float: left; border: none;">
              </iframe>
  </div>
 

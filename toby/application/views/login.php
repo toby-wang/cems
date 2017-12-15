@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="application/style/assets/css/vendor/bootstrap-checkbox.css">
 
     <link href="application/style/assets/css/minimal.css" rel="stylesheet">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +30,7 @@
 
           <div class="inside-block">
             <img src="application/style/assets/images/logo-big.png" alt class="logo">
-            <h1><strong>Welcome</strong> <span id="">Admin</h1>
+            <h1><strong>Welcome</strong>  you</h1>
             <h5>Examination management system</h5>
 
 
