@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="lastname" class="col-sm-2 control-label">考试科目</label>
+    <label for="·lastname" class="col-sm-2 control-label">考试科目</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="lastname" name="subject" placeholder="请输入科目" value="{{ data.subject }}">
     </div>
