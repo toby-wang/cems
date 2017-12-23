@@ -4,7 +4,7 @@ use core\lib\conf;
 /**
 * 
 */
-class model extends \Medoo\medoo
+class model extends \Medoo\Medoo
 {
 	function __construct()
 	{

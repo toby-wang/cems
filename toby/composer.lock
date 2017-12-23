@@ -234,16 +234,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.4.0",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "ec650a975a8e04e0c114d35eab732981243db3a2"
+                "reference": "757074cf71b952ce9e75b557538948811c2bf006"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/symfony/var-dumper/ec650a975a8e04e0c114d35eab732981243db3a2.zip",
-                "reference": "ec650a975a8e04e0c114d35eab732981243db3a2",
+                "url": "https://files.phpcomposer.com/files/symfony/var-dumper/757074cf71b952ce9e75b557538948811c2bf006.zip",
+                "reference": "757074cf71b952ce9e75b557538948811c2bf006",
                 "shasum": ""
             },
             "require": {
@@ -299,7 +299,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-11-30T14:59:23+00:00"
+            "time": "2017-12-11T22:06:16+00:00"
         },
         {
             "name": "twig/twig",

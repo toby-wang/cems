@@ -1,5 +1,66 @@
 [
     {
+        "name": "catfan/medoo",
+        "version": "v1.5.2",
+        "version_normalized": "1.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/catfan/Medoo.git",
+            "reference": "d65fad6c087e5904803e0dfd4e7a984d0eda77ef"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/catfan/Medoo/d65fad6c087e5904803e0dfd4e7a984d0eda77ef.zip",
+            "reference": "d65fad6c087e5904803e0dfd4e7a984d0eda77ef",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pdo": "*",
+            "php": ">=5.4"
+        },
+        "suggest": {
+            "ext-pdo_dblib": "For MSSQL or Sybase database on Linux/UNIX platform",
+            "ext-pdo_mysql": "For MySQL or MariaDB database",
+            "ext-pdo_oci": "For Oracle database",
+            "ext-pdo_oci8": "For Oracle version 8 database",
+            "ext-pdo_pqsql": "For PostgreSQL database",
+            "ext-pdo_sqlite": "For SQLite database",
+            "ext-pdo_sqlsrv": "For MSSQL database"
+        },
+        "time": "2017-12-01T14:31:32+00:00",
+        "type": "framework",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Medoo\\": "/src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Angel Lai",
+                "email": "angel@catfan.me"
+            }
+        ],
+        "description": "The lightest PHP database framework to accelerate development",
+        "homepage": "https://medoo.in",
+        "keywords": [
+            "database",
+            "lightweight",
+            "mariadb",
+            "mssql",
+            "mysql",
+            "oracle",
+            "php framework",
+            "postgresql",
+            "sql",
+            "sqlite"
+        ]
+    },
+    {
         "name": "psr/log",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
@@ -46,73 +107,6 @@
             "log",
             "psr",
             "psr-3"
-        ]
-    },
-    {
-        "name": "twig/twig",
-        "version": "v1.35.0",
-        "version_normalized": "1.35.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/twigphp/Twig/daa657073e55b0a78cce8fdd22682fddecc6385f.zip",
-            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "psr/container": "^1.0",
-            "symfony/debug": "~2.7",
-            "symfony/phpunit-bridge": "~3.3@dev"
-        },
-        "time": "2017-09-27T18:06:46+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.35-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            },
-            "psr-4": {
-                "Twig\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "http://twig.sensiolabs.org/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
         ]
     },
     {
@@ -240,18 +234,85 @@
         ]
     },
     {
-        "name": "symfony/var-dumper",
-        "version": "v3.4.0",
-        "version_normalized": "3.4.0.0",
+        "name": "twig/twig",
+        "version": "v1.35.0",
+        "version_normalized": "1.35.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "ec650a975a8e04e0c114d35eab732981243db3a2"
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/var-dumper/ec650a975a8e04e0c114d35eab732981243db3a2.zip",
-            "reference": "ec650a975a8e04e0c114d35eab732981243db3a2",
+            "url": "https://files.phpcomposer.com/files/twigphp/Twig/daa657073e55b0a78cce8fdd22682fddecc6385f.zip",
+            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "psr/container": "^1.0",
+            "symfony/debug": "~2.7",
+            "symfony/phpunit-bridge": "~3.3@dev"
+        },
+        "time": "2017-09-27T18:06:46+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.35-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            },
+            "psr-4": {
+                "Twig\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "symfony/var-dumper",
+        "version": "v3.4.2",
+        "version_normalized": "3.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/var-dumper.git",
+            "reference": "757074cf71b952ce9e75b557538948811c2bf006"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/var-dumper/757074cf71b952ce9e75b557538948811c2bf006.zip",
+            "reference": "757074cf71b952ce9e75b557538948811c2bf006",
             "shasum": ""
         },
         "require": {
@@ -270,7 +331,7 @@
             "ext-intl": "To show region name in time zone dump",
             "ext-symfony_debug": ""
         },
-        "time": "2017-11-30T14:59:23+00:00",
+        "time": "2017-12-11T22:06:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -308,67 +369,6 @@
         "keywords": [
             "debug",
             "dump"
-        ]
-    },
-    {
-        "name": "catfan/medoo",
-        "version": "v1.5.2",
-        "version_normalized": "1.5.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/catfan/Medoo.git",
-            "reference": "d65fad6c087e5904803e0dfd4e7a984d0eda77ef"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/catfan/Medoo/d65fad6c087e5904803e0dfd4e7a984d0eda77ef.zip",
-            "reference": "d65fad6c087e5904803e0dfd4e7a984d0eda77ef",
-            "shasum": ""
-        },
-        "require": {
-            "ext-pdo": "*",
-            "php": ">=5.4"
-        },
-        "suggest": {
-            "ext-pdo_dblib": "For MSSQL or Sybase database on Linux/UNIX platform",
-            "ext-pdo_mysql": "For MySQL or MariaDB database",
-            "ext-pdo_oci": "For Oracle database",
-            "ext-pdo_oci8": "For Oracle version 8 database",
-            "ext-pdo_pqsql": "For PostgreSQL database",
-            "ext-pdo_sqlite": "For SQLite database",
-            "ext-pdo_sqlsrv": "For MSSQL database"
-        },
-        "time": "2017-12-01T14:31:32+00:00",
-        "type": "framework",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Medoo\\": "/src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Angel Lai",
-                "email": "angel@catfan.me"
-            }
-        ],
-        "description": "The lightest PHP database framework to accelerate development",
-        "homepage": "https://medoo.in",
-        "keywords": [
-            "database",
-            "lightweight",
-            "mariadb",
-            "mssql",
-            "mysql",
-            "oracle",
-            "php framework",
-            "postgresql",
-            "sql",
-            "sqlite"
         ]
     }
 ]
