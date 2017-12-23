@@ -64,7 +64,7 @@
             			 <i class="glyphicon glyphicon-user"></i>欢迎你,
               <span>{{ data }}</span>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="../index/logout" class="btn btn-danger">退出系统</a>
+              <!-- <a href="../index/logout" class="btn btn-danger">退出系统</a> -->
              
               </div>
            

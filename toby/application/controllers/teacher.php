@@ -77,7 +77,7 @@ class teacher extends \core\toby
 	}
 	public function exam_add_cate()
 	{
-		$path='./upfile/teacher/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$filename='./upfile/teacher/'.$_FILES['file']['name'];
 		upfile("teacher");
 		$data = array(
       		"BeginTime" => $_POST["begin_time"],
@@ -86,10 +86,9 @@ class teacher extends \core\toby
       		"IsAuto" => $_POST["auto"],
       		"subject" => $_POST["subject"],
       		"examnation" => $_FILES['file']['name'],
-      		"path" => $path,
+      		"path" => $filename,
       		"creater" => $_POST["creater"]
 		);
-		//p($data);die;
 		$a=$this->model->exam_add($data);
 		if ($a==0) {
 			echo "<script>alert(\"添加失败！！！\");history.go(-1)</script>";
@@ -151,9 +150,26 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_situation()
 	{
-		$this->display('teacher/teacher_exam_situation.php');
+		$exam=$this->model->get_exam();
+		if (!isset($exam[0])||$exam[0]['IsBegin']==0) {
+			echo "<script>alert(\"考试不存在或未开启！！！\");location.href=\"teacher_intro\"</script>";
+		}else{
+			$exam_name=$exam[0]['subject'];
+			$student_all_number=$this->model->student_all_number($exam_name);
+			$student_login=$this->model->student_login($exam_name);
+			$student_submit=$this->model->student_submit($exam_name);
+			$data=array(
+				'exam_name'=>$exam_name,
+				'student_all_number'=>$student_all_number,
+				'student_login'=>$student_login,
+				'student_unlogin'=>$student_all_number-$student_login,
+				'student_submit'=>$student_submit,
+				'student_unsubmit'=>$student_login-$student_submit
+			);
+			$this->assign('data',$data);
+			$this->display('teacher/teacher_exam_situation.php');
+		}
 	}
-
 	public function teacher_exam_edit()
 	{
 		$id=$this->uri(3);
@@ -163,7 +179,7 @@ class teacher extends \core\toby
 	}
 	public function exam_edit_cate()
 	{
-		$path='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$filename='./upfile/teacher/'.$_FILES['file']['name'];
 		upfile("teacher");
 		$data=array(
 			"BeginTime" => $_POST["begin_time"],
@@ -172,7 +188,7 @@ class teacher extends \core\toby
       		"IsAuto" => $_POST["auto"],
       		"subject" => $_POST["subject"],
       		"examnation" => $_FILES['file']['name'],
-      		"path" => $path,
+      		"path" => $filename,
       		"creater" => $_POST["creater"]
 		);
 		$edit_data=array(
@@ -187,7 +203,12 @@ class teacher extends \core\toby
 	}
 	public function teacher_student_unlock()
 	{
-		$this->display('teacher/teacher_student_unlock.php');
+		$exam=$this->model->get_exam();
+		if (!isset($exam[0])||$exam[0]['IsBegin']==0) {
+			echo "<script>alert(\"考试不存在或未开启！！！\");location.href=\"teacher_intro\"</script>";
+		}else{
+			$this->display('teacher/teacher_student_unlock.php');
+		}
 	}
 	public function unlock_class()
 	{
@@ -243,10 +264,14 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_broadcast()
 	{
-		$data=$this->model->get_message();
-		//p($data);die;
-		$this->assign('data',$data);
-		$this->display('teacher/teacher_exam_broadcast.php');
+		$exam=$this->model->get_exam();
+		if (!isset($exam[0])||$exam[0]['IsBegin']==0) {
+			echo "<script>alert(\"考试不存在或未开启！！！\");location.href=\"teacher_intro\"</script>";
+		}else{
+			$data=$this->model->get_message();
+			$this->assign('data',$data);
+			$this->display('teacher/teacher_exam_broadcast.php');
+		}
 	}
 	public function broadcast_add()
 	{
@@ -270,6 +295,9 @@ class teacher extends \core\toby
 	
 	public function teacher_exam_end()
 	{
+		$data=$this->model->get_exam();
+		//p($data[0]);die;
+		$this->assign('data',$data[0]);
 		$this->display('teacher/teacher_exam_clear.php');
 	}
 }

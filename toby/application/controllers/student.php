@@ -26,21 +26,36 @@ class student extends \core\toby
 	}
 	public function student_upload_act()
 	{
-		$filename='./upfile/student/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$filename='./upfile/student/'.$_FILES['file']['name'];
 		if (upfile("student")==1) {
 			$data=array(
 				"path"=>$filename,
 				"time"=>date("y-m-d h:i:s"),
 				"name"=>$_FILES['file']['name']
 			);
-			$this->model->path_add($data);
+			$rename=$this->model->path_add($data);
+			if ($rename==0) {
+				$edit_data1=array(
+					"name"=>$_FILES['file']['name']
+				);
+				$data1=array(
+					"time"=>date("y-m-d h:i:s")
+				);
+				$this->model->path_update($data1,$edit_data1);
+			}
+			$edit_data=array(
+				"sName"=>$_SESSION['user']
+			);
+			$data=array(
+				"isSubmit"=>1
+			);
+			$this->model->submit($data,$edit_data);
 			echo "<script>alert(\"上传成功！！！\");location.replace(document.referrer)</script>";
 		}
 	}
 	public function student_upload()
 	{
 		$data=$this->model->upfile_list();
-		
 		$this->assign('data',$data);
 		$this->display('student/student_upload.php');
 	}

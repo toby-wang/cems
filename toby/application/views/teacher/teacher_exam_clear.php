@@ -38,32 +38,15 @@
 
                	<tbody>
                		<tr>
-               			<th>java</th>
-               			<th>李老师</th>
-               		    <th><a href="">清理</a></th>
-               		</tr>
-               		<tr>
-               			<th>java</th>
-               			<th>李老师</th>
-               			 <th><a href="">清理</a></th>
-               		</tr>
-               		<tr>
-               			<th>java</th>
-               			<th>李老师</th>
-               			 <th><a href="">清理</a></th>
-               		</tr>
-               		<tr>
-               			<th>java</th>
-               			<th>李老师</th>
-               			 <th><a href="">清理</a></th>
+               			<th>{{ data.subject }}</th>
+               			<th>{{ data.creater }}</th>
+               		    <th>
+                        <a href="">打包下载</a>
+                        <a href="">清理</a>
+                      </th>
                		</tr>
                	</tbody>
-
                </table>
-
-
-
-
                </form>
 
 

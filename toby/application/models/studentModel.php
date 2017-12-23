@@ -12,6 +12,11 @@ class studentModel extends model
 		$result = $this->insert($this->table,$data);
 		return $result->rowCount();
 	}
+	public function path_update($data1,$edit_data1)
+	{
+		$result = $this->update($this->table,$data1,$edit_data1);
+		return $result->rowCount();
+	}
 	public function upfile_list()
 	{
 		$result = $this->select($this->table, "*");
@@ -31,9 +36,14 @@ class studentModel extends model
 		));
 		return $result->rowCount();
 	}
-	public function get_exam()
+	public function get_exam() 
 	{
 		$result = $this->select("exam",'*');
 		return $result;
+	}
+	public function submit($data,$edit_data)
+	{
+		$result = $this->update("student",$data,$edit_data);
+		return $result->rowCount();
 	}
 }

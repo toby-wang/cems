@@ -44,14 +44,14 @@
 
 						<th>文件名称</th>
 						<th>上传时间</th>
-						<th>说明</th>
+						<th>操作</th>
 					</tr>
 					{% for v in data %}
 					<tr>
 						<td>{{ v.name }}</td>
 						<td>{{ v.time }}</td>
 						<td>
-							<a href="../{{ v.path }}">查看</a>
+							<!-- <a href="../{{ v.path }}">查看</a> -->
 							<a href="../student/student_delete/{{ v.id }}">删除</a>
 						</td>
 					</tr>

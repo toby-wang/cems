@@ -88,4 +88,23 @@ class teacherModel extends model
 		$result = $this->select("message",'*');
 		return $result;
 	}
+	public function student_all_number($subject)
+	{
+		$count = $this->count("student",array(
+    		"exam" => $subject
+		));
+		return $count;
+	}
+	public function student_login($subject)
+	{
+		$count = $this->count("student",["ip[!]" => null]);
+		return $count;
+	}
+	public function student_submit($subject)
+	{
+		$count = $this->count("student",array(
+    		"isSubmit" => 1
+		));
+		return $count;
+	}
 }

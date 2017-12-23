@@ -47,12 +47,12 @@
       </thead>
       <tbody>
         <tr>
-          <th>java</th>
-          <th>90</th>
-          <th>80</th>
-          <th>10</th>
-          <th>45</th>
-          <th>35</th>
+          <th>{{ data.exam_name }}</th>
+          <th>{{ data.student_all_number }}</th>
+          <th>{{ data.student_login }}</th>
+          <th>{{ data.student_unlogin }}</th>
+          <th>{{ data.student_submit }}</th>
+          <th>{{ data.student_unsubmit }}</th>
         </tr>
       </tbody>
 		    </table>	

@@ -29,7 +29,7 @@
                             <tr>
         			    	   <td>{{ v.subject }}</td>
 							   <td>{{ v.BeginTime }}</td>
-							   <td></td>
+							   <td>{{ v.creater }}</td>
 							   <td>
 								<a href="../{{ v.path }}">下载</a>	
 						    </td>

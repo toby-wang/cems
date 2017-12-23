@@ -55,7 +55,7 @@ function upfile($category)
             if ($maintype != "application" || $subtype != "vnd.openxmlformats-officedocument.spreadsheetml.sheet") {  
                 echo "<script>alert(\"上传文件格式不正确！！！\");history.go(-1)</script>";  
             } else {  
-                $path = './upfile/'.$category.'/'. time() . strtolower(strstr($_FILES['file']['name'], "."));//定义上传文件名和存储位置  
+                $path = './upfile/'.$category.'/'. $_FILES['file']['name'];//定义上传文件名和存储位置  
                 if (is_uploaded_file($_FILES['file']['tmp_name'])) {//判断文件上传是否为HTTP POST上传  
                     if (!move_uploaded_file($_FILES['file']['tmp_name'],$path)) {//执行上传操作  
                         echo "<script>alert(\"上传失败！！！\");history.go(-1)</script>";  
@@ -67,7 +67,7 @@ function upfile($category)
                 }  
             }
             }elseif ($category=="student") {
-               $path = './upfile/'.$category.'/'. time() . strtolower(strstr($_FILES['file']['name'], "."));//定义上传文件名和存储位置  
+               $path = './upfile/'.$category.'/'. $_FILES['file']['name'];//定义上传文件名和存储位置  
                 if (is_uploaded_file($_FILES['file']['tmp_name'])) {//判断文件上传是否为HTTP POST上传  
                     if (!move_uploaded_file($_FILES['file']['tmp_name'],$path)) {//执行上传操作  
                         echo "<script>alert(\"上传失败！！！\");history.go(-1)</script>";  
