@@ -25,13 +25,27 @@
     <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
     <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
-    
-<!--     <script language="JavaScript">
-    function re_fresh() {
-    window.location.reload();
+
+    <script language="JavaScript">
+  function re_fresh() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "exam_situation");
+    //var data = "name=" + document.getElementById("student_name").value;
+    //request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    request.send(); 
+    request.onreadystatechange = function() {
+        if (request.readyState===4) {
+            if (request.status===200) { 
+                alert(request.responseText);
+                }
+            } else {
+                alert("发生错误：" + request.status);
+            }
+        } 
     }
-    setTimeout('re_fresh()',2000); //指定2秒刷新一次
-    </script> -->
+    //window.location.reload();
+    //setTimeout('re_fresh()',2000); //指定2秒刷新一次
+    </script>
 
 
   </head>

@@ -2,6 +2,7 @@
 namespace application\controllers;
 use core\lib\model;
 use application\models\studentModel;
+use application\models\teacherModel;
 class student extends \core\toby
 {
 	public $model;
@@ -12,7 +13,13 @@ class student extends \core\toby
 	}
 	public function student_index()
 	{
-		$this->display('student/student_index.php');
+		$model = new teacherModel();
+		$get_exam=$model->get_exam();
+		if ($get_exam[0]['IsBegin']!=1) {
+			echo '<script>location.href="../";</script>';
+		}else{
+			$this->display('student/student_index.php');
+		}
 	}
 	public function student_download()
 	{

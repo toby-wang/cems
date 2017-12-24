@@ -117,6 +117,14 @@ class index extends \core\toby
 		session_destroy();	
 		echo '<script>location.href="../";</script>';
 	}
+	public function exam_situation()
+	{
+		echo "1111";
+		// $model = new teacherModel();
+		// $get_exam=$model->get_exam();
+		//p($get_exam[0]['IsBegin']);
+		//p($get_exam[0]['EndTime']);
+	}
 }
 
 
