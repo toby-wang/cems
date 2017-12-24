@@ -55,6 +55,7 @@ class index extends \core\toby
 			{
 				echo '<script>alert("不存在已开启的考试！！！");location.href="../"</script>';
 			}else{
+				if ($get_exam[0]['IsBegin']==1) {
 				if (time()>=strtotime($get_exam[0]['EndTime'])) {
 					echo '<script>alert("本场考试已经结束了！！！");location.href="../"</script>';
 				}elseif (time()<strtotime($get_exam[0]['BeginTime'])) {
@@ -107,7 +108,10 @@ class index extends \core\toby
 						echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";
 					}
 				}
+			}else{
+				echo '<script>alert("本场考试还未开始！！！");location.href="../"</script>';
 			}
+		}
 		}
 	}
 	public function logout()
@@ -119,11 +123,13 @@ class index extends \core\toby
 	}
 	public function exam_situation()
 	{
-		echo "1111";
-		// $model = new teacherModel();
-		// $get_exam=$model->get_exam();
-		//p($get_exam[0]['IsBegin']);
-		//p($get_exam[0]['EndTime']);
+		$final=1;
+		$model = new teacherModel();
+		$get_exam=$model->get_exam();
+		if (time()>=strtotime($get_exam[0]['EndTime'])) {
+			$final=0;
+		}
+		echo $get_exam[0]['IsBegin']*$final;	
 	}
 }
 

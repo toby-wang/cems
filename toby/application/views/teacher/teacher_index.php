@@ -23,6 +23,25 @@
     <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
     <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
+<script language="JavaScript">
+  function re_fresh() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "exam_auto");
+    request.send(); 
+    request.onreadystatechange = function() {
+        if (request.readyState===4) {
+            if (request.status===200) { 
+                if(request.responseText==0)
+                  {
+                   alert("考试结束!");
+                   location.href="../";
+                  }
+                }
+            }
+        } 
+  }
+  setInterval('re_fresh()',2000); //指定2秒刷新一次
+</script>
   </head>
   <body class="bg-1">
     <div class="mask"><div id="loader"></div></div>

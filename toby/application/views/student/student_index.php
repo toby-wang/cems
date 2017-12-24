@@ -30,21 +30,20 @@
   function re_fresh() {
     var request = new XMLHttpRequest();
     request.open("GET", "exam_situation");
-    //var data = "name=" + document.getElementById("student_name").value;
-    //request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     request.send(); 
     request.onreadystatechange = function() {
         if (request.readyState===4) {
             if (request.status===200) { 
-                alert(request.responseText);
+                if(request.responseText==0)
+                  {
+                   alert("考试结束!");
+                   location.href="../";
+                  }
                 }
-            } else {
-                alert("发生错误：" + request.status);
             }
         } 
-    }
-    //window.location.reload();
-    //setTimeout('re_fresh()',2000); //指定2秒刷新一次
+  }
+    setInterval('re_fresh()',2000); //指定2秒刷新一次
     </script>
 
 

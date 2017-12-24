@@ -32,7 +32,7 @@ class teacher extends \core\toby
 	public function student_add()
 	{
 		$info="";
-		$filename='./upfile/teacher/'. time() . strtolower(strstr($_FILES['file']['name'], "."));
+		$filename='./upfile/teacher/'.$_FILES['file']['name'];
 		upfile("teacher");
 		$objPHPExcel=\PHPExcel_IOFactory::load($filename);//加载文件
 		foreach ($objPHPExcel->getWorksheetIterator() as $sheet) {//循环获取sheet
@@ -297,7 +297,7 @@ class teacher extends \core\toby
 		$data=$this->model->get_exam();
 		if(!isset($data[0]))
 		{
-			echo '<script>alert("不存在考试！！！");location.href="../"</script>';
+			echo '<script>alert("不存在考试！！！");location.href="teacher_intro"</script>';
 		}else{
 			$this->assign('data',$data[0]);
 			$this->display('teacher/teacher_exam_end.php');
@@ -347,6 +347,24 @@ class teacher extends \core\toby
 			echo '<script>alert("考试终止！");location.href="teacher_exam_situation"</script>';
 		}else{
 			echo '<script>alert("考试已经被终止！！！");location.href="teacher_exam_situation"</script>';
+		}
+	}
+	public function exam_auto()
+	{
+		$model = new teacherModel();
+		$get_exam=$model->get_exam();
+		if (isset($get_exam[0])) {
+			if ($get_exam[0]['IsAuto']==1) {
+				if (time()>=strtotime($get_exam[0]['BeginTime'])&&time()<=strtotime($get_exam[0]['EndTime'])) {
+						$data=array(
+							"IsBegin" => 1
+						);
+						$edit_data=array(
+							"id" => $get_exam[0]['id']
+						);
+						$this->model->exam_edit($data,$edit_data);
+				}
+			}
 		}
 	}
 }
