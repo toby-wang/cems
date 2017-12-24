@@ -102,9 +102,16 @@ class teacherModel extends model
 	}
 	public function student_submit($subject)
 	{
-		$count = $this->count("student",array(
-    		"isSubmit" => 1
-		));
+		$count = $this->count("student", [
+    		"AND" => [
+        		"ip[!]" => null,
+       			"isSubmit" => 1
+    		]
+		]);
 		return $count;
+	}
+	public function clear_all($table)
+	{
+		$this->query("truncate table $table");
 	}
 }

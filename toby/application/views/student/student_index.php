@@ -25,6 +25,15 @@
     <link rel="stylesheet" href="../application/style/assets/js/vendor/chosen/css/chosen-bootstrap.css">
 
     <link href="../application/style/assets/css/minimal.css" rel="stylesheet">
+    
+<!--     <script language="JavaScript">
+    function re_fresh() {
+    window.location.reload();
+    }
+    setTimeout('re_fresh()',2000); //指定2秒刷新一次
+    </script> -->
+
+
   </head>
   <body class="bg-1">
     <!-- Wrap all page content here -->

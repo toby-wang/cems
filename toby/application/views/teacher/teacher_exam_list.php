@@ -57,13 +57,13 @@
           {% endif %} 
           </td>
           <td>
-          {% if v.IsBegin == '1' %}
+          {% if v.IsBegin == '0' %}
                  true
-          {% elseif v.IsBegin == '0' %}
+          {% elseif v.IsBegin == '1' %}
                  false
           {% endif %} 
           </td>
-          <td>true</td>
+          <td>false</td>
           <td><a href="../teacher/teacher_exam_edit/{{ v.id }}">编辑</a></td>
           <td><a href="../teacher/exam_delete/{{ v.id }}">删除</a></td>
         </tr>

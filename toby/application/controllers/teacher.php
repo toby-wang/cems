@@ -292,12 +292,61 @@ class teacher extends \core\toby
 		$this->model->message_delete($id);
 		echo "<script>location.replace(document.referrer)</script>";
 	}
-	
 	public function teacher_exam_end()
 	{
 		$data=$this->model->get_exam();
-		//p($data[0]);die;
-		$this->assign('data',$data[0]);
-		$this->display('teacher/teacher_exam_clear.php');
+		if(!isset($data[0]))
+		{
+			echo '<script>alert("不存在考试！！！");location.href="../"</script>';
+		}else{
+			$this->assign('data',$data[0]);
+			$this->display('teacher/teacher_exam_end.php');
+		}
+	}
+	public function addFileToZip()
+	{
+		$get_exam=$this->model->get_exam();
+		if (time()>=strtotime($get_exam[0]['EndTime'])) {
+			//进行打包操作
+			//
+			//
+			//
+			$data=array(	
+				"Isdownload" => 1
+			);
+			$edit_data=array(
+				"id" => $get_exam[0]['id']
+			);
+			$result=$this->model->exam_edit($data,$edit_data);		
+		}else{
+			echo '<script>alert("考试未结束！不可打包下载！");location.href="teacher_exam_end"</script>';
+		}
+	}
+	public function exam_clear()
+	{
+		$get_exam=$this->model->get_exam();
+		if ($get_exam[0]['Isdownload']==1) {
+			$this->model->clear_all("exam");
+			$this->model->clear_all("student");
+			$this->model->clear_all("studentfile");
+		}else{
+			echo '<script>alert("未打包下载，不可清理考试！");location.href="teacher_exam_end"</script>';
+		}
+	}
+	public function stop_exam()
+	{
+		$get_exam=$this->model->get_exam();
+		$data=array(
+			"IsBegin" => 0
+		);
+		$edit_data=array(
+			"id" => $get_exam[0]['id']
+		);
+		$result=$this->model->exam_edit($data,$edit_data);
+		if ($result==1) {
+			echo '<script>alert("考试终止！");location.href="teacher_exam_situation"</script>';
+		}else{
+			echo '<script>alert("考试已经被终止！！！");location.href="teacher_exam_situation"</script>';
+		}
 	}
 }

@@ -43,6 +43,7 @@
 				<th >未登录人数</th>
 				<th >登陆后提交答案人数</th>
 				<th >登录却未提交答案的人数</th>
+				<th >操作</th>
         </tr>
       </thead>
       <tbody>
@@ -53,6 +54,7 @@
           <th>{{ data.student_unlogin }}</th>
           <th>{{ data.student_submit }}</th>
           <th>{{ data.student_unsubmit }}</th>
+          <th><a href="stop_exam">终止考试</a></th>
         </tr>
       </tbody>
 		    </table>	

@@ -17,7 +17,7 @@ class index extends \core\toby
 	{
 		//$this->uri(3);
 		//url();die;
-		//$this->mem->flush(); 
+		$this->mem->flush(); 
 		$this->display('login.php');
 	}
 	public function login()
@@ -49,8 +49,8 @@ class index extends \core\toby
 				echo "<script>alert(\"用户名或密码错误，请重新登录！\");history.go(-1)</script>";
 			}
 		}else if($_POST["radio"]=="student"){
-			$model = new teacherModel();
-			$get_exam=$model->get_exam();
+			$model1 = new teacherModel();
+			$get_exam=$model1->get_exam();
 			if(!isset($get_exam[0]))
 			{
 				echo '<script>alert("不存在已开启的考试！！！");location.href="../"</script>';
@@ -60,7 +60,6 @@ class index extends \core\toby
 				}elseif (time()<strtotime($get_exam[0]['BeginTime'])) {
 					echo '<script>alert("本场考试还未开始！！！");location.href="../"</script>';
 				}else{
-				//p(time());die;
 					if ($getstu['sName']==$username&&$getstu['sPassword']==$password)
 					{
 						session_start();
@@ -85,6 +84,7 @@ class index extends \core\toby
 									$edit_data=array("sName"=>$username);
 									//ip设置成一个唯一索引
 									$rel=$model->bind_ip($data1,$edit_data);
+									//p($rel);die;
 									if ($rel==0) {
 										echo '<script>alert("一个电脑只能登录一个学生用户！！!");location.href="../"</script>';
 									}else{
@@ -93,6 +93,7 @@ class index extends \core\toby
 										$this->display('student/student_index.php');
 									}
 								}else{
+									//p($getstu['ip']);die;
 									if ($ipv4 !=$getstu['ip']) {
 										echo '<script>alert("该用户与IP地址不符！！!");location.href="../"</script>';
 									}else{

@@ -2,42 +2,59 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../application/style/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<script src="../application/style/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>  
+		<script src="../application/style/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js"></script>  
+		<script src="../application/style/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+  
+  
+
 		<title></title>
+
+		<style type="text/css">
+			li{
+				text-decoration-line: none;
+			}
+		</style>
 	</head>
     <body style="background:background-color;background-color: transparent;">
-	<form >
-		
-		<table align="center" border="1" style="border:double">
-			<thead>
-			<tr>
-				<th width="90px" align="center">考试名称</th>
-				<th width="90px" align="center">考试时间</th>
-				<th width="60px" align="center">创建人</th>
-				<th width="70px" align="center">上传试卷</th>
-				<th width="70px" align="center">自动开始</th>
-				<th width="50px" align="center">进行中</th>
-				<th width="50px" align="center">已结束</th>
-				<th width="50px" align="center">已归档</th>
-				<th width="50px" align="center">已清理</th>
-				<th width="50px" align="center">编辑</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr height="20px">
-				<td></td>
-				<td></td>
-				<td></td>				
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>	
-				<td></td>
-			</tr>
-			</tbody>
-		</table>
-	</form>
-    
+
+<div class="panel panel-danger">
+           <div class="panel-heading">
+              <h3 class="panel-title text-center">清理考试</h3>
+           </div>
+           <div class="panel-body">
+               <form class="form-horizontal" role="form" style="margin-top:50px;" method="" action="" enctype="multipart/form-data">
+
+               <table class="table table-striped">
+               	<thead>
+               	    <tr>
+               		   <th>考试科目</th>
+               		   <th>创建老师</th>
+               		   <th>说明</th>
+               		</tr>
+               	</thead>
+
+               	<tbody>
+               		<tr>
+               			<th>{{ data.subject }}</th>
+               			<th>{{ data.creater }}</th>
+               		    <th>
+                        <a href="../teacher/addFileToZip">打包下载</a>
+                        <a href="../teacher/exam_clear">清理</a>
+                      </th>
+               		</tr>
+               	</tbody>
+               </table>
+               </form>
+
+
+           </div>
+        </div>
+
+
+    	
+   
     </body>
 </html>

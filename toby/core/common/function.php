@@ -12,20 +12,64 @@ function p($var)
 	}
 
 }
+function FunctionName()
+{
+    function list_dir($dir){
+            $result = array();
+            if (is_dir($dir)){
+                $file_dir = scandir($dir);
+                foreach($file_dir as $file){
+                    if ($file == '.' || $file == '..'){
+                        continue;
+                    }
+                    elseif (is_dir($dir.$file)){
+                        $result = array_merge($result, list_dir($dir.$file.'/'));
+                    }
+                    else{
+                        array_push($result, $dir.$file);
+                    }
+                }
+            }
+            return $result;
+        }
+    //获取列表 
+    $datalist=list_dir('./ajax_text');
+    // print_r($datalist);die;
+    // $dirs = explode(',', $_POST['ids']);
+    //实例化zipArchive类
+    $zip = new zipArchive();
+    //创建空的压缩包
+    $zipName = "./ajax_text.zip";
+    $zip->open($zipName, ZIPARCHIVE::OVERWRITE); //打开的方式来进行创建 若有则打开 若没有则进行创建
+    //循环将要下载的文件路径添加到压缩包
+    foreach ($datalist as $v) {
+        $zip->addFile($v, basename($v));
+    }
+    //关闭压缩包
+    $zip->close();
+    //实现文件的下载
+    header('Content-Type:Application/zip');
+    header('Content-Disposition:attachment; filename=' . $zipName);
+    header('Content-Length:' . filesize($zipName));
+    readfile($zipName);
+    //删除生成的压缩文件
+    unlink($zipName);
+}
 function url()
 {
 	print_r($_SERVER["SERVER_NAME"]."/cems/toby/application/");
 }
 
 function get_ipv4(){
-        if (isset($_ENV["HOSTNAME"])){
-            $MachineName = $_ENV["HOSTNAME"];
-        } else if(isset($_ENV["COMPUTERNAME"])){
-            $MachineName = $_ENV["COMPUTERNAME"];
-        }else{
-            $MachineName = "";
-        }
-        return gethostbyname($MachineName);
+        // if (isset($_ENV["HOSTNAME"])){
+        //     $MachineName = $_ENV["HOSTNAME"];
+        // } else if(isset($_ENV["COMPUTERNAME"])){
+        //     $MachineName = $_ENV["COMPUTERNAME"];
+        // }else{
+        //     $MachineName = "";
+        // }
+        // return gethostbyname($MachineName);
+        return $_SERVER['REMOTE_ADDR'];
     }
     
 function upfile($category)
