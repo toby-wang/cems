@@ -60,7 +60,7 @@ function url()
 	print_r($_SERVER["SERVER_NAME"]."/cems/toby/application/");
 }
 
-function get_ipv4(){
+//function get_ipv4(){
         // if (isset($_ENV["HOSTNAME"])){
         //     $MachineName = $_ENV["HOSTNAME"];
         // } else if(isset($_ENV["COMPUTERNAME"])){
@@ -69,9 +69,33 @@ function get_ipv4(){
         //     $MachineName = "";
         // }
         // return gethostbyname($MachineName);
-        return $_SERVER['REMOTE_ADDR'];
-    }
-    
+      //  return $_SERVER['REMOTE_ADDR'];
+   // }
+   function get_ipv4()
+    {
+
+        if(!empty($_SERVER["HTTP_CLIENT_IP"]))
+        {
+            $cip = $_SERVER["HTTP_CLIENT_IP"];
+        }
+        else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))
+        {
+            $cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+        }
+        else if(!empty($_SERVER["REMOTE_ADDR"]))
+        {
+            $cip = $_SERVER["REMOTE_ADDR"];
+        }
+        else
+        {
+            $cip = '';
+        }
+        preg_match("/[\d\.]{7,15}/", $cip, $cips);
+        $cip = isset($cips[0]) ? $cips[0] : 'unknown';
+        unset($cips);
+
+        return $cip;
+    } 
 function upfile($category)
 {
 	 if (!empty($_FILES['file'])) {//判断上传内容是否为空  
