@@ -1,21 +1,24 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : 王腾飞
-Source Server Version : 50711
-Source Host           : localhost:3306
-Source Database       : exam
+ Source Server         : toby
+ Source Server Type    : MySQL
+ Source Server Version : 50638
+ Source Host           : 123.207.235.125
+ Source Database       : exam
 
-Target Server Type    : MYSQL
-Target Server Version : 50711
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50638
+ File Encoding         : utf-8
 
-Date: 2017-12-24 21:05:33
+ Date: 12/25/2017 15:48:01 PM
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- ----------------------------
--- Table structure for `exam`
+--  Table structure for `exam`
 -- ----------------------------
 DROP TABLE IF EXISTS `exam`;
 CREATE TABLE `exam` (
@@ -34,12 +37,14 @@ CREATE TABLE `exam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of exam
+--  Records of `exam`
 -- ----------------------------
-INSERT INTO exam VALUES ('1', '15-4', '0', '15-4demo.xlsx', '2017-11-10 18:00:00', '2018-02-07 09:45:00', '1', '0', '计算机组成原理', '陈老师', './upfile/teacher/15-4demo.xlsx');
+BEGIN;
+INSERT INTO `exam` VALUES ('1', '15-4', '0', '15-4demo.xlsx', '2017-11-10 18:00:00', '2018-02-07 09:45:00', '1', '1', '计算机组成原理', '陈老师', './upfile/teacher/15-4demo.xlsx');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `message`
+--  Table structure for `message`
 -- ----------------------------
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE `message` (
@@ -50,11 +55,7 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of message
--- ----------------------------
-
--- ----------------------------
--- Table structure for `student`
+--  Table structure for `student`
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
@@ -64,65 +65,19 @@ CREATE TABLE `student` (
   `ip` varchar(255) DEFAULT NULL,
   `isSubmit` int(1) NOT NULL DEFAULT '0' COMMENT '是否提交，0是未提交，1是提交',
   `exam` char(11) NOT NULL COMMENT '考试id',
-  `tId` int(11) NOT NULL,
   PRIMARY KEY (`sId`),
   UNIQUE KEY `ip` (`ip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of student
+--  Records of `student`
 -- ----------------------------
-INSERT INTO student VALUES ('1510120001', '赵红光', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120002', '侯勇康', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120011', '李益鸿', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120014', '许青', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120015', '蔡廷翰', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120018', '邱锦毫', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120021', '曹冠文', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120022', '刘璇', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120023', '陈庆祥', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120024', '郑森', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120025', '温兴杰', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120028', '段玲蕊', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120031', '李朝阳', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120032', '明伟', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120034', '董庚', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120036', '聂璋', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120047', '孙瑶', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120057', '黄怡', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120058', '王熏远', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510120062', '彭记贤', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121006', '闫美玲', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121009', '陈映宇', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121021', '刘凯鹏', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121022', '彭忠义', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121031', '赵国浩', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121036', '余昊泽', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121049', '焦正浩', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121051', '郭柯', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121075', '蒋晓晗', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121079', '袁亮亮', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121080', '王壮', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121081', '聂金松', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121084', '陈茜茹', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121096', '王亚杰', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121097', '郭智慧', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121100', '王腾飞', '123456', '::1', '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121105', '王乾坤', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121112', '王铮', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121113', '李浩', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121120', '张天啸', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121124', '周玉欣', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121139', '杜新辉', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121151', '杨满', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121168', '姚亚强', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121179', '郭繁森', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121184', '和国庆', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510121296', '刘晓茜', '123456', null, '0', '数据结构', '0');
-INSERT INTO student VALUES ('1510131156', '曾志文', '123456', null, '0', '数据结构', '0');
+BEGIN;
+INSERT INTO `student` VALUES ('1510120001', '赵红光', '123456', '1.194.187.4', '0', '数据结构'), ('1510120002', '侯勇康', '123456', null, '0', '数据结构'), ('1510120011', '李益鸿', '123456', null, '0', '数据结构'), ('1510120014', '许青', '123456', null, '0', '数据结构'), ('1510120015', '蔡廷翰', '123456', null, '0', '数据结构'), ('1510120018', '邱锦毫', '123456', null, '0', '数据结构'), ('1510120021', '曹冠文', '123456', null, '0', '数据结构'), ('1510120022', '刘璇', '123456', null, '0', '数据结构'), ('1510120023', '陈庆祥', '123456', null, '0', '数据结构'), ('1510120024', '郑森', '123456', null, '0', '数据结构'), ('1510120025', '温兴杰', '123456', null, '0', '数据结构'), ('1510120028', '段玲蕊', '123456', null, '0', '数据结构'), ('1510120031', '李朝阳', '123456', null, '0', '数据结构'), ('1510120032', '明伟', '123456', null, '0', '数据结构'), ('1510120034', '董庚', '123456', null, '0', '数据结构'), ('1510120036', '聂璋', '123456', null, '0', '数据结构'), ('1510120047', '孙瑶', '123456', null, '0', '数据结构'), ('1510120057', '黄怡', '123456', null, '0', '数据结构'), ('1510120058', '王熏远', '123456', null, '0', '数据结构'), ('1510120062', '彭记贤', '123456', null, '0', '数据结构'), ('1510121006', '闫美玲', '123456', null, '0', '数据结构'), ('1510121009', '陈映宇', '123456', null, '0', '数据结构'), ('1510121021', '刘凯鹏', '123456', null, '0', '数据结构'), ('1510121022', '彭忠义', '123456', null, '0', '数据结构'), ('1510121031', '赵国浩', '123456', null, '0', '数据结构'), ('1510121036', '余昊泽', '123456', null, '0', '数据结构'), ('1510121049', '焦正浩', '123456', null, '0', '数据结构'), ('1510121051', '郭柯', '123456', null, '0', '数据结构'), ('1510121075', '蒋晓晗', '123456', null, '0', '数据结构'), ('1510121079', '袁亮亮', '123456', null, '0', '数据结构'), ('1510121080', '王壮', '123456', null, '0', '数据结构'), ('1510121081', '聂金松', '123456', null, '0', '数据结构'), ('1510121084', '陈茜茹', '123456', null, '0', '数据结构'), ('1510121096', '王亚杰', '123456', '211.142.109.83', '0', '数据结构'), ('1510121097', '郭智慧', '123456', null, '0', '数据结构'), ('1510121100', '王腾飞', '123456', '::1', '0', '数据结构'), ('1510121105', '王乾坤', '123456', null, '0', '数据结构'), ('1510121112', '王铮', '123456', null, '0', '数据结构'), ('1510121113', '李浩', '123456', null, '0', '数据结构'), ('1510121120', '张天啸', '123456', null, '0', '数据结构'), ('1510121124', '周玉欣', '123456', null, '0', '数据结构'), ('1510121139', '杜新辉', '123456', null, '0', '数据结构'), ('1510121151', '杨满', '123456', null, '0', '数据结构'), ('1510121168', '姚亚强', '123456', null, '0', '数据结构'), ('1510121179', '郭繁森', '123456', null, '0', '数据结构'), ('1510121184', '和国庆', '123456', null, '0', '数据结构'), ('1510121296', '刘晓茜', '123456', null, '0', '数据结构'), ('1510131156', '曾志文', '123456', null, '0', '数据结构');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `studentfile`
+--  Table structure for `studentfile`
 -- ----------------------------
 DROP TABLE IF EXISTS `studentfile`;
 CREATE TABLE `studentfile` (
@@ -137,11 +92,7 @@ CREATE TABLE `studentfile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of studentfile
--- ----------------------------
-
--- ----------------------------
--- Table structure for `system_set`
+--  Table structure for `system_set`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_set`;
 CREATE TABLE `system_set` (
@@ -156,26 +107,29 @@ CREATE TABLE `system_set` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of system_set
+--  Records of `system_set`
 -- ----------------------------
-INSERT INTO system_set VALUES ('1', '2', '2', '1', '1', '2', 'off');
+BEGIN;
+INSERT INTO `system_set` VALUES ('1', '2', '2', '1', '1', '2', 'off');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `user`
+--  Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `name` varchar(255) NOT NULL COMMENT '姓名',
   `password` varchar(255) NOT NULL COMMENT '密码',
-  `type` varchar(1) NOT NULL COMMENT '类型，0是管理员，1教师',
+  `type` int(1) NOT NULL COMMENT '类型，0是管理员，1教师',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user
+--  Records of `user`
 -- ----------------------------
-INSERT INTO user VALUES ('12', 'toby', '123', '1');
-INSERT INTO user VALUES ('25', 'teacher', '123', '0');
-INSERT INTO user VALUES ('32', 'teacher1', '123', '0');
-INSERT INTO user VALUES ('33', '徜徉在深蓝的守护群', '123', '0');
+BEGIN;
+INSERT INTO `user` VALUES ('12', 'toby', '123', '1'), ('25', 'teacher', '123', '0'), ('32', 'teacher1', '123', '0'), ('33', '徜徉在深蓝的守护群', '123', '0');
+COMMIT;
+
+SET FOREIGN_KEY_CHECKS = 1;
