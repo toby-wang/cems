@@ -333,6 +333,8 @@ class teacher extends \core\toby
 			$this->model->clear_all("exam");
 			$this->model->clear_all("student");
 			$this->model->clear_all("studentfile");
+			array_map('unlink', glob('./upfile/student/*'));
+			array_map('unlink', glob('./upfile/teacher/*'));
 		}else{
 			echo '<script>alert("未打包下载，不可清理考试！");location.href="teacher_exam_end"</script>';
 		}
@@ -371,4 +373,5 @@ class teacher extends \core\toby
 			}
 		}
 	}
+
 }
