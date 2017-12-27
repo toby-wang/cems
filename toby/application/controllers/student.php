@@ -10,6 +10,9 @@ class student extends \core\toby
 	{
 		$this->model = new studentModel();
 		session_start();
+		if (!isset($_SESSION['user'])) {
+			echo "<script>location.href=\"../\";</script>";
+		}
 	}
 	public function student_index()
 	{

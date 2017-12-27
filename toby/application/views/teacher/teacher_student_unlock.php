@@ -35,7 +35,6 @@
            <div class="panel-body" align="center">
     			<input type="text" placeholder="学号"/>
     			<input type="text" id="student_name" placeholder="姓名" />
-    			<input type="text" placeholder="班级" />
     			<input type="submit" id="search0" class="glyphicon glyphicon-search" value="查找" />
            </div>
         </div>
@@ -56,7 +55,6 @@
     				<tr>
     					<th>学号</th>
     					<th>姓名</th>
-    					<th>班级</th>
     					<th>IP地址</th>
                         <th>操作</th>
     				</tr>
@@ -65,7 +63,6 @@
     				<tr>
     					<td id="number"></td>
     					<td id="name"></td>
-    					<td id="class"></td>
     					<td id="ipdress"></td>
                         <td id="opearte"></td>
     				</tr>

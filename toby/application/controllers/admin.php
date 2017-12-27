@@ -10,6 +10,9 @@ class admin extends \core\toby
 	{
 		$this->model = new adminModel();
 		session_start();
+		if (!isset($_SESSION['user'])) {
+			echo "<script>location.href=\"../\";</script>";
+		}
 	}
 	public function admin_index()
 	{

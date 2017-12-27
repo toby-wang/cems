@@ -16,6 +16,10 @@ class teacher extends \core\toby
 		$this->mem = new \Memcache;
 		//连接服务器
 		$this->mem->connect("127.0.0.1", 11211);
+		session_start();
+		if (!isset($_SESSION['user'])) {
+			echo "<script>location.href=\"../\";</script>";
+		}
 	}
 	public function teacher_index()
 	{

@@ -30,6 +30,7 @@ class index extends \core\toby
 		if ($_POST["radio"]=="admin") {
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="1")
 			{
+				session_start();
 				$_SESSION['user']=$getdata['name'];
 				$data=$_SESSION['user'];
 				$this->assign('data',$data);
@@ -41,6 +42,7 @@ class index extends \core\toby
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="0")
 			{
 				//echo "<script>alert(\"登录成功！！！\")</script>";
+				session_start();
 				$_SESSION['user']=$getdata['name'];
 				$data=$_SESSION['user'];
 				$this->assign('data',$data);
