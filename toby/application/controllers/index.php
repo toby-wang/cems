@@ -17,6 +17,7 @@ class index extends \core\toby
 	{
 		//$this->uri(3);
 		//url();die;
+		//session_destroy();
 		$this->mem->flush(); 
 		$this->display('login.php');
 	}
@@ -31,8 +32,8 @@ class index extends \core\toby
 			if ($getdata['name']==$username&&$getdata['password']==$password&&$getdata['type']=="1")
 			{
 				session_start();
-				$_SESSION['user']=$getdata['name'];
-				$data=$_SESSION['user'];
+				$_SESSION['admin']=$getdata['name'];
+				$data=$_SESSION['admin'];
 				$this->assign('data',$data);
 				$this->display('admin/admin_index.php');
 			}else{
@@ -43,8 +44,8 @@ class index extends \core\toby
 			{
 				//echo "<script>alert(\"登录成功！！！\")</script>";
 				session_start();
-				$_SESSION['user']=$getdata['name'];
-				$data=$_SESSION['user'];
+				$_SESSION['teacher']=$getdata['name'];
+				$data=$_SESSION['teacher'];
 				$this->assign('data',$data);
 				$this->display('teacher/teacher_index.php');
 			}else{

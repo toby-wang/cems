@@ -17,7 +17,7 @@ class teacher extends \core\toby
 		//连接服务器
 		$this->mem->connect("127.0.0.1", 11211);
 		session_start();
-		if (!isset($_SESSION['user'])) {
+		if (!isset($_SESSION['teacher'])) {
 			echo "<script>location.href=\"../\";</script>";
 		}
 	}
