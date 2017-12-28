@@ -112,10 +112,6 @@ class teacher extends \core\toby
 	}
 	public function teacher_exam_list()
 	{
-		// $page = new Pagination();
-  //       $page->init(2,1,'/cems/toby/teacher/teacher_exam_list');
-  //       $index = $page->show();
-        //echo $index;
 		$data=$this->model->get_exam();
 		foreach ($data as $k => $v) {
 			if ($v["IsAuto"]==1) {
@@ -308,7 +304,8 @@ class teacher extends \core\toby
 		$data=array(
 			"content"=>$_POST['content'],
 			"time"=>date("y-m-d h:i:s")
-		);
+		);  
+		//p($data);die;
 		$b=$this->model->message_add($data);
 		if ($b==0) {
 			echo "<script>alert(\"添加失败！！！\");history.go(-1)</script>";
@@ -336,11 +333,30 @@ class teacher extends \core\toby
 	public function addFileToZip()
 	{
 		$get_exam=$this->model->get_exam();
-		if (time()>=strtotime($get_exam[0]['EndTime'])) {
-			//进行打包操作
-			//
-			//
-			//
+		if ($get_exam[0]['IsBegin']!=1) {
+			    //获取列表 
+		    $datalist=list_dir('./upfile/student/');
+		    //print_r($datalist);die;
+		    // $dirs = explode(',', $_POST['ids']);
+		    //实例化zipArchive类
+		    $zip = new \zipArchive();
+		    //创建空的压缩包
+		    $zipName = $get_exam[0]['subject'].".zip";
+		    //$zip->open($zipName, \ZIPARCHIVE::OVERWRITE); //打开的方式来进行创建 若有则打开 若没有则进行创建
+		    $zip->open($zipName,\ZipArchive::OVERWRITE|\ZipArchive::CREATE);
+		    //循环将要下载的文件路径添加到压缩包
+		    foreach ($datalist as $v) {
+		        $zip->addFile($v, basename($v));
+		    }
+		    //关闭压缩包
+		    $zip->close();
+		    //实现文件的下载
+		    header('Content-Type:Application/zip');
+		    header('Content-Disposition:attachment; filename=' . $zipName);
+		    header('Content-Length:' . filesize($zipName));
+		    readfile($zipName);
+		    //删除生成的压缩文件
+		    unlink($zipName);
 			$data=array(	
 				"Isdownload" => 1
 			);
@@ -359,6 +375,7 @@ class teacher extends \core\toby
 			$this->model->clear_all("exam");
 			$this->model->clear_all("student");
 			$this->model->clear_all("studentfile");
+			$this->model->clear_all("message");
 			array_map('unlink', glob('./upfile/student/*'));
 			array_map('unlink', glob('./upfile/teacher/*'));
 		}else{
@@ -369,7 +386,8 @@ class teacher extends \core\toby
 	{
 		$get_exam=$this->model->get_exam();
 		$data=array(
-			"IsBegin" => 0
+			"IsBegin" => 0,
+			"IsAuto" => 0
 		);
 		$edit_data=array(
 			"id" => $get_exam[0]['id']

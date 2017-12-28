@@ -58,15 +58,20 @@ class student extends \core\toby
 				$data=array(
 					"path"=>$filename,
 					"time"=>date("y-m-d h:i:s"),
-					"name"=>$_FILES['file']['name']
+					"name"=>$_FILES['file']['name'],
+					"sId"=>$_SESSION['sId']
 				);
 				$rename=$this->model->path_add($data);
 				if ($rename==0) {
+					$data=$this->model->get_file($_SESSION['sId']);
+					unlink($data['path']);
 					$edit_data1=array(
-						"name"=>$_FILES['file']['name']
+						"sId"=>$_SESSION['sId']
 					);
 					$data1=array(
-						"time"=>date("y-m-d h:i:s")
+						"path"=>$filename,
+						"time"=>date("y-m-d h:i:s"),
+						"name"=>$_FILES['file']['name']
 					);
 					$this->model->path_update($data1,$edit_data1);
 				}

@@ -22,6 +22,13 @@ class studentModel extends model
 		$result = $this->select($this->table, "*");
 		return $result;
 	}
+	public function get_file($sId)
+	{
+		$result = $this->get($this->table, '*' ,array(
+			'sId'=>$sId
+		));
+		return $result;
+	}
 	public function get_path($id)
 	{
 		$result = $this->get($this->table, '*' ,array(

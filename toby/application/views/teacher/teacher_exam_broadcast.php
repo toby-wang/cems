@@ -17,7 +17,8 @@
     </div>
   </div>
   <div class="col-sm-offset-2 col-sm-10"  style="width:80%;margin: 0 auto;margin-top: 20px;">
-      <button type="submit" style="float: right;" class="btn btn-default" onclick="song()">发布</button>
+      <input type="submit" style="float: right;" class="btn btn-default" 
+      onclick="song()" value="发布" />
   </div>
 </form>
   <div style="width:80%;margin: 0 auto;margin-top: 100px;">
@@ -75,9 +76,11 @@
 
     function song(){
         var tongzhi = document.getElementById('tongzhi').value;
-        document.getElementById('tongzhi').value = '';
+        //document.getElementById('tongzhi').value = '';
         //向服务器发送数据
         websocket.send(tongzhi);
+
+        return false;
     }
       //监听连接关闭
 //    websocket.onclose = function (evt) {
