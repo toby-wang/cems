@@ -135,18 +135,24 @@ class teacher extends \core\toby
 	}
 	public function exam_open()
 	{
-		$name=$_POST['exam_name'];
-		$data=array(
-			"IsBegin" => 1
-		);
-		$edit_data=array(
-			"subject" => $name
-		);
-		$result=$this->model->exam_edit($data,$edit_data);
-		if ($result==1) {
-			echo "<script>alert(\"启动成功！！！\");location.replace(document.referrer)</script>";
+		$model1 = new teacherModel();
+		$get_exam=$model1->get_exam();
+		if (time()<strtotime($get_exam[0]['EndTime'])&&time()>strtotime($get_exam[0]['BeginTime'])) {
+			$name=$_POST['exam_name'];
+			$data=array(
+				"IsBegin" => 1
+			);
+			$edit_data=array(
+				"subject" => $name
+			);
+			$result=$this->model->exam_edit($data,$edit_data);
+			if ($result==1) {
+				echo "<script>alert(\"启动成功！！！\");location.replace(document.referrer)</script>";
+			}else{
+				echo "<script>alert(\"该场考试已启动或输入名称错误！！！\");location.replace(document.referrer)</script>";
+			}
 		}else{
-			echo "<script>alert(\"该项目已启动或输入名称错误！！！\");location.replace(document.referrer)</script>";
+			echo "<script>alert(\"此时不在考试范围时间内！\");location.replace(document.referrer)</script>";
 		}
 	}
 	public function teacher_exam_situation()
