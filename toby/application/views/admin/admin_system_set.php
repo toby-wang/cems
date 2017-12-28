@@ -31,19 +31,19 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td>制定扫描考试信息的间隔时间，单位为分钟</td>
+                    <td>制定扫描考试信息的间隔时间，单位为秒</td>
                 </tr>
                 
-                <tr>
+               <!--  <tr>
                     <td>分页查询记录条数</td>
                     <td>
                         <input type="text" style="line-height: normal;" name="number" value="{{ data.number }}" />
                     </td>
-                </tr>
+                </tr> 
                 <tr style="margin-bottom:15px;">
                     <td></td>
                     <td>指定分页查询时每页显示记录数的默认值（查询页面中可以更改）</td>
-                </tr>
+                </tr>-->
                 
                 <tr>
                     <td>手工开启考试时间阈值</td>

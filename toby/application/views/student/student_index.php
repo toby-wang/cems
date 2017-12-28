@@ -43,7 +43,7 @@
             }
         } 
   }
-    setInterval('re_fresh()',2000); //指定2秒刷新一次
+    setInterval('re_fresh()',{{ data.time }}*1000); //指定2秒刷新一次
     </script>
 
 
@@ -84,7 +84,7 @@
             			<i class="fa fa-search"></i> <input type="text" placeholder="Search...">
             		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             			 <i class="glyphicon glyphicon-user"></i>欢迎你,
-              <span>{{ data }}</span>
+              <span>{{ data.user }}</span>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <!-- <a href="../index/logout" class="btn btn-danger">退出系统</a> -->
              

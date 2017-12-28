@@ -26,7 +26,8 @@
             			          <span class="input-group-addon glyphicon glyphicon-file"></span>
            				          <input style="width:450px;" type="text" id="showFile" class="form-control" placeholder="请上传答案">
        				            </div>
-       				           </td>					   
+       				           </td>
+       				               <input type="hidden" name="MAX_FILE_SIZE" value="{{ data[1].max_byte }}">					   
                                <td><input onchange="handleFile()" id="chooseFile" type="file" align="center" name="file" style="height: 30px;width:75px;margin:10px;display: inline-block;"/></td>
                             </tr>  
                             <tr>
@@ -38,24 +39,22 @@
                 </table>
                 </form>
                 <table class="table table-striped">
-                        <tr>
-	
-
-
+                    <tr>
 						<th>文件名称</th>
 						<th>上传时间</th>
 						<th>操作</th>
 					</tr>
-					{% for v in data %}
 					<tr>
-						<td>{{ v.name }}</td>
-						<td>{{ v.time }}</td>
+						<td>{{ data[0][0].name }}</td>
+						<td>{{ data[0][0].time }}</td>
 						<td>
 							<!-- <a href="../{{ v.path }}">查看</a> -->
-							<a href="../student/student_delete/{{ v.id }}">删除</a>
+							 {% if data[0][0].id != '' %}
+							 <a href="../student/student_delete/{{ data[0][0].id }}">删除</a>
+							 {% else %}
+							{% endif %} 
 						</td>
 					</tr>
-					{% endfor %} 
 				</table>
 			</div>
 		</div>

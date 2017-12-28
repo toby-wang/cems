@@ -2,6 +2,7 @@
 namespace application\controllers;
 use core\lib\model;
 use application\models\teacherModel;
+use application\models\adminModel;
 use core\lib\Pagination;
 class teacher extends \core\toby
 {
@@ -177,33 +178,58 @@ class teacher extends \core\toby
 	public function teacher_exam_edit()
 	{
 		$id=$this->uri(3);
-		$data=$this->model->getOne($id);
+		//$data=$this->model->getOne($id);
+
+		$system = new adminModel();
+		//$data = $system->system_list();
+		$data=array(
+			"0"=>$this->model->getOne($id),
+			"1"=>$system->system_list()
+		);
+		//p($data);die;
 		$this->assign('data',$data);
 		$this->display('teacher/teacher_exam_edit.php');
 	}
 	public function exam_edit_cate()
 	{
 		$filename='./upfile/teacher/'.$_FILES['file']['name'];
-		upfile("teacher");
-		$data=array(
-			"BeginTime" => $_POST["begin_time"],
-      		"EndTime" => $_POST["end_time"],
-      		"class" => $_POST["class"],
-      		"IsAuto" => $_POST["auto"],
-      		"subject" => $_POST["subject"],
-      		"examnation" => $_FILES['file']['name'],
-      		"path" => $filename,
-      		"creater" => $_POST["creater"]
-		);
-		$edit_data=array(
-			"id"=>$this->uri(3)
-		);	
-		$a=$this->model->exam_edit($data,$edit_data);
-		if ($a==0) {
-			echo "<script>alert(\"修改失败！！！\");history.go(-1)</script>";
-		}else{  
-			echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
-		}	
+		if ($_FILES['file']['error'] > 0) {//判断上传错误信息  
+            switch ($_FILES['file']['error']) {  
+                case 1:  
+                	echo "<script>alert(\"上传文件大小超出配置文件规定值\");history.go(-1)</script>";
+                    break;  
+                case 2:  
+                	echo "<script>alert(\"您上传的文件过大\");history.go(-1)</script>";
+                    break;  
+                case 3:  
+                	echo "<script>alert(\"上传文件不全\");history.go(-1)</script>";
+                    break;  
+                case 4:  
+                echo "<script>alert(\"没有上传文件\");history.go(-1)</script>";
+                    break;  
+            }  
+        } else {
+			upfile("teacher");
+			$data=array(
+				"BeginTime" => $_POST["begin_time"],
+	      		"EndTime" => $_POST["end_time"],
+	      		"class" => $_POST["class"],
+	      		"IsAuto" => $_POST["auto"],
+	      		"subject" => $_POST["subject"],
+	      		"examnation" => $_FILES['file']['name'],
+	      		"path" => $filename,
+	      		"creater" => $_POST["creater"]
+			);
+			$edit_data=array(
+				"id"=>$this->uri(3)
+			);	
+			$a=$this->model->exam_edit($data,$edit_data);
+			if ($a==0) {
+				echo "<script>alert(\"修改失败！！！\");history.go(-1)</script>";
+			}else{  
+				echo "<script>alert(\"修改成功！！！\");location.href=\"../../teacher/teacher_exam_list\";</script>";
+			}	
+		}
 	}
 	public function teacher_student_unlock()
 	{

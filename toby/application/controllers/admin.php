@@ -95,7 +95,7 @@ class admin extends \core\toby
 	public function admin_system_set()
 	{
 		$data = $this->model->system_list();
-
+		//p($data['time']);die;
 		$this->assign('data',$data);
 		$this->display('admin/admin_system_set.php');
 	}

@@ -3,6 +3,7 @@ namespace application\controllers;
 use core\lib\model;
 use application\models\loginModel;
 use application\models\teacherModel;
+use application\models\adminModel;
 class index extends \core\toby
 {
 	public $mem;
@@ -67,9 +68,14 @@ class index extends \core\toby
 					if ($getstu['sName']==$username&&$getstu['sPassword']==$password)
 					{
 						session_start();
+						$system = new adminModel();
+						$system_set=$system->system_list();
 						$_SESSION['user']=$getstu['sName'];
 						$_SESSION['sId']=$getstu['sId'];
-						$data=$_SESSION['user'];
+						$data=array(
+							'user'=>$_SESSION['user'],
+							'time'=>$system_set['time']
+						);
 						//session_id(md5($getstu['sName']));
 						$id=md5($getstu['sName']);
 						$ip=$this->mem->get($id);
