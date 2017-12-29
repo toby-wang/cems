@@ -105,11 +105,9 @@ class admin extends \core\toby
 		$id=array('id'=>1);
 		$data=array(
 			'time'=> $_POST['time'],
-			'number'=> $_POST['number'],
 			'period'=> $_POST['period'],
 			'min_byte'=> $_POST['min_byte'],
-			'max_byte'=> $_POST['max_byte'],
-			'power'=> $_POST['power']
+			'max_byte'=> $_POST['max_byte']
 		);
 		if ($this->model->system_set($data,$id)) {
 			echo "<script>alert(\"修改成功！！！\");location.replace(document.referrer)</script>";

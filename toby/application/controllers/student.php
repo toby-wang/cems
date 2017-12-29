@@ -89,8 +89,9 @@ class student extends \core\toby
 	public function student_upload()
 	{
 		$system = new adminModel();
+		$id=$_SESSION['sId'];
 		$data=array(
-			"0"=>$this->model->upfile_list(),
+			"0"=>$this->model->upfile_list($id),
 			"1"=>$system->system_list()
 		);
 		//p($data);die;

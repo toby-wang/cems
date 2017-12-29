@@ -17,9 +17,11 @@ class studentModel extends model
 		$result = $this->update($this->table,$data1,$edit_data1);
 		return $result->rowCount();
 	}
-	public function upfile_list()
+	public function upfile_list($id)
 	{
-		$result = $this->select($this->table, "*");
+		$result = $this->select($this->table, "*",array(
+			'sId'=>$id
+		));
 		return $result;
 	}
 	public function get_file($sId)
