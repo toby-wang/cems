@@ -26,7 +26,11 @@
                                 <tr>
                                      <th>{{ v.name }}</th>
                                      <th>{{ v.password }}</th>
-                                     <th>是</th>
+                                     {% if v.type == 1 %}
+                                        <th>是</th>
+                                     {% else %}
+                                     <th>否</th>
+                                     {% endif %} 
                                 </tr>  
                                 {% endfor %} 
                         </tbody>

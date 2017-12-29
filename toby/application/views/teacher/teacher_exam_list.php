@@ -31,7 +31,6 @@
 				<th >自动开始</th>
 				<th >进行中</th>
 				<th >已结束</th>
-				<th >已清理</th>
 				<th >编辑</th>
         </tr>
       </thead>
@@ -63,7 +62,6 @@
                  false
           {% endif %} 
           </td>
-          <td>false</td>
           <td><a href="../teacher/teacher_exam_edit/{{ v.id }}">编辑</a></td>
           <td><a href="../teacher/exam_delete/{{ v.id }}">删除</a></td>
         </tr>

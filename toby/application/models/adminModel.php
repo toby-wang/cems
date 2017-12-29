@@ -11,15 +11,13 @@ class adminModel extends model
 	{
 		$result = $this->get($this->table,'*',array(
 			'name'=>$username,
-			'type'=>0
+			//'type'=>0
 		));
 		return $result;
 	}
 	public function teacher_list()
 	{
-		$result = $this->select($this->table, "*" , [
-    		"type" => 0
-		]);
+		$result = $this->select($this->table, "*" ,"*");
 		return $result;
 	}
 	public function teacher_add($data)
@@ -30,7 +28,7 @@ class adminModel extends model
 	public function teacher_delete($user)
 	{
 		$result = $this->delete($this->table,array(
-			'type'=>"0",
+			//'type'=>"0",
 			'name'=>$user
 		));
 		return $result->rowCount();

@@ -47,6 +47,7 @@ class admin extends \core\toby
 		$username = $_POST['name'];
 		$password = $_POST['old_psw'];
 		$getdata = $this->model->get_teacher($username);
+		//p($getdata);die;
 		if ($getdata['name']==$username&&$getdata['password']==$password)
 		{
 			if ($_POST['new_psw']==$_POST['new_psw1']) {
@@ -84,7 +85,7 @@ class admin extends \core\toby
 	public function admin_teacher_all()
 	{
 		$data = $this->model->teacher_list();//获取数据库信息
-
+		//p($data);die;
 		$this->assign('data',$data);
 		$this->display('admin/admin_teacher_all.php');
 	}
