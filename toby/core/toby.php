@@ -4,6 +4,8 @@ use core\lib\log;
 use core\lib\route;
 use application\controllers;
 use core\lib\conf;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 class toby
 {
@@ -16,15 +18,20 @@ class toby
 	public $action;
 	static public function run()
 	{
+		$log = new Logger("toby_log");
+        $log->pushHandler(new StreamHandler(toby."/log/monolog.log",Logger::WARNING));
+       // $log->warning('monolog.log');$log->error('monolog.log');
+
 		include_once toby.'/PHPExcel/PHPExcel/IOFactory.php';
 		//启动日志
 		log::init();
 		//p('ok');
 		$route = new route();
 		$ctrlClass = $route->ctrl; //控制器名字
-		$action = $route->action;  //方法名
-		$ctrlfile=app.'/controllers/'.$ctrlClass.'.php';
 
+		$action = $route->action;  //方法名
+		//p($ctrlClass);die;
+		$ctrlfile=app.'/controllers/'.$ctrlClass.'.php';
 		$ctrlClass=application.'\\controllers\\'.$ctrlClass;
 		//p($ctrlClass);exit();
 		if (is_file($ctrlfile)) {
@@ -98,8 +105,8 @@ class toby
 		if (is_file($file)) {
 			//将数组打散变成一个个变量
 			//extract($this->assign);
-                        include_once toby.'/vendor/twig/twig/lib/Twig/Autoloader.php';
-			\Twig_AutoLoader::register();
+            //include_once toby.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+			//\Twig_AutoLoader::register();
 			$loader = new \Twig_Loader_Filesystem(app.'/views/');
 			$twig = new \Twig_Environment($loader, array(
     			//'cache' => toby.'/log/twig'

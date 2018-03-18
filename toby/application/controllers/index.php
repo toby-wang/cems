@@ -10,9 +10,9 @@ class index extends \core\toby
 	function __construct() 
 	{
 		//初始化对象
-		$this->mem = new \Memcache;
+		$this->mem = new \Memcached;
 		//连接服务器
-		$this->mem->connect("127.0.0.1", 11211);
+		$this->mem->addServer("127.0.0.1", 11211);
 	}
 	public function index()
 	{

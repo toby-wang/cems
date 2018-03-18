@@ -8,6 +8,7 @@ class ComposerStaticInit53bc635f29bed48894b1fdc66df54260
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
@@ -22,6 +23,7 @@ class ComposerStaticInit53bc635f29bed48894b1fdc66df54260
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
@@ -31,6 +33,7 @@ class ComposerStaticInit53bc635f29bed48894b1fdc66df54260
         ),
         'M' => 
         array (
+            'Monolog\\' => 8,
             'Medoo\\' => 6,
         ),
     );
@@ -44,6 +47,10 @@ class ComposerStaticInit53bc635f29bed48894b1fdc66df54260
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -55,6 +62,10 @@ class ComposerStaticInit53bc635f29bed48894b1fdc66df54260
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Medoo\\' => 
         array (

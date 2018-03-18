@@ -2,9 +2,9 @@
 /*!
  * Medoo database framework
  * https://medoo.in
- * Version 1.5.2
+ * Version 1.5.5
  *
- * Copyright 2017, Angel Lai
+ * Copyright 2018, Angel Lai
  * Released under the MIT license
  */
 
@@ -81,8 +81,10 @@ class Medoo
 			{
 				$attr = $options[ 'dsn' ];
 			}
-
-			return false;
+			else
+			{
+				return false;
+			}
 		}
 		else
 		{
@@ -521,19 +523,18 @@ class Medoo
 		{
 			$type = gettype($value);
 
-			if ($type === 'array')
+			if (
+				$type === 'array' &&
+				preg_match("/^(AND|OR)(\s+#.*)?$/", $key, $relation_match)
+			)
 			{
-				$relationship = strpos($key, 'AND', 0) !== false ? 'AND' :
-				 				(strpos($key, 'OR', 0) !== false ? 'OR' : false);
+				$relationship = $relation_match[ 1 ];
 
-				 if ($relationship)
-				 {
-					$stack[] = !empty(array_diff_key($value, array_keys(array_keys($value)))) ?
-						'(' . $this->dataImplode($value, $map, ' ' . $relationship) . ')' :
-						'(' . $this->innerConjunct($value, $map, ' ' . $relationship, $conjunctor) . ')';
+				$stack[] = $value !== array_keys(array_keys($value)) ?
+					'(' . $this->dataImplode($value, $map, ' ' . $relationship) . ')' :
+					'(' . $this->innerConjunct($value, $map, ' ' . $relationship, $conjunctor) . ')';
 
-					continue;
-				}
+				continue;
 			}
 
 			$map_key = $this->mapKey();
@@ -588,8 +589,8 @@ class Medoo
 
 								foreach ($value as $index => $item)
 								{
-									$placeholders[] = $map_key . $index;
-									$map[ $map_key . $index ] = $this->typeMap($item, gettype($item));
+									$placeholders[] = $map_key . $index . '_i';
+									$map[ $map_key . $index . '_i' ] = $this->typeMap($item, gettype($item));
 								}
 
 								$stack[] = $column . ' NOT IN (' . implode(', ', $placeholders) . ')';
@@ -683,8 +684,8 @@ class Medoo
 
 							foreach ($value as $index => $item)
 							{
-								$placeholders[] = $map_key . $index;
-								$map[ $map_key . $index ] = $this->typeMap($item, gettype($item));
+								$placeholders[] = $map_key . $index . '_i';
+								$map[ $map_key . $index . '_i' ] = $this->typeMap($item, gettype($item));
 							}
 
 							$stack[] = $column . ' IN (' . implode(', ', $placeholders) . ')';

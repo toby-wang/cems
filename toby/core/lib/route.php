@@ -15,7 +15,7 @@ class route
 			$path = $_SERVER['PATH_INFO'];
 			$patharr=explode('/',trim($path,'/'));
 			//print_r(conf::get('ACTION','route'));
-			if (isset($patharr[0])) {
+			if (isset($patharr[0])){
 				$this->ctrl = $patharr[0];
 				unset($patharr[0]);
 			}
@@ -23,6 +23,7 @@ class route
 				$this->action = $patharr[1];
 				unset($patharr[1]);
 			}else{
+				$this->ctrl = conf::get('CTRL','route');
 				$this->action = conf::get('ACTION','route');
 			}
 		}else{
