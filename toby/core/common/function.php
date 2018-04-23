@@ -12,7 +12,6 @@ function p($var)
 	}
 
 }
-
 function list_dir($dir){
     $result = array();
     if (is_dir($dir)){
